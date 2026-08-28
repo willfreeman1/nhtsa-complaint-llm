@@ -60,10 +60,10 @@ CLASS_DEFINITIONS = {
     "EQUIPMENT": "General aftermarket/OEM accessory equipment not covered by any other category (e.g. roof racks, tonneau covers, cargo equipment).",
     "LATCHES/LOCKS/LINKAGES": "Door/hood latches, locks, and related linkages -- the latch/lock mechanism itself, not a structural failure.",
     "BACK OVER PREVENTION": "Backup camera / rearview visibility systems specifically intended for back-over prevention.",
-    "LANE DEPARTURE": "Lane departure warning / lane keep assist system malfunction.",
+    "LANE DEPARTURE": "Lane departure warning / lane keep assist AND blind-spot monitoring system malfunctions -- NHTSA groups blind-spot detection under this category too, not just literal lane-departure warnings.",
     "FUEL SYSTEM, OTHER": "Fuel system issues not clearly gasoline or diesel (e.g. propane, CNG, or unspecified fuel type).",
     "PARKING BRAKE": "Parking/emergency brake mechanism specifically.",
-    "SERVICE BRAKES, AIR": "Air-brake systems, mostly heavy trucks/buses.",
+    "SERVICE BRAKES, AIR": "Despite the name, in practice this category is used broadly for ordinary hydraulic/disc brake complaints on regular passenger vehicles (rotors, calipers, ABS units) -- only ~1.7% of narratives in this category even mention \"air brake\" literally. Do not expect the narrative to describe a heavy-truck pneumatic air-brake system; treat it as functionally similar to SERVICE BRAKES / SERVICE BRAKES, HYDRAULIC and don't over-weight the word \"air.\"",
 }
 assert set(CLASS_DEFINITIONS) == set(TOP_30_CLASSES), "definitions must exactly cover the 30 primary classes"
 
@@ -117,13 +117,52 @@ def _format_example(ex, component_override=None):
     return f"Input:\n{user}\n\nOutput:\n{json.dumps(answer)}"
 
 
+# Manual overrides for classes where the first auto-sampled candidate turned out to be
+# a poor teaching example on inspection (either a multi-issue narrative anchored to a
+# minor detail, or a narrative that doesn't actually match the class definition).
+# cmplid -> hand-picked replacement, sourced by direct query against cmpl_clean.parquet.
+CURATED_OVERRIDES = {
+    "VEHICLE SPEED CONTROL": {
+        "cmplid": 88495, "make": "CHEVROLET", "model": "S10", "year": "1997",
+        "narrative": "CRUISE CONTROL FAILED TO DISENGAGE, VEHICLE CONTINUED TO ACCELERATE OUT OF CONTROL. WAS ABLE TO STOP VEHICLE BY PUTTING IT INTO NEUTRAL AND TURNING OFF KEY.  *AK",
+        "crash": "N", "fire": "N", "injured": 0, "deaths": 0,
+    },  # original auto-sample (Ford Explorer "lost power downhill") was an ambiguous
+        # loss-of-power case with no cruise/accelerator signal -- bad teaching example
+        # for this class even though it's a real gold label.
+    "EXTERIOR LIGHTING": {
+        "cmplid": 325175, "make": "UNKNOWN", "model": "UNKNOWN", "year": "2001",
+        "narrative": "THIS COMPLAINT IS CONCERNING HID HEADLAMPS ON NEWER MODEL VEHICLES.  THEY ARE VERY BLINDING AND EYES TAKE CONSIDERABLY MORE TIME TO RECOVER AFTER PASSING A VEHICLE EQUIPED WITH HID.  CONSIDER BANNING THESE PLEASE.*AK",
+        "crash": "N", "fire": "N", "injured": 0, "deaths": 0,
+    },  # original auto-sample (Dodge Journey multi-system electrical cascade) directly
+        # contradicted this class's own definition (general electrical, not lighting).
+    "WHEELS": {
+        "cmplid": 626198, "make": "UNKNOWN", "model": "UNKNOWN", "year": "9999",
+        "narrative": "FRONT AND REAR RIMS ON MY 2005 NISSAN 350Z BROKE AND REQUIRED REPLACEMENT. A TOTAL OF 5 RIMS CRACKED ON MY CAR.  IT REQUIRED ME TO REPLACE THE NISSAN RIMS WITH AFTER MARKET RIMS.  *TR",
+        "crash": "N", "fire": "N", "injured": 0, "deaths": 0,
+    },  # original auto-sample (Cadillac DeVille) was mostly about an ignition-switch/key
+        # problem with only a passing "wheel monitoring light" mention -- contradicts our
+        # own multi-issue tie-break instruction.
+    "SERVICE BRAKES, AIR": {
+        "cmplid": 543268, "make": "FORD", "model": "F SERIES", "year": "2000",
+        "narrative": "ABS WARNING LIGHT CAME ON.  DIAGNOSIS WAS FAULTY HYDRAULLIC CONTROL UNIT.  SINCE IT OCCURED AT 61,615 MILES AND STILL ON ORIGINAL BRAKE PADS/LININGS AND TIRES I FEEL FAILURE WAS PREMATURE.  HAPPENED SHORTLY AFTER RECAL FOR SPEED CONTOL DISTURBED BRAKE SYSTEM.  REPAIR COST FOR DIAGNOSIS AND EXTIMATE FOR REPAIR $475+ SO REPAIRS HAVE NOT YET BEEN DONE.",
+        "crash": "N", "fire": "N", "injured": 0, "deaths": 0,
+    },  # original auto-sample (Jeep rotor wear) was fine too, but this one at least
+        # mentions ABS/hydraulic brake system explicitly, consistent with the corrected
+        # class definition above (this bucket is not actually about pneumatic air brakes).
+}
+
+
 def build_fewshot_block():
     with open(OUT_DIR / "fewshot_candidates.json") as f:
         cands = json.load(f)
 
     blocks = []
-    # one representative example per primary class (first sampled candidate)
+    # one representative example per primary class (curated override if we have one,
+    # else the first auto-sampled candidate)
     for cls in TOP_30_CLASSES:
+        if cls in CURATED_OVERRIDES:
+            blocks.append(_format_example(CURATED_OVERRIDES[cls], component_override=cls))
+            continue
         examples = cands["per_class"].get(cls, [])
         if examples:
             blocks.append(_format_example(examples[0]))

@@ -50,10 +50,10 @@ Important rules:
 - EQUIPMENT: General aftermarket/OEM accessory equipment not covered by any other category (e.g. roof racks, tonneau covers, cargo equipment).
 - LATCHES/LOCKS/LINKAGES: Door/hood latches, locks, and related linkages -- the latch/lock mechanism itself, not a structural failure.
 - BACK OVER PREVENTION: Backup camera / rearview visibility systems specifically intended for back-over prevention.
-- LANE DEPARTURE: Lane departure warning / lane keep assist system malfunction.
+- LANE DEPARTURE: Lane departure warning / lane keep assist AND blind-spot monitoring system malfunctions -- NHTSA groups blind-spot detection under this category too, not just literal lane-departure warnings.
 - FUEL SYSTEM, OTHER: Fuel system issues not clearly gasoline or diesel (e.g. propane, CNG, or unspecified fuel type).
 - PARKING BRAKE: Parking/emergency brake mechanism specifically.
-- SERVICE BRAKES, AIR: Air-brake systems, mostly heavy trucks/buses.
+- SERVICE BRAKES, AIR: Despite the name, in practice this category is used broadly for ordinary hydraulic/disc brake complaints on regular passenger vehicles (rotors, calipers, ABS units) -- only ~1.7% of narratives in this category even mention "air brake" literally. Do not expect the narrative to describe a heavy-truck pneumatic air-brake system; treat it as functionally similar to SERVICE BRAKES / SERVICE BRAKES, HYDRAULIC and don't over-weight the word "air."
 
 ## Examples
 Input:
@@ -127,8 +127,8 @@ Output:
 {"component": "SUSPENSION", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
 
 Input:
-Make/Model/Year: FORD EXPLORER 2016
-Narrative: WE ARE DRIVING BACK FROM ZION NATIONAL PARK THEN IN THE FREEWAY SUDDENLY I LOST POWER LUCKILY IT WAS ON A DOWN HILL.  I WENT ON THE SIDE OF THE ROAD THEN THEN COUPLE I STARTED RIGHT BACK.  NOW AM AFRAID DRIVING IT FAR AWAY.  FROM TIME TO TIME WHEN UPHILL IT JERK A BIT AND IT FEELS LIKE LOOSING POWER.
+Make/Model/Year: CHEVROLET S10 1997
+Narrative: CRUISE CONTROL FAILED TO DISENGAGE, VEHICLE CONTINUED TO ACCELERATE OUT OF CONTROL. WAS ABLE TO STOP VEHICLE BY PUTTING IT INTO NEUTRAL AND TURNING OFF KEY.  *AK
 
 Output:
 {"component": "VEHICLE SPEED CONTROL", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
@@ -141,8 +141,8 @@ Output:
 {"component": "SERVICE BRAKES", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
 
 Input:
-Make/Model/Year: DODGE JOURNEY 2010
-Narrative: MADE A LEFT HAND TURN AND SUDDENLY THE AIR CONDITIONER, RADIO, LIGHTS, WINDOWS STOPPED WORKING. DROVE TO A LOT AND PULLED OVER AND EVERYTHING CAME BACK ON. THEN MOVE THE STEERING WHEEL AND EVERYTHING SHUT OFF AGAIN. TURNED THE CAR OFF AND EVERYTHING CAME BACK AND HAS WORKED FINE SO FAR. HOWEVER, THE CAR WOULDN'T START EARLIER WHEN TURNED ON. HAD TO START THE CAR 3 TIMES BEFORE IT CAME ON.
+Make/Model/Year: UNKNOWN UNKNOWN 2001
+Narrative: THIS COMPLAINT IS CONCERNING HID HEADLAMPS ON NEWER MODEL VEHICLES.  THEY ARE VERY BLINDING AND EYES TAKE CONSIDERABLY MORE TIME TO RECOVER AFTER PASSING A VEHICLE EQUIPED WITH HID.  CONSIDER BANNING THESE PLEASE.*AK
 
 Output:
 {"component": "EXTERIOR LIGHTING", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
@@ -197,8 +197,8 @@ Output:
 {"component": "FORWARD COLLISION AVOIDANCE", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
 
 Input:
-Make/Model/Year: CADILLAC DEVILLE 2003
-Narrative: THE WHEEL MONITORING LIGHT CONTINUES TO INDICATE A MALFUNCTION.  THE IGNITION SWITCH SLOT PREVENTS ME FROM REMOVING THE KEY.   TO REMOVE THE IGNITION KEY, I HAVE TO MANIPULATE THE GEAR HANDLE IN ORDER ALIGN THE EXTRACTION OF THE KEY.  *TR
+Make/Model/Year: UNKNOWN UNKNOWN 9999
+Narrative: FRONT AND REAR RIMS ON MY 2005 NISSAN 350Z BROKE AND REQUIRED REPLACEMENT. A TOTAL OF 5 RIMS CRACKED ON MY CAR.  IT REQUIRED ME TO REPLACE THE NISSAN RIMS WITH AFTER MARKET RIMS.  *TR
 
 Output:
 {"component": "WHEELS", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
@@ -260,8 +260,8 @@ Output:
 {"component": "PARKING BRAKE", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
 
 Input:
-Make/Model/Year: JEEP GRAND CHEROKEE 1999
-Narrative: I HAVE HAD TO HAVE THE DEALER REPLACE/MACHINE THE FRONT ROTORS EVERY 8 - 10,000 MILES SINCE I PURCHASED THE THE VEHICLE NEW. THEY HAVE GIVEN ME ALL KINDS OF EXCUSSES FROM WARE AND TEAR TO DRIVING INRAIN CAUSE THE ROTOR TO WARP WHEN THEY ARE HOT AND HIT WATER.  I THINK  IT THE CALIPER THAT ARE PROBLEM AND NOT THE PAD OR ROTOR. 
+Make/Model/Year: FORD F SERIES 2000
+Narrative: ABS WARNING LIGHT CAME ON.  DIAGNOSIS WAS FAULTY HYDRAULLIC CONTROL UNIT.  SINCE IT OCCURED AT 61,615 MILES AND STILL ON ORIGINAL BRAKE PADS/LININGS AND TIRES I FEEL FAILURE WAS PREMATURE.  HAPPENED SHORTLY AFTER RECAL FOR SPEED CONTOL DISTURBED BRAKE SYSTEM.  REPAIR COST FOR DIAGNOSIS AND EXTIMATE FOR REPAIR $475+ SO REPAIRS HAVE NOT YET BEEN DONE.
 
 Output:
 {"component": "SERVICE BRAKES, AIR", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}

@@ -109,6 +109,26 @@ is counterfeit"*, *"Other/I am not sure"*). This is a small slice (~0.7% of rows
 will pollute a clean label space if not filtered. **Fix: scope the project to
 `PROD_TYPE='V'` (vehicles, 96.8% of rows) to avoid this entirely.**
 
+**B10. `SERVICE BRAKES, AIR` does not mean what its name implies.** Checked at scale
+(4,520 vehicle rows): the make distribution is dominated by ordinary passenger
+vehicles (Chevrolet, Ford, Dodge, GMC, Toyota, Honda, Jeep...), and only **1.7%** of
+narratives in this bucket even mention "air brake" literally. In practice this
+category is applied to the same kind of ordinary hydraulic/disc-brake complaints
+(rotors, calipers, ABS units) as `SERVICE BRAKES` and `SERVICE BRAKES, HYDRAULIC` —
+there is no narrative-text signal that distinguishes it. **Recommendation: treat as
+functionally equivalent to `SERVICE BRAKES` for prompting purposes (don't expect or
+reward "air brake" language), and consider merging it into `SERVICE BRAKES` at the
+label-schema stage** the same way the ESC/COMMUNICATION typo-duplicates were merged —
+unlike those, this isn't a spelling artifact, but it may be functionally unlearnable
+as a separate class from text alone, which is the same practical problem.
+
+**B11. `LANE DEPARTURE` also covers blind-spot monitoring.** All 3 few-shot
+candidates sampled for this class were about blind-spot camera/detection failures,
+not literal lane-departure-warning language — this looks like a genuine, consistent
+NHTSA convention (grouping ADAS side-detection features under the same top-level
+bucket as lane-keeping) rather than sampling noise. Teacher prompt should say so
+explicitly rather than assuming the name is literal.
+
 **B9. Circularity is low but nonzero.** Only ~20.5% of narratives literally contain the
 top-level `COMPDESC` string (28.7% for any sub-segment) — so ~75-80% of the time this
 is a real inference task, not a lookup task. Good news for the "does this need language
