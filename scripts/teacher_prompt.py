@@ -2,13 +2,19 @@
 
 Design notes (see output/NHTSA_CODING_GOTCHAS.md for the underlying evidence):
 
-- The model is asked for the *specific* system name, not literally one of our 31
-  training buckets. If it clearly identifies a real system outside our top-30 list
-  (e.g. "TRACTION CONTROL SYSTEM", "HYBRID PROPULSION SYSTEM", "TRAILER HITCH"), it
-  should say so in plain words rather than defaulting to a vague answer. Only
-  "UNKNOWN OR OTHER" is used when the narrative genuinely doesn't pin down a system.
-  `bucket_component()` below then maps that raw string to the final 31-class training
-  label (top-30 verbatim, else OTHER) -- this is the same logic used in
+- The model chooses "component" from a CLOSED enumeration: the 30 primary categories,
+  10 secondary categories (real, specific systems that are too rare to train on
+  directly but shouldn't be conflated with "unknown"), or "UNKNOWN OR OTHER". This is
+  deliberately closed-form rather than open-ended free text -- an LLM given "or name
+  something more specific" license will happily invent ever-finer subcategories (a
+  spark-plug complaint becoming "SPARK PLUGS" instead of ENGINE), which defeats the
+  point of having top-level categories at all. The prompt explicitly instructs mapping
+  UP to the enclosing system/category, with contrasting examples, and the secondary
+  list is exhaustive (backed by an actual count of every real top-level COMPDESC
+  string in the cleaned data that didn't make the primary 30) so there's no ambiguity
+  about when "go outside the 30" is actually licensed.
+  `bucket_component()` below then maps the model's answer to the final 31-class
+  training label (top-30 verbatim, else OTHER) -- this is the same logic used in
   prepare_training_data.py, applied post-hoc so we don't ask the LLM to reason about
   our label-simplification choice.
 - Fire/smoke language is explicitly de-fanged (gotchas B1/B2): mentioning fire does
@@ -67,12 +73,35 @@ CLASS_DEFINITIONS = {
 }
 assert set(CLASS_DEFINITIONS) == set(TOP_30_CLASSES), "definitions must exactly cover the 30 primary classes"
 
+# Exhaustive list of real, specific top-level COMPDESC values that exist in the
+# cleaned vehicle data but didn't make the primary-30 cut (all bucket to OTHER at
+# training time via bucket_component()). Sourced directly from a full value_counts()
+# over data/cmpl_clean.parquet -- every other raw string that appears (typo/free-text
+# child-seat artifacts like "Chest Clip, Buckle, Harness", blank strings, "Other/I am
+# not sure", etc: collectively <500 rows) is noise, not a real category, and is
+# deliberately excluded here so the model falls back to UNKNOWN OR OTHER for those
+# rather than inventing/echoing a bogus label.
+SECONDARY_CLASSES = {
+    "FUEL SYSTEM, DIESEL": "Diesel-specific fuel system (injectors, fuel pump, tank, lines) explicitly tied to a diesel engine.",
+    "CHILD SEAT": "A built-in/integrated child-seat feature of the vehicle itself (not a standalone aftermarket car-seat product).",
+    "INTERIOR LIGHTING": "Interior cabin lights, dome lights, dashboard illumination -- as distinct from EXTERIOR LIGHTING.",
+    "SERVICE BRAKES, ELECTRIC": "Electric brake systems, e.g. brake-by-wire or trailer electric brake controllers.",
+    "TRACTION CONTROL SYSTEM": "Traction control malfunction or warning light -- distinct from ELECTRONIC STABILITY CONTROL when the narrative specifically names traction control (not ESC/stability).",
+    "EQUIPMENT ADAPTIVE/MOBILITY": "Adaptive/mobility equipment for drivers with disabilities (hand controls, wheelchair lifts, etc.).",
+    "TRAILER HITCHES": "Trailer hitch and towing hardware, including trailer sway related to the hitch/coupling.",
+    "HYBRID PROPULSION SYSTEM": "Hybrid/EV battery-pack or propulsion-specific issues explicitly tied to the hybrid/electric drive system itself (not general stalling -- that's POWER TRAIN).",
+    "FIRERELATED": "Reserved for a narrow, specific fire-related designation distinct from routing a fire to its causal system -- rare; when in doubt between this and routing to a causal system, prefer the causal system.",
+    "COMMUNICATION": "Infotainment, telematics, or vehicle-to-X communication systems.",
+}
+
+ALL_VALID_COMPONENTS = set(TOP_30_CLASSES) | set(SECONDARY_CLASSES) | {"UNKNOWN OR OTHER"}
+
 SYSTEM_INSTRUCTIONS = """You are labeling NHTSA vehicle owner complaint narratives for a machine-learning training set. For each complaint, read the narrative (and make/model/year if given) and return a single JSON object with these fields:
 
-- "component": the specific vehicle system/component at fault, as a string.
-  - If the narrative clearly matches one of the 30 primary categories listed below, output that category name EXACTLY as written.
-  - If the narrative clearly points to a real, specific vehicle system that is NOT one of the 30 (e.g. traction control system, hybrid/EV battery propulsion, trailer hitch, interior lighting, infotainment/communications, child-seat hardware), name that specific system in plain words rather than forcing a poor fit into one of the 30. Do not be shy about naming something outside the list -- precision matters more than matching the list.
-  - Only output "UNKNOWN OR OTHER" when the narrative genuinely does not identify which system is at fault (e.g. vague "car died"/"lost power" complaints with no specific part named).
+- "component": the vehicle system/component at fault. You MUST output EXACTLY one of the category names below (30 primary + 10 secondary + "UNKNOWN OR OTHER" = 41 valid strings total) -- never invent a new name, and never output a part name that isn't itself one of these 41 strings.
+  - The 30 PRIMARY categories are top-level SYSTEMS, not individual parts. Map specific parts/symptoms UP to whichever primary system they belong to -- do not get more specific than the list allows. For example: a spark-plug or timing-chain complaint is ENGINE (not "spark plugs"); a ball-joint or strut complaint is SUSPENSION (not "ball joint"); a wiring-harness short is ELECTRICAL SYSTEM (not "wiring harness"). This applies even when the narrative uses a very specific part name -- always report the enclosing primary category if one fits.
+  - The 10 SECONDARY categories exist because they're real, specific systems that are too rare to be primary categories, but are NOT vague/unknown -- use one of these ONLY when the complaint is about a genuinely different system that none of the 30 primary categories cover at all (e.g. a trailer hitch, hybrid battery pack, traction control specifically, child seat, in-cabin infotainment). Do not use a secondary category just because it sounds more specific than a primary one that already fits -- primary categories always take priority when they apply.
+  - Only output "UNKNOWN OR OTHER" when the narrative genuinely does not identify which system is at fault at all (vague "car died"/"lost power" complaints with no specific part named), NOT as a fallback for "I'm not sure which of the 41 options to pick."
 - "crash": "Y" or "N" -- does THIS narrative's own text describe a crash/collision? Do not infer from context outside the text; if the narrative is silent on a crash, answer "N".
 - "fire": "Y" or "N" -- does THIS narrative's own text describe an actual vehicle fire (flames, something burning)? Smoke/glowing from normal friction (e.g. hard-braked brakes) or airbag-deployment discharge is NOT a fire. An external fire (e.g. wildfire) near the vehicle that never ignites the vehicle itself is NOT a fire.
 - "injured": integer count of people injured per THIS narrative's own text (0 if none mentioned).
@@ -86,9 +115,13 @@ Important rules:
 3. Base crash/fire/injured/deaths ONLY on what this specific narrative says, never on assumptions about a broader incident you're not shown.
 4. Output ONLY the JSON object, no other text.
 
-## The 30 primary categories
+## The 30 primary categories (top-level systems -- map specific parts up to these)
 
 {class_list}
+
+## The 10 secondary categories (use ONLY when no primary category fits at all)
+
+{secondary_list}
 
 ## Examples
 {fewshot_block}
@@ -100,6 +133,10 @@ Narrative: {narrative}"""
 
 def _format_class_list():
     return "\n".join(f"- {name}: {desc}" for name, desc in CLASS_DEFINITIONS.items())
+
+
+def _format_secondary_list():
+    return "\n".join(f"- {name}: {desc}" for name, desc in SECONDARY_CLASSES.items())
 
 
 def _format_example(ex, component_override=None):
@@ -152,6 +189,58 @@ CURATED_OVERRIDES = {
 }
 
 
+# Dedicated field-coverage examples: the per-class + fire-routing + other/unknown
+# examples above skew heavily toward crash=N/fire=N/injured=0/deaths=0 (representative
+# of the true base rate, but useless as *teaching* examples for those fields). These
+# were hand-picked by directly querying for CRASH=Y, INJURED>=1, and DEATHS>=1 rows.
+CURATED_FIELD_EXAMPLES = [
+    {  # crash=Y, no injury/death -- crash extraction independent of injury outcome
+        "make": "CHEVROLET", "model": "LUMINA", "year": "1997",
+        "narrative": "TEN MONTHS AFTER THE RACK AND PINION BEARING/ STEERING RECALL  03V527000 REPAIRS  WERE PERFORMED IT FAILED. WHILE MAKING  A LEFT HAND TURN THE STEERING WHEEL LOCKED UP, CAUSING THE VEHICLE TO GO INTO A SPIN AND CRASH INTO A GUARD RAIL.  A MECHANIC INSPECTED THE VEHICLE AFTER THE CRASH  AND INDICATED THAT THE RACK AND PINION  BROKE. *AK",
+        "component": "STEERING", "crash": "Y", "fire": "N", "injured": 0, "deaths": 0,
+    },
+    {  # crash=Y with injured=2, non-airbag component
+        "make": "CHEVROLET", "model": "SILVERADO 1500", "year": "1997",
+        "narrative": "THE INVESTIGATING OFFICER ON THE SCENE SAID THAT ALL EVIDENCE (PHYSICAL & WITNESS STATEMENTS) ARE CONSISTENT WITH THE BALL JOINT FAILING. I HAVE PHOTOS OF THE SCENE, INCLUDING CLOSE-UPS OF THE FAILED BALL JOINT. THE VEHICLE IS TOTALED.*AK",
+        "component": "SUSPENSION", "crash": "Y", "fire": "N", "injured": 2, "deaths": 0,
+    },
+    {  # injured=1, crash=N -- injury without a crash (inadvertent airbag deployment)
+        "make": "OLDSMOBILE", "model": "CUTLASS", "year": "1995",
+        "narrative": "CONSUMER'S VEHICLE WAS IN THE FIRST SWITCH POSITION BEFORE TURNING ENGINE OVER WHEN THE DRIVER SIDE AIR BAG INADVERTEDLY DEPLOYED, CONSUMER WAS INJURED. *AK",
+        "component": "AIR BAGS", "crash": "N", "fire": "N", "injured": 1, "deaths": 0,
+    },
+    {  # deaths=1, injured=0 -- fatality tracked independently of the injured count
+        "make": "LINCOLN", "model": "CONTINENTAL", "year": "1991",
+        "narrative": "WAS DRVING VEHICLE ABOUT 35MPH,   HIT A TREE HEAD ON, DEAD CENTER. THE WEATHER WAS CLEAR & PAVEMENT DRY. THE DRIVER'S SIDE AIR BAG DID NOT DEPLOY UPON IMPACT. IT RESULTED IN A FATALITY.  *AK",
+        "component": "AIR BAGS", "crash": "Y", "fire": "N", "injured": 0, "deaths": 1,
+    },
+]
+
+# Explicit granularity contrasts (component instruction rule #1: map parts UP to the
+# enclosing primary system; only go to a secondary category when NO primary fits).
+CURATED_GRANULARITY_EXAMPLES = [
+    {  # specific part (spark plug) -> still the primary system, not the part name
+        "make": "TOYOTA", "model": "PRIUS", "year": "2010",
+        "narrative": "TOYOTA REFUSES TO PROVIDE ANY DOCUMENTATION OR TSB EXPLAINING WHY  2010- 4 CYL. (2ZRFXE) SC20HR11 90919-01253  WAS SUPERSEDED BY  SC16HR11 90919-01275 SPARK PLUG",
+        "component": "ENGINE", "crash": "N", "fire": "N", "injured": 0, "deaths": 0,
+    },
+    {  # a system with NO primary-category match at all -> correctly use a secondary category
+        "make": "JAYCO", "model": "JAYCO", "year": "2000",
+        "narrative": "CONSUMER NOTICED A PROBLEM WHEN PULLING THE JAYCO KIWI TRAILER, TRAILER SWAYING ACROSS THE ROAD. CONTACTED  DEALER, DEALER REPLACED THE TIRES, PROBLEM STILL OCCURRED WHEN DRIVING AT 55 MPH.  TRAVEL TRAILER WAS SWAYING ACROSS THE ROAD, CAUSING THE TRAILER TO FLIP OVER WHICH CAUSED AN ACCIDENT, TOTALING  VEHICLE AND TRAILER. PLEASE PROVIDE ANY FURTHER DETAILS.  *AK",
+        "component": "TRAILER HITCHES", "crash": "Y", "fire": "N", "injured": 0, "deaths": 0,
+    },
+]
+
+
+def _format_curated(ex):
+    user = USER_TEMPLATE.format(make=ex["make"], model=ex["model"], year=ex["year"], narrative=ex["narrative"])
+    answer = {
+        "component": ex["component"], "crash": ex["crash"], "fire": ex["fire"],
+        "injured": ex["injured"], "deaths": ex["deaths"],
+    }
+    return f"Input:\n{user}\n\nOutput:\n{json.dumps(answer)}"
+
+
 def build_fewshot_block():
     with open(OUT_DIR / "fewshot_candidates.json") as f:
         cands = json.load(f)
@@ -175,12 +264,20 @@ def build_fewshot_block():
     for ex in cands["other_vs_unknown_examples"]:
         blocks.append(_format_example(ex))
 
+    # granularity contrasts (map parts up to primary; only use secondary when no
+    # primary fits at all) and dedicated crash/injured/deaths coverage
+    for ex in CURATED_GRANULARITY_EXAMPLES:
+        blocks.append(_format_curated(ex))
+    for ex in CURATED_FIELD_EXAMPLES:
+        blocks.append(_format_curated(ex))
+
     return "\n\n".join(blocks)
 
 
 def build_system_prompt():
     return SYSTEM_INSTRUCTIONS.format(
         class_list=_format_class_list(),
+        secondary_list=_format_secondary_list(),
         fewshot_block=build_fewshot_block(),
     )
 
@@ -190,7 +287,13 @@ def build_user_message(narrative, make="", model="", year=""):
 
 
 def bucket_component(raw_component: str) -> str:
-    """Map a teacher's raw component string to the final 31-class training label."""
+    """Map a teacher's raw component string to the final 31-class training label.
+
+    Primary-30 answers pass through verbatim; secondary-category and any other
+    (off-list / hallucinated) answers all bucket to OTHER. Callers that want to know
+    whether the teacher stayed within the closed enumeration should separately check
+    `raw_component in ALL_VALID_COMPONENTS` for QA purposes.
+    """
     if raw_component in TOP_30_CLASSES or raw_component == "UNKNOWN OR OTHER":
         return raw_component
     return "OTHER"

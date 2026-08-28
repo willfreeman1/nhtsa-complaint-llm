@@ -5,10 +5,10 @@
 ```
 You are labeling NHTSA vehicle owner complaint narratives for a machine-learning training set. For each complaint, read the narrative (and make/model/year if given) and return a single JSON object with these fields:
 
-- "component": the specific vehicle system/component at fault, as a string.
-  - If the narrative clearly matches one of the 30 primary categories listed below, output that category name EXACTLY as written.
-  - If the narrative clearly points to a real, specific vehicle system that is NOT one of the 30 (e.g. traction control system, hybrid/EV battery propulsion, trailer hitch, interior lighting, infotainment/communications, child-seat hardware), name that specific system in plain words rather than forcing a poor fit into one of the 30. Do not be shy about naming something outside the list -- precision matters more than matching the list.
-  - Only output "UNKNOWN OR OTHER" when the narrative genuinely does not identify which system is at fault (e.g. vague "car died"/"lost power" complaints with no specific part named).
+- "component": the vehicle system/component at fault. You MUST output EXACTLY one of the category names below (30 primary + 10 secondary + "UNKNOWN OR OTHER" = 41 valid strings total) -- never invent a new name, and never output a part name that isn't itself one of these 41 strings.
+  - The 30 PRIMARY categories are top-level SYSTEMS, not individual parts. Map specific parts/symptoms UP to whichever primary system they belong to -- do not get more specific than the list allows. For example: a spark-plug or timing-chain complaint is ENGINE (not "spark plugs"); a ball-joint or strut complaint is SUSPENSION (not "ball joint"); a wiring-harness short is ELECTRICAL SYSTEM (not "wiring harness"). This applies even when the narrative uses a very specific part name -- always report the enclosing primary category if one fits.
+  - The 10 SECONDARY categories exist because they're real, specific systems that are too rare to be primary categories, but are NOT vague/unknown -- use one of these ONLY when the complaint is about a genuinely different system that none of the 30 primary categories cover at all (e.g. a trailer hitch, hybrid battery pack, traction control specifically, child seat, in-cabin infotainment). Do not use a secondary category just because it sounds more specific than a primary one that already fits -- primary categories always take priority when they apply.
+  - Only output "UNKNOWN OR OTHER" when the narrative genuinely does not identify which system is at fault at all (vague "car died"/"lost power" complaints with no specific part named), NOT as a fallback for "I'm not sure which of the 41 options to pick."
 - "crash": "Y" or "N" -- does THIS narrative's own text describe a crash/collision? Do not infer from context outside the text; if the narrative is silent on a crash, answer "N".
 - "fire": "Y" or "N" -- does THIS narrative's own text describe an actual vehicle fire (flames, something burning)? Smoke/glowing from normal friction (e.g. hard-braked brakes) or airbag-deployment discharge is NOT a fire. An external fire (e.g. wildfire) near the vehicle that never ignites the vehicle itself is NOT a fire.
 - "injured": integer count of people injured per THIS narrative's own text (0 if none mentioned).
@@ -22,7 +22,7 @@ Important rules:
 3. Base crash/fire/injured/deaths ONLY on what this specific narrative says, never on assumptions about a broader incident you're not shown.
 4. Output ONLY the JSON object, no other text.
 
-## The 30 primary categories
+## The 30 primary categories (top-level systems -- map specific parts up to these)
 
 - ELECTRICAL SYSTEM: Wiring, battery, ignition switch, fuses, general electrical faults; also electrical-origin fires when wiring/electrical is the identified cause.
 - POWER TRAIN: Transmission, driveline/axle, transfer case, engine mounts interacting with the drivetrain; EV/hybrid propulsion power-delivery issues not specific to the battery pack; general stalling/loss-of-power tied to the drivetrain.
@@ -54,6 +54,19 @@ Important rules:
 - FUEL SYSTEM, OTHER: Fuel system issues not clearly gasoline or diesel (e.g. propane, CNG, or unspecified fuel type).
 - PARKING BRAKE: Parking/emergency brake mechanism specifically.
 - SERVICE BRAKES, AIR: Despite the name, in practice this category is used broadly for ordinary hydraulic/disc brake complaints on regular passenger vehicles (rotors, calipers, ABS units) -- only ~1.7% of narratives in this category even mention "air brake" literally. Do not expect the narrative to describe a heavy-truck pneumatic air-brake system; treat it as functionally similar to SERVICE BRAKES / SERVICE BRAKES, HYDRAULIC and don't over-weight the word "air."
+
+## The 10 secondary categories (use ONLY when no primary category fits at all)
+
+- FUEL SYSTEM, DIESEL: Diesel-specific fuel system (injectors, fuel pump, tank, lines) explicitly tied to a diesel engine.
+- CHILD SEAT: A built-in/integrated child-seat feature of the vehicle itself (not a standalone aftermarket car-seat product).
+- INTERIOR LIGHTING: Interior cabin lights, dome lights, dashboard illumination -- as distinct from EXTERIOR LIGHTING.
+- SERVICE BRAKES, ELECTRIC: Electric brake systems, e.g. brake-by-wire or trailer electric brake controllers.
+- TRACTION CONTROL SYSTEM: Traction control malfunction or warning light -- distinct from ELECTRONIC STABILITY CONTROL when the narrative specifically names traction control (not ESC/stability).
+- EQUIPMENT ADAPTIVE/MOBILITY: Adaptive/mobility equipment for drivers with disabilities (hand controls, wheelchair lifts, etc.).
+- TRAILER HITCHES: Trailer hitch and towing hardware, including trailer sway related to the hitch/coupling.
+- HYBRID PROPULSION SYSTEM: Hybrid/EV battery-pack or propulsion-specific issues explicitly tied to the hybrid/electric drive system itself (not general stalling -- that's POWER TRAIN).
+- FIRERELATED: Reserved for a narrow, specific fire-related designation distinct from routing a fire to its causal system -- rare; when in doubt between this and routing to a causal system, prefer the causal system.
+- COMMUNICATION: Infotainment, telematics, or vehicle-to-X communication systems.
 
 ## Examples
 Input:
@@ -342,6 +355,48 @@ Narrative: WHILE DRIVING THE CAR WILL SUDDENLY "JUMP" OR "SKIP", AND THE  ENGINE
 
 Output:
 {"component": "UNKNOWN OR OTHER", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
+
+Input:
+Make/Model/Year: TOYOTA PRIUS 2010
+Narrative: TOYOTA REFUSES TO PROVIDE ANY DOCUMENTATION OR TSB EXPLAINING WHY  2010- 4 CYL. (2ZRFXE) SC20HR11 90919-01253  WAS SUPERSEDED BY  SC16HR11 90919-01275 SPARK PLUG
+
+Output:
+{"component": "ENGINE", "crash": "N", "fire": "N", "injured": 0, "deaths": 0}
+
+Input:
+Make/Model/Year: JAYCO JAYCO 2000
+Narrative: CONSUMER NOTICED A PROBLEM WHEN PULLING THE JAYCO KIWI TRAILER, TRAILER SWAYING ACROSS THE ROAD. CONTACTED  DEALER, DEALER REPLACED THE TIRES, PROBLEM STILL OCCURRED WHEN DRIVING AT 55 MPH.  TRAVEL TRAILER WAS SWAYING ACROSS THE ROAD, CAUSING THE TRAILER TO FLIP OVER WHICH CAUSED AN ACCIDENT, TOTALING  VEHICLE AND TRAILER. PLEASE PROVIDE ANY FURTHER DETAILS.  *AK
+
+Output:
+{"component": "TRAILER HITCHES", "crash": "Y", "fire": "N", "injured": 0, "deaths": 0}
+
+Input:
+Make/Model/Year: CHEVROLET LUMINA 1997
+Narrative: TEN MONTHS AFTER THE RACK AND PINION BEARING/ STEERING RECALL  03V527000 REPAIRS  WERE PERFORMED IT FAILED. WHILE MAKING  A LEFT HAND TURN THE STEERING WHEEL LOCKED UP, CAUSING THE VEHICLE TO GO INTO A SPIN AND CRASH INTO A GUARD RAIL.  A MECHANIC INSPECTED THE VEHICLE AFTER THE CRASH  AND INDICATED THAT THE RACK AND PINION  BROKE. *AK
+
+Output:
+{"component": "STEERING", "crash": "Y", "fire": "N", "injured": 0, "deaths": 0}
+
+Input:
+Make/Model/Year: CHEVROLET SILVERADO 1500 1997
+Narrative: THE INVESTIGATING OFFICER ON THE SCENE SAID THAT ALL EVIDENCE (PHYSICAL & WITNESS STATEMENTS) ARE CONSISTENT WITH THE BALL JOINT FAILING. I HAVE PHOTOS OF THE SCENE, INCLUDING CLOSE-UPS OF THE FAILED BALL JOINT. THE VEHICLE IS TOTALED.*AK
+
+Output:
+{"component": "SUSPENSION", "crash": "Y", "fire": "N", "injured": 2, "deaths": 0}
+
+Input:
+Make/Model/Year: OLDSMOBILE CUTLASS 1995
+Narrative: CONSUMER'S VEHICLE WAS IN THE FIRST SWITCH POSITION BEFORE TURNING ENGINE OVER WHEN THE DRIVER SIDE AIR BAG INADVERTEDLY DEPLOYED, CONSUMER WAS INJURED. *AK
+
+Output:
+{"component": "AIR BAGS", "crash": "N", "fire": "N", "injured": 1, "deaths": 0}
+
+Input:
+Make/Model/Year: LINCOLN CONTINENTAL 1991
+Narrative: WAS DRVING VEHICLE ABOUT 35MPH,   HIT A TREE HEAD ON, DEAD CENTER. THE WEATHER WAS CLEAR & PAVEMENT DRY. THE DRIVER'S SIDE AIR BAG DID NOT DEPLOY UPON IMPACT. IT RESULTED IN A FATALITY.  *AK
+
+Output:
+{"component": "AIR BAGS", "crash": "Y", "fire": "N", "injured": 0, "deaths": 1}
 
 ```
 

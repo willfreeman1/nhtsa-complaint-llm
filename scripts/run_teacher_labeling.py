@@ -22,7 +22,7 @@ from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
 
-from teacher_prompt import build_system_prompt, build_user_message, bucket_component
+from teacher_prompt import ALL_VALID_COMPONENTS, build_system_prompt, build_user_message, bucket_component
 
 load_dotenv()
 
@@ -103,6 +103,7 @@ def label_one(row, provider, client, model, system_prompt, max_retries=4):
                 "gold_INJURED": None if pd.isna(row["INJURED"]) else float(row["INJURED"]),
                 "gold_DEATHS": None if pd.isna(row["DEATHS"]) else float(row["DEATHS"]),
                 "pred_component_bucketed": bucket_component(parsed.get("component", "")),
+                "pred_component_off_list": parsed.get("component", "") not in ALL_VALID_COMPONENTS,
                 "error": None,
             }
         except Exception as e:  # noqa: BLE001
@@ -165,9 +166,11 @@ def main():
                 print(f"  {done}/{len(sample)} done ({elapsed:.0f}s elapsed)")
 
     n_errors = sum(1 for r in results if r["error"] is not None)
+    n_off_list = sum(1 for r in results if r.get("pred_component_off_list"))
     total_input = sum(r["usage"]["input_tokens"] for r in results if r["usage"])
     total_output = sum(r["usage"]["output_tokens"] for r in results if r["usage"])
     print(f"\nDone in {time.time()-t0:.0f}s. {n_errors} errors out of {len(results)}.")
+    print(f"Off-list component answers (didn't match any of the 41 valid strings): {n_off_list}/{len(results)}")
     print(f"Total tokens: {total_input:,} input, {total_output:,} output")
 
     out_path = OUT_DIR / f"teacher_labels_{args.provider}_{args.n}.json"
