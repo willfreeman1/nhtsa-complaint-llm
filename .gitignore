@@ -1,0 +1,23 @@
+# Raw / large data — regenerate via scripts/load_data.py, don't version large binaries
+data/*.zip
+data/*.txt
+data/*.parquet
+output/*.npy
+
+# Future model artifacts
+checkpoints/
+*.gguf
+*.safetensors
+adapters/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Env / secrets
+.env
+*.key
+gcp-key*.json

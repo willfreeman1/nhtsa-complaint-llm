@@ -1,0 +1,15 @@
+{
+  "n": 160,
+  "component_exact_accuracy": 0.51875,
+  "component_macro_f1": 0.37219026541121225,
+  "component_n_correct": 83,
+  "crash_accuracy": 0.9875,
+  "crash_f1_Y": 0.9090909090909091,
+  "fire_accuracy": 1.0,
+  "fire_f1_Y": 1.0,
+  "injured_exact_match_pct": 0.975,
+  "deaths_exact_match_pct": 1.0,
+  "injured_any_vs_any_agreement": 0.975,
+  "deaths_any_vs_any_agreement": 1.0,
+  "all_fields_exact_pct": 0.50625
+}

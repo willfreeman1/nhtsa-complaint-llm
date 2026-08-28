@@ -1,0 +1,68 @@
+{
+  "n_rows": 2239860,
+  "cdescr_length": {
+    "pct_blank": 0.0016072433098497229,
+    "pct_lt_100": 10.753841757967015,
+    "pct_lt_200": 24.722929111640905,
+    "pct_ge_200": 75.2770708883591,
+    "mean": 516.5596296197084,
+    "median": 409.0,
+    "p10": 94.0,
+    "p90": 1101.0,
+    "max": 2132
+  },
+  "boilerplate_marker_hits": {
+    "TO WHOM IT MAY CONCERN": 1139,
+    "SEE ATTACHED": 3906,
+    "PLEASE SEE ATTACHED": 409,
+    "*TR": 406083,
+    "CONSUMER STATED": 38675
+  },
+  "label_completeness_pct": {
+    "COMPDESC": 100.0,
+    "CRASH": 100.0,
+    "FIRE": 100.0,
+    "INJURED": 100.0,
+    "DEATHS": 100.0,
+    "VEH_SPEED": 51.875161840472174,
+    "MEDICAL_ATTN": 100.0,
+    "VEHICLES_TOWED_YN": 100.0
+  },
+  "yn_value_counts": {
+    "CRASH": {
+      "N": 2099925,
+      "Y": 139935
+    },
+    "FIRE": {
+      "N": 2183166,
+      "Y": 56694
+    },
+    "MEDICAL_ATTN": {
+      "N": 2213159,
+      "Y": 26701
+    },
+    "VEHICLES_TOWED_YN": {
+      "N": 2110097,
+      "": 72064,
+      "Y": 57699
+    }
+  },
+  "injured_zero_pct": 96.00809872045575,
+  "deaths_zero_pct": 99.80498781173823,
+  "injured_gt0_pct": 3.991901279544257,
+  "deaths_gt0_pct": 0.19501218826176636,
+  "veh_speed_nonnull_pct": 51.875161840472174,
+  "veh_speed_nonzero_pct": 38.86774173385837,
+  "compdesc_cardinality": {
+    "n_distinct_full_string": 770,
+    "n_distinct_top_level_category": 55,
+    "n_top_level_cats_for_90pct_coverage": 19,
+    "n_full_strings_for_90pct_coverage": 92
+  },
+  "class_balance": {
+    "crash_Y_pct": 6.24748868232836,
+    "fire_Y_pct": 2.5311403391283385,
+    "any_injury_pct": 3.991901279544257,
+    "any_death_pct": 0.19501218826176636
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "exact_accuracy": 0.51875,
+  "collapsed_accuracy": 0.78125,
+  "n_explained_by_taxonomy_overlap": 42,
+  "n_remaining_real_errors": 35
+}
