@@ -1,0 +1,8 @@
+{
+  "n_total_raw": 2239860,
+  "n_vehicle_rows": 2167796,
+  "n_classes_incl_other": 31,
+  "n_real_classes": 30,
+  "coverage_before_other": 0.991875,
+  "pct_odino_multi_row": 0.445789
+}

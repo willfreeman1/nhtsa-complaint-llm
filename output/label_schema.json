@@ -1,0 +1,166 @@
+{
+  "n_classes_incl_other": 31,
+  "n_real_classes": 30,
+  "coverage_before_other": 0.991875,
+  "merge_map_applied": {
+    "ELECTRONIC STABILITY CONTROL (ESC)": "ELECTRONIC STABILITY CONTROL",
+    "COMMUNICATIONS": "COMMUNICATION"
+  },
+  "classes": [
+    {
+      "label": "ELECTRICAL SYSTEM",
+      "count": 247804,
+      "pct_of_vehicle_rows": 0.114311
+    },
+    {
+      "label": "POWER TRAIN",
+      "count": 217760,
+      "pct_of_vehicle_rows": 0.100452
+    },
+    {
+      "label": "ENGINE",
+      "count": 168418,
+      "pct_of_vehicle_rows": 0.077691
+    },
+    {
+      "label": "AIR BAGS",
+      "count": 156232,
+      "pct_of_vehicle_rows": 0.07207
+    },
+    {
+      "label": "STEERING",
+      "count": 143803,
+      "pct_of_vehicle_rows": 0.066336
+    },
+    {
+      "label": "ENGINE AND ENGINE COOLING",
+      "count": 120804,
+      "pct_of_vehicle_rows": 0.055727
+    },
+    {
+      "label": "UNKNOWN OR OTHER",
+      "count": 116653,
+      "pct_of_vehicle_rows": 0.053812
+    },
+    {
+      "label": "SERVICE BRAKES, HYDRAULIC",
+      "count": 106754,
+      "pct_of_vehicle_rows": 0.049245
+    },
+    {
+      "label": "STRUCTURE",
+      "count": 103855,
+      "pct_of_vehicle_rows": 0.047908
+    },
+    {
+      "label": "SUSPENSION",
+      "count": 89423,
+      "pct_of_vehicle_rows": 0.041251
+    },
+    {
+      "label": "VEHICLE SPEED CONTROL",
+      "count": 85066,
+      "pct_of_vehicle_rows": 0.039241
+    },
+    {
+      "label": "SERVICE BRAKES",
+      "count": 78584,
+      "pct_of_vehicle_rows": 0.036251
+    },
+    {
+      "label": "EXTERIOR LIGHTING",
+      "count": 62646,
+      "pct_of_vehicle_rows": 0.028898
+    },
+    {
+      "label": "FUEL/PROPULSION SYSTEM",
+      "count": 62131,
+      "pct_of_vehicle_rows": 0.028661
+    },
+    {
+      "label": "FUEL SYSTEM, GASOLINE",
+      "count": 56025,
+      "pct_of_vehicle_rows": 0.025844
+    },
+    {
+      "label": "VISIBILITY",
+      "count": 52959,
+      "pct_of_vehicle_rows": 0.02443
+    },
+    {
+      "label": "TIRES",
+      "count": 41874,
+      "pct_of_vehicle_rows": 0.019316
+    },
+    {
+      "label": "SEAT BELTS",
+      "count": 38935,
+      "pct_of_vehicle_rows": 0.017961
+    },
+    {
+      "label": "SEATS",
+      "count": 28728,
+      "pct_of_vehicle_rows": 0.013252
+    },
+    {
+      "label": "FORWARD COLLISION AVOIDANCE",
+      "count": 28121,
+      "pct_of_vehicle_rows": 0.012972
+    },
+    {
+      "label": "WHEELS",
+      "count": 24356,
+      "pct_of_vehicle_rows": 0.011235
+    },
+    {
+      "label": "VISIBILITY/WIPER",
+      "count": 24042,
+      "pct_of_vehicle_rows": 0.011091
+    },
+    {
+      "label": "ELECTRONIC STABILITY CONTROL",
+      "count": 21617,
+      "pct_of_vehicle_rows": 0.009972
+    },
+    {
+      "label": "EQUIPMENT",
+      "count": 21601,
+      "pct_of_vehicle_rows": 0.009964
+    },
+    {
+      "label": "LATCHES/LOCKS/LINKAGES",
+      "count": 20639,
+      "pct_of_vehicle_rows": 0.009521
+    },
+    {
+      "label": "OTHER",
+      "count": 17614,
+      "pct_of_vehicle_rows": 0.008125
+    },
+    {
+      "label": "BACK OVER PREVENTION",
+      "count": 8175,
+      "pct_of_vehicle_rows": 0.003771
+    },
+    {
+      "label": "LANE DEPARTURE",
+      "count": 7828,
+      "pct_of_vehicle_rows": 0.003611
+    },
+    {
+      "label": "FUEL SYSTEM, OTHER",
+      "count": 5910,
+      "pct_of_vehicle_rows": 0.002726
+    },
+    {
+      "label": "PARKING BRAKE",
+      "count": 4919,
+      "pct_of_vehicle_rows": 0.002269
+    },
+    {
+      "label": "SERVICE BRAKES, AIR",
+      "count": 4520,
+      "pct_of_vehicle_rows": 0.002085
+    }
+  ]
+}
