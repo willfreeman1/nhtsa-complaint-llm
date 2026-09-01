@@ -1,0 +1,12 @@
+{
+  "rows_covered": "the 7 originally-excluded (unknowable_from_text) rows from disagreement_adjudication_n40.json, re-examined instead of dropped",
+  "rows": [
+    {"cmplid": 1287909, "gold": "SUSPENSION", "teacher": "UNKNOWN OR OTHER", "accept": ["UNKNOWN OR OTHER"], "note": "Purely a complaint about the recall-scheduling website bundling an oil change -- zero vehicle-system content."},
+    {"cmplid": 1573951, "gold": "ELECTRICAL SYSTEM", "teacher": "UNKNOWN OR OTHER", "accept": ["UNKNOWN OR OTHER"], "note": "'Lost power' on the highway with zero cause or component named."},
+    {"cmplid": 1981710, "gold": "ENGINE AND ENGINE COOLING", "teacher": "ELECTRICAL SYSTEM", "accept": ["ENGINE AND ENGINE COOLING", "ELECTRICAL SYSTEM"], "note": "Explicitly quotes 'NHTSA Campaign Number: 23V905000 (Engine and Engine Cooling)' -- per the recall-campaign rule, believed directly. The dealer's actual repair (unstated wiring) also supports the electrical reading."},
+    {"cmplid": 1510319, "gold": "POWER TRAIN", "teacher": "UNKNOWN OR OTHER", "accept": ["UNKNOWN OR OTHER"], "note": "Pure never-received-recall-notice complaint, zero technical content."},
+    {"cmplid": 121457, "gold": "SUSPENSION", "teacher": "UNKNOWN OR OTHER", "accept": ["UNKNOWN OR OTHER"], "note": "Pure recall-parts-availability complaint, zero diagnostic content; the recall category is never named in the text itself."},
+    {"cmplid": 347953, "gold": "ENGINE AND ENGINE COOLING", "teacher": "UNKNOWN OR OTHER", "accept": ["UNKNOWN OR OTHER"], "note": "'Vehicle will stall out, losing all power' with no part named -- matches UNKNOWN OR OTHER's own definition verbatim."},
+    {"cmplid": 1984362, "gold": "STEERING", "teacher": "OTHER", "accept": ["HYBRID PROPULSION SYSTEM"], "note": "Mach-E EV high-voltage battery junction box recall dispute -- an EV battery-pack component, the rare hybrid-propulsion category. Zero steering content anywhere; neither original answer is right."}
+  ]
+}

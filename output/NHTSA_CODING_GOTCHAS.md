@@ -129,6 +129,168 @@ NHTSA convention (grouping ADAS side-detection features under the same top-level
 bucket as lane-keeping) rather than sampling noise. Teacher prompt should say so
 explicitly rather than assuming the name is literal.
 
+**B12. `VISIBILITY` vs `VISIBILITY/WIPER` is genuinely inconsistent in the raw gold
+labels, in *both* directions — confirmed at n=40 on the teacher-vs-gold disagreement
+sample.** A windshield that spontaneously cracked (no wiper involved) was coded
+`VISIBILITY/WIPER`; two separate narratives about literal wiper failure ("wipers
+become inoperative," "wipers stop working in heavy rain") were coded plain
+`VISIBILITY`, not the wiper variant. This isn't a case where the teacher model needs a
+better rule — NHTSA's own coding doesn't consistently distinguish these two strings, so
+don't expect (or try to force) a clean split here.
+
+**B13. Heater/HVAC complaints are inconsistently routed between `ENGINE AND ENGINE
+COOLING` and `VISIBILITY/WIPER`.** Two narratives about a malfunctioning heater core
+(one "won't release heat," one "blows only cool air, can't defrost windows") were
+coded to *different* top-level categories — presumably because the second one
+mentioned the defrost/defog consequence explicitly and the first one didn't — but the
+underlying defect (heater core / HVAC blend-air-door hardware) is the same. Treat this
+as inherent gold noise rather than a learnable convention.
+
+**B14. `SUSPENSION` / `STEERING` / `POWER TRAIN` share a genuinely fuzzy boundary at
+axles, tie rods, and wheel hubs.** Multiple narratives in the n=40 disagreement sample
+landed on this exact seam: a wheel hub separating (`WHEELS` vs `SUSPENSION`), "death
+wobble" fixed by tie-rod recalls (`STEERING` vs `SUSPENSION`), and a leaking front axle
+(`POWER TRAIN` — our own definition explicitly lists driveline/axle — vs
+`SUSPENSION`). These are physically adjacent/overlapping systems where a single part
+touches both; expect real disagreement here independent of model quality.
+
+**B15. Recall-campaign linkage really does drive some gold labels independent of the
+narrative text — directly confirmed, not just inferred.** CMPLID 1981710 (Ford
+EcoSport) literally states *"the failure was related to NHTSA Campaign Number:
+23V905000 (Engine and Engine Cooling)"* — quoting the recall's own assigned category
+by name — while the actual repair described in the same narrative ("wiring needed to
+be replaced") reads as electrical. The gold label matches the recall's official
+category, not the narrative's literal content. This confirms (not just plausibly
+explains) several other teacher/gold disagreements in complaints that mention a recall
+number with no other diagnostic detail: the correct label in those cases may live in
+NHTSA's recall database, not in `CDESCR` at all, and no narrative-only model — teacher
+or student — can be expected to recover it.
+
+**B13-REVISED. The `VISIBILITY`/`EQUIPMENT`/`ENGINE AND ENGINE COOLING` heater/AC split is
+*mostly* a learnable convention, not pure noise -- confirmed against raw `COMPDESC`, not
+just narrative reading.** Checked at scale: HVAC complaints that explicitly mention a
+defrost/defog/visibility consequence roll up to `VISIBILITY` (or the legacy
+`VISIBILITY/WIPER` string -- see B12, that half is genuinely noisy); a failed heater
+**core** specifically rolls to `ENGINE AND ENGINE COOLING:COOLING SYSTEM` because the
+core physically sits in the coolant loop, regardless of whether defrost is mentioned;
+and standalone AC-unit complaints (compressor, refrigerant, "blows warm") with no
+defrost/visibility consequence roll to `EQUIPMENT:APPLIANCE:AIR CONDITIONER`. All three
+readings are encoded in the class definitions now (see `teacher_prompt.py`). This
+**corrects an earlier adjudication note** for CMPLID 463855 that had misread the raw
+gold label as `EQUIPMENT` (checked directly against `cmpl_clean.parquet`: it's actually
+`ENGINE AND ENGINE COOLING`) -- a reminder to verify against the raw `COMPDESC_LABEL`
+column directly rather than trusting a prior note's summary.
+
+**B16. Exhaust-system complaints roll up to `ENGINE AND ENGINE COOLING`, not a
+separate class -- confirmed at scale (~11k rows: manifold/muffler/tailpipe, catalytic
+converter, EGR valve).** There's no dedicated exhaust category in NHTSA's own
+top-level rollup, so none was added to the teacher schema either; the
+`ENGINE AND ENGINE COOLING` definition was extended to say so explicitly instead
+(previously the definition only described the cooling system, not exhaust, which is
+why 3 different models missed this on CMPLID 683472 despite the correct answer being
+recoverable from NHTSA's own convention).
+
+**B17. Recall Campaign Numbers quoted in the narrative should outrank the
+complainant's own symptom-based diagnosis (extends B15 into an actionable prompt
+rule).** B15 already showed the gold label sometimes matches a quoted recall
+campaign's official category rather than the narrative's literal repair description.
+CMPLID 1938571 (Ford F-450) is a second confirmed instance the model evaluation
+surfaced: the narrative describes a failed "electronic brake control" and mentions no
+electrical fault, but explicitly quotes "NHTSA Campaign Number: 22V193000 (Electrical
+System)" -- and the true top-level `COMPDESC` (checked directly) is `ELECTRICAL
+SYSTEM`. All three evaluated models (gpt-5-mini, gpt-5.4-mini, gpt-5.4-nano) missed
+this in three different ways, none of them ELECTRICAL SYSTEM, because nothing in the
+prompt told them a quoted campaign category should outweigh the symptom description.
+**Fixed in `teacher_prompt.py` (new instruction rule 4).**
+
+**B18. Crash narratives that list multiple collision-damaged parts can mislead a model
+into classifying the crash damage instead of the alleged product defect.** CMPLID
+452061 (Dodge Durango): the narrative lists a broken steering rack and pinion,
+radiator, headlights, bumper, and transmission line as damage sustained *in the
+crash*, then separately states "AIRBAGS DID NOT DEPLOYED!!" as the actual complaint
+(confirmed: true `COMPDESC` is `AIR BAGS`). All three evaluated models answered
+STEERING, apparently anchored on the most specific/technical-sounding damaged part
+in the list rather than recognizing it as collision damage rather than the alleged
+defect. **Fixed in `teacher_prompt.py` (new instruction rule 5)**: distinguish
+impact-damaged parts from the defect actually being alleged (look for phrasing like
+"did not deploy," "failed to activate").
+
+**B19. Some narratives are inherently too garbled to resolve, and no prompt fix will
+help.** CMPLID 1435252 (Jeep Renegade): "...THE VEHICLE STALLED WITHOUT WARNING...
+DIAGNOSED AS A SAFETY PRECAUTION FOR THE VEHICLE WHEN THE OIL WAS LOW..." reads like a
+mangled auto-summary that conflates a stall event with an unrelated
+low-oil-safety-shutdown explanation. The true `COMPDESC` is plain `ENGINE`, but three
+different models gave three different wrong answers (POWER TRAIN, ENGINE AND ENGINE
+COOLING, UNKNOWN OR OTHER) on a genuinely confusing sentence. Counted as a real
+human-judgment-ceiling case (same category as B5/C1), not a fixable prompt gap.
+
+**B20. Non-vehicle product complaints (`PROD_TYPE != 'V'`) must be removed from the
+dataset entirely, not mapped to OTHER/UNKNOWN OR OTHER.** CMPLID 826851 is a
+standalone Graco child car seat -- make/model are `UNKNOWN`, and the complaint has
+nothing to do with any vehicle system. B8 already recommended scoping the whole
+project to `PROD_TYPE='V'`; this is a concrete instance of what goes wrong if that
+scoping is skipped: the teacher gets marked "wrong" for correctly recognizing there's
+no relevant vehicle system, when the real fix is that the row should never have been
+in a vehicle-system classification set at all. **Removed from `gold_eval_set_reviewed.json`
+along with CMPLID 2112094 (a telematics dump of three unrelated recall notices with no
+actual complaint text, same non-answer problem).**
+
+**B21. `SERVICE BRAKES` / `SERVICE BRAKES, HYDRAULIC` / `SERVICE BRAKES, AIR` are not
+reliably distinguishable from ANYTHING available to us -- not narrative text, and not
+vehicle make/model/year either.** Checked at scale across all 192,497 brake-family rows
+in `cmpl_clean.parquet`: the top makes in all three buckets are the *same* ordinary
+passenger-vehicle mix (Chevrolet, Ford, Dodge, GMC, Toyota, Honda, Jeep), not heavy
+trucks for `AIR` as the name would suggest (consistent with B10's narrative-level
+finding, extended here to the vehicle itself). More tellingly: **4,662 of 13,861
+(33.6%) unique make+model+year combinations appear coded under more than one of the
+three brake categories** -- e.g. the exact same vehicle shows up as plain `SERVICE
+BRAKES` in one complaint and `SERVICE BRAKES, HYDRAULIC` in another, with no
+identifiable reason. This isn't a narrow text-ambiguity problem the prompt can fix --
+NHTSA's own coding of this subtype is functionally close to random. **Practical
+consequence: the gold set now treats these three (plus `SERVICE BRAKES, ELECTRIC` when
+no electric-specific detail is present) as a single interchangeable answer whenever the
+narrative lacks distinguishing detail (`accept` contains all three/four) rather than
+scoring a model down for landing on a different one of the three than NHTSA happened to
+pick.** For any future *training* run (not just eval), the same logic argues for
+collapsing these into one training class (e.g. `SERVICE BRAKES` as the umbrella) rather
+than asking a model to learn a 3-4-way split that NHTSA's own human coders don't apply
+consistently -- training on it as-is would just be teaching the model to memorize noise.
+
+## D. Methodology note: what counts as "truth" when NHTSA disagrees with itself
+
+During the manual row-by-row review of the 275-row gold eval set (2026-08-31), it
+became clear that NHTSA's raw `COMPDESC` is **one hypothesis about the correct label,
+not the definition of correct.** Two patterns showed this concretely:
+
+- **NHTSA contradicts itself on the raw label, but that's a cue to read more carefully,
+  not a license to accept both.** Two rows that look superficially similar at the
+  `COMPDESC` level can still describe genuinely different things once you actually read
+  the narratives -- CMPLID 1293783 explicitly states "FEAR OF AIRBAG DEPLOYING" (a real
+  airbag-system concern, correctly `AIR BAGS`), while CMPLID 1346344 is purely "the
+  dashboard cracked, I don't know what caused it" with no airbag symptom at all
+  (`STRUCTURE`). Similarly, 1837120 and 1886408 explicitly describe sensor-triggered
+  false braking with no obstacle (`FORWARD COLLISION AVOIDANCE`-supporting language),
+  which is textually distinguishable from a bare brake-lockup complaint with no ADAS
+  language. In every case checked, deciding from the text -- not defaulting to
+  "NHTSA said both, so accept both" -- resolved these to a single label. Multi-label
+  `accept` entries in the gold set are reserved for rows where two labels are each
+  independently supported by that row's own narrative (see B10/B21 for the brake-family
+  schema case, which is different: there the narrative genuinely can't distinguish the
+  subtype, not "we didn't bother deciding").
+- **The reviewer's own read of the narrative can override NHTSA outright**, as it did
+  on 463855 (relabeled from a mis-transcribed "EQUIPMENT" to `ENGINE AND ENGINE
+  COOLING`, which is also what the raw label already said once checked directly) and
+  on the four rows where an earlier disagreement adjudication (see
+  `disagreement_adjudication_n40.json`) turned out to have missed a detail in the
+  narrative (1447285, 1779673, 463855, 1335413 -- see the `revised_prior_adjudications`
+  field in `gold_eval_set_reviewed.json`).
+
+In short: **NHTSA's label is our starting hypothesis, not our verdict.** The gold set
+records what a careful reading of the narrative text supports, using NHTSA's label,
+the teacher LLM's label, and NHTSA's own class definitions as evidence -- and where two
+readings are both defensible (including two different NHTSA rows disagreeing with each
+other), both are accepted rather than treating either as automatically right.
+
 **B9. Circularity is low but nonzero.** Only ~20.5% of narratives literally contain the
 top-level `COMPDESC` string (28.7% for any sub-segment) — so ~75-80% of the time this
 is a real inference task, not a lookup task. Good news for the "does this need language

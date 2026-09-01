@@ -5,9 +5,9 @@
 ```
 You are labeling NHTSA vehicle owner complaint narratives for a machine-learning training set. For each complaint, read the narrative (and make/model/year if given) and return a single JSON object with these fields:
 
-- "component": the vehicle system/component at fault. Output EXACTLY one of the 41 category names below (30 primary + 10 secondary + "UNKNOWN OR OTHER") -- never invent a new name.
+- "component": the vehicle system/component at fault. Output EXACTLY one of the 41 category names below (30 primary + 10 rare + "UNKNOWN OR OTHER") -- never invent a new name.
   - Use a primary category whenever it fits, even for a specific part (e.g. spark plugs -> ENGINE, ball joint -> SUSPENSION) -- don't get more specific than the list allows.
-  - Use a secondary category only when the complaint is about a system none of the 30 primary categories cover at all (e.g. trailer hitch, hybrid battery, child seat).
+  - The 10 rare categories are for systems none of the 30 primary categories cover at all (e.g. trailer hitch, hybrid battery, child seat) -- not weaker/fallback versions of a primary category.
   - Use "UNKNOWN OR OTHER" only when the narrative doesn't identify any specific system.
 - "crash": "Y" or "N" -- does THIS narrative's own text describe a crash/collision? Do not infer from context outside the text; if the narrative is silent on a crash, answer "N".
 - "fire": "Y" or "N" -- does THIS narrative's own text describe an actual vehicle fire (flames, something burning)? Smoke/glowing from normal friction (e.g. hard-braked brakes) or airbag-deployment discharge is NOT a fire. An external fire (e.g. wildfire) near the vehicle that never ignites the vehicle itself is NOT a fire.
@@ -20,7 +20,9 @@ Important rules:
 1. Mentioning fire/flames/smoke does NOT by itself imply a special "fire" category -- identify the underlying system that caused or is most closely associated with the fire (e.g. a wiring fire -> ELECTRICAL SYSTEM; an engine-bay fire with confirmed engine origin -> ENGINE; a fire with no origin identified -> UNKNOWN OR OTHER).
 2. If the narrative describes multiple problems, pick the ONE most central to the complainant's stated primary concern -- not necessarily the first-mentioned or most technical-sounding detail.
 3. Base crash/fire/injured/deaths ONLY on what this specific narrative says, never on assumptions about a broader incident you're not shown.
-4. Output ONLY the JSON object, no other text.
+4. If the narrative quotes an NHTSA recall Campaign Number with an official category in parentheses (e.g. "Campaign Number: 22V193000 (Electrical System)"), treat that quoted category as strong evidence for "component" -- it is the manufacturer's own defect classification, not the complainant's guess, and should usually be preferred over a system you infer solely from the complainant's own diagnosis of symptoms.
+5. If the narrative describes a crash/collision, distinguish parts merely DAMAGED by the physical impact (e.g. "my radiator, bumper, and steering rack were destroyed in the crash") from the actual defect being alleged (typically flagged by phrasing like "did not deploy," "failed to activate," or "did not work as intended"). Classify based on the alleged defect, not the most specific-sounding item in a list of crash damage.
+6. Output ONLY the JSON object, no other text.
 
 ## The 30 primary categories (top-level systems -- map specific parts up to these)
 
@@ -29,7 +31,7 @@ Important rules:
 - ENGINE: Engine internals: spark plugs, valves, engine block, misfires, stalling caused by the engine itself; engine-bay fires with confirmed engine origin.
 - AIR BAGS: Airbag warning lights, non-deployment, inadvertent deployment, seat belt sensors tied to the airbag system, Takata-style recalls.
 - STEERING: Steering wheel, steering column, power steering, rack and pinion.
-- ENGINE AND ENGINE COOLING: Cooling system specifically: radiator, coolant leaks/overheating, water pump, cooling fan. Use over plain ENGINE when overheating/coolant is the central complaint.
+- ENGINE AND ENGINE COOLING: Cooling system specifically: radiator, coolant leaks/overheating, water pump, cooling fan; also the exhaust system (manifold, muffler, catalytic converter, EGR valve) and the heater CORE (it physically sits in the coolant loop, even when the complaint is about heat output rather than overheating). Use over plain ENGINE when overheating/coolant/exhaust/heater-core is the central complaint.
 - UNKNOWN OR OTHER: The narrative genuinely does not identify which system is at fault -- vague drivability complaints (car "died"/"shook"/"lost power") with no specific part named, or a failure with no cause identified even after investigation.
 - SERVICE BRAKES, HYDRAULIC: Hydraulic brake system: brake lines, master cylinder, brake fluid -- the default bucket for ordinary brake complaints without ABS/air/electric-specific detail.
 - STRUCTURE: Body/frame/chassis structural issues: frame rust/cracking, hood/body structural failures; a fire whose origin is attributed to a structural/body component rather than engine or wiring.
@@ -47,7 +49,7 @@ Important rules:
 - WHEELS: Wheel rim cracking/bending or wheel separation, distinct from the tire itself failing.
 - VISIBILITY/WIPER: Windshield wiper/washer system specifically.
 - ELECTRONIC STABILITY CONTROL: ESC/stability system malfunction or warning light.
-- EQUIPMENT: General aftermarket/OEM accessory equipment not covered by any other category (e.g. roof racks, tonneau covers, cargo equipment).
+- EQUIPMENT: General aftermarket/OEM accessory equipment not covered by any other category (e.g. roof racks, tonneau covers, cargo equipment); also standalone air conditioning/climate-control failures (the AC unit itself -- compressor, refrigerant, blowing warm) when the narrative does NOT mention a defrost/defog/visibility consequence -- if it does, use VISIBILITY instead.
 - LATCHES/LOCKS/LINKAGES: Door/hood latches, locks, and related linkages -- the latch/lock mechanism itself, not a structural failure.
 - BACK OVER PREVENTION: Backup camera / rearview visibility systems specifically intended for back-over prevention.
 - LANE DEPARTURE: Lane departure warning / lane keep assist AND blind-spot monitoring system malfunctions -- NHTSA groups blind-spot detection under this category too, not just literal lane-departure warnings.
@@ -55,7 +57,7 @@ Important rules:
 - PARKING BRAKE: Parking/emergency brake mechanism specifically.
 - SERVICE BRAKES, AIR: Despite the name, in practice this category is used broadly for ordinary hydraulic/disc brake complaints on regular passenger vehicles (rotors, calipers, ABS units) -- only ~1.7% of narratives in this category even mention "air brake" literally. Do not expect the narrative to describe a heavy-truck pneumatic air-brake system; treat it as functionally similar to SERVICE BRAKES / SERVICE BRAKES, HYDRAULIC and don't over-weight the word "air."
 
-## The 10 secondary categories (use ONLY when no primary category fits at all)
+## The 10 rare categories (distinct systems the 30 primary categories don't cover)
 
 - FUEL SYSTEM, DIESEL: Diesel-specific fuel system (injectors, fuel pump, tank, lines) explicitly tied to a diesel engine.
 - CHILD SEAT: A built-in/integrated child-seat feature of the vehicle itself (not a standalone aftermarket car-seat product).

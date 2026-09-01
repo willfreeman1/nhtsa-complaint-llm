@@ -1,0 +1,370 @@
+{
+  "eval_set": {
+    "file": "gold_eval_set_v2.json",
+    "n": 498,
+    "n_hard": 258,
+    "caveats": [
+      "Every one of the 254 pilot teacher/gold disagreements (plus 4 dual-agreement corrections found during review) has now been independently adjudicated from the narrative text -- none are dropped as unadjudicated. Remaining unresolved cases are rows where the narrative genuinely supports more than one label (accept has >1 entry) or is truly unknowable from text alone (labeled UNKNOWN OR OTHER), not gaps in review.",
+      "Dual-agreement rows are, by construction, rows the Anthropic pilot model (claude-haiku-4-5) got right, which mildly favors models that behave like it. Relative ranking across models is still meaningful; treat small (<2pt) gaps with suspicion.",
+      "NHTSA CRASH/FIRE flags are carried for secondary scoring only and are known to be noisy (gotcha B1/B2)."
+    ]
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "reasoning_effort": null,
+      "accuracy": 0.9036144578313253,
+      "accuracy_hard": 0.8372093023255814,
+      "macro_f1": 0.8375773205994619,
+      "off_list_rate": 0.0,
+      "errors": 0,
+      "usd_per_100k_rows": 465.88080321285145,
+      "input_tokens_per_row": 16260.082329317269,
+      "output_tokens_per_row": 81.03012048192771,
+      "reasoning_tokens_per_row": 0.0,
+      "pct_of_cost_from_input": 82.60711325233405,
+      "sec_per_row": 0.2008511311557877
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "reasoning_effort": null,
+      "accuracy": 0.8835341365461847,
+      "accuracy_hard": 0.7829457364341085,
+      "macro_f1": 0.793918585840196,
+      "off_list_rate": 0.0,
+      "errors": 0,
+      "usd_per_100k_rows": 155.0105220883534,
+      "input_tokens_per_row": 9747.520080321285,
+      "output_tokens_per_row": 81.83534136546184,
+      "reasoning_tokens_per_row": 0.0,
+      "pct_of_cost_from_input": 73.60329471091741,
+      "sec_per_row": 0.12889699476311006
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "reasoning_effort": "none",
+      "accuracy": 0.8594377510040161,
+      "accuracy_hard": 0.7441860465116279,
+      "macro_f1": 0.8285840986313421,
+      "off_list_rate": 0.0,
+      "errors": 5,
+      "usd_per_100k_rows": 150.63879310344828,
+      "input_tokens_per_row": 9115.377281947262,
+      "output_tokens_per_row": 49.308316430020284,
+      "reasoning_tokens_per_row": 0.0,
+      "pct_of_cost_from_input": 85.27023355911287,
+      "sec_per_row": 0.1643389311088268
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "reasoning_effort": "minimal",
+      "accuracy": 0.8132530120481928,
+      "accuracy_hard": 0.7325581395348837,
+      "macro_f1": 0.7072094365604866,
+      "off_list_rate": 0.0,
+      "errors": 2,
+      "usd_per_100k_rows": 52.90494959677419,
+      "input_tokens_per_row": 9115.320564516129,
+      "output_tokens_per_row": 65.43548387096774,
+      "reasoning_tokens_per_row": 0.0,
+      "pct_of_cost_from_input": 75.2630011484001,
+      "sec_per_row": 0.1611402726942493
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-nano",
+      "reasoning_effort": "none",
+      "accuracy": 0.7730923694779116,
+      "accuracy_hard": 0.6589147286821705,
+      "macro_f1": 0.7157464761534813,
+      "off_list_rate": 0.0,
+      "errors": 5,
+      "usd_per_100k_rows": 49.52959837728195,
+      "input_tokens_per_row": 9114.501014198782,
+      "output_tokens_per_row": 52.88438133874239,
+      "reasoning_tokens_per_row": 0.0,
+      "pct_of_cost_from_input": 86.65333884400141,
+      "sec_per_row": 0.16685898405543206
+    }
+  ],
+  "cost_note": "Cost is dominated by the ~7.4k-token system prompt resent on every row. Prompt caching already absorbs most of it; the remaining levers are batching several complaints per call, the Batch API (50% off), and trimming few-shot examples -- all of which move cost far more than switching between models in this tier.",
+  "universally_missed_rows": [
+    {
+      "cmplid": 1915489,
+      "accept": [
+        "POWER TRAIN"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "SERVICE BRAKES, HYDRAULIC",
+        "claude-sonnet-5": "SERVICE BRAKES, HYDRAULIC",
+        "gpt-5-mini": "SERVICE BRAKES, HYDRAULIC",
+        "gpt-5.4-mini": "SERVICE BRAKES, HYDRAULIC",
+        "gpt-5.4-nano": "SERVICE BRAKES, HYDRAULIC"
+      },
+      "unanimous_alternative": true,
+      "adjudication_note": "Long history culminating in a detailed, costly transmission failure; no brake symptom appears anywhere in the (truncated) visible text. Neither original answer is supported by what's actually here."
+    },
+    {
+      "cmplid": 105591,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "ELECTRICAL SYSTEM",
+        "claude-sonnet-5": "ELECTRICAL SYSTEM",
+        "gpt-5-mini": "ELECTRICAL SYSTEM",
+        "gpt-5.4-mini": "ELECTRICAL SYSTEM",
+        "gpt-5.4-nano": "ENGINE"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Fire investigators themselves state the failure mechanism is undetermined -- only the general location (engine bay) is known, not a confirmed engine or electrical cause. Per the fire-routing rule, an undetermined cause goes to UNKNOWN OR OTHER. Both original answers assume a cause the text doesn't confirm."
+    },
+    {
+      "cmplid": 359150,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "ELECTRONIC STABILITY CONTROL",
+        "claude-sonnet-5": "SERVICE BRAKES, AIR",
+        "gpt-5-mini": "ELECTRONIC STABILITY CONTROL",
+        "gpt-5.4-mini": "SERVICE BRAKES, AIR",
+        "gpt-5.4-nano": "ELECTRONIC STABILITY CONTROL"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "ABS malfunction with a replaced wheel-speed sensor -- an ABS/hydraulic-brake component, no stability/skid symptom described. Gold is right."
+    },
+    {
+      "cmplid": 471641,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_teacher_clean_miss",
+      "predictions": {
+        "claude-haiku-4-5": "EQUIPMENT",
+        "claude-sonnet-5": "EQUIPMENT",
+        "gpt-5-mini": "ELECTRICAL SYSTEM",
+        "gpt-5.4-mini": "EQUIPMENT",
+        "gpt-5.4-nano": "EQUIPMENT"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Paint peeling (cosmetic/finish issue, explicitly the complainant's stated main concern) is not really a STRUCTURE (frame/chassis integrity) issue -- teacher overreached into a poor-fit specific category instead of using UNKNOWN OR OTHER, which gold correctly did."
+    },
+    {
+      "cmplid": 533047,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "SERVICE BRAKES, AIR",
+        "claude-sonnet-5": "SERVICE BRAKES, AIR",
+        "gpt-5-mini": "ELECTRONIC STABILITY CONTROL",
+        "gpt-5.4-mini": "SERVICE BRAKES, AIR",
+        "gpt-5.4-nano": "ELECTRONIC STABILITY CONTROL"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "ABS malfunction on a passenger Buick, dealer confirmed normal (non-ABS) brakes were fine -- no air-brake indication. Gold is right."
+    },
+    {
+      "cmplid": 595094,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "ENGINE",
+        "claude-sonnet-5": "ENGINE",
+        "gpt-5-mini": "POWER TRAIN",
+        "gpt-5.4-mini": "POWER TRAIN",
+        "gpt-5.4-nano": "POWER TRAIN"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Repeated stalling with power-steering/brake loss as a downstream consequence; the dealer explicitly found nothing and no component is named. Same reasoning as 2016886. Neither original answer is confirmed."
+    },
+    {
+      "cmplid": 849421,
+      "accept": [
+        "INTERIOR LIGHTING"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "ELECTRICAL SYSTEM",
+        "claude-sonnet-5": "EXTERIOR LIGHTING",
+        "gpt-5-mini": "EXTERIOR LIGHTING",
+        "gpt-5.4-mini": "ELECTRICAL SYSTEM",
+        "gpt-5.4-nano": "ELECTRICAL SYSTEM"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Dashboard (interior) lights going out, not exterior headlights/taillights -- the rare INTERIOR LIGHTING category is the precise fit that neither original answer used."
+    },
+    {
+      "cmplid": 1024252,
+      "accept": [
+        "VISIBILITY"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "STRUCTURE",
+        "claude-sonnet-5": "STRUCTURE",
+        "gpt-5-mini": "EXTERIOR LIGHTING",
+        "gpt-5.4-mini": "STRUCTURE",
+        "gpt-5.4-nano": "STRUCTURE"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Spontaneous sunroof glass shattering while closed -- matches the established convention that sunroof-glass failures are VISIBILITY, not structural. Gold is right."
+    },
+    {
+      "cmplid": 1363654,
+      "accept": [
+        "POWER TRAIN"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "VEHICLE SPEED CONTROL",
+        "claude-sonnet-5": "SERVICE BRAKES, HYDRAULIC",
+        "gpt-5-mini": "VEHICLE SPEED CONTROL",
+        "gpt-5.4-mini": "VEHICLE SPEED CONTROL",
+        "gpt-5.4-nano": "VEHICLE SPEED CONTROL"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Explicitly cites Honda Service Bulletin 16-008, a documented transmission-control-module 'creep forward' surge defect -- a named, specific root cause pointing to the drivetrain, not a brake malfunction. Gold is right."
+    },
+    {
+      "cmplid": 1504109,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "STRUCTURE",
+        "claude-sonnet-5": "AIR BAGS",
+        "gpt-5-mini": "OTHER",
+        "gpt-5.4-mini": "STRUCTURE",
+        "gpt-5.4-nano": "AIR BAGS"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Dashboard surface degrading/melting is a material/cosmetic defect, not a structural-integrity failure (same reasoning as the paint-peeling case above). The 'Takata recall' mention appears to be the complainant's own confusion, unrelated to the actual described issue. Gold is right."
+    },
+    {
+      "cmplid": 1728337,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "ELECTRICAL SYSTEM",
+        "claude-sonnet-5": "ELECTRICAL SYSTEM",
+        "gpt-5-mini": "POWER TRAIN",
+        "gpt-5.4-mini": "ELECTRICAL SYSTEM",
+        "gpt-5.4-nano": "POWER TRAIN"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "'All power will turn off' with no named component (no wiring/battery/fuse/ignition mentioned) -- fits our own UNKNOWN OR OTHER definition exactly. Gold is right, teacher overreached to ELECTRICAL SYSTEM without a named part."
+    },
+    {
+      "cmplid": 1870763,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "OTHER",
+        "claude-sonnet-5": "OTHER",
+        "gpt-5-mini": "OTHER",
+        "gpt-5.4-mini": "ELECTRICAL SYSTEM",
+        "gpt-5.4-nano": "OTHER"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Narrative describes the car being 'hacked' via 'wave frequency' -- not a coherent technical fault description of any real vehicle system."
+    },
+    {
+      "cmplid": 1938591,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "SERVICE BRAKES, AIR",
+        "claude-sonnet-5": "SERVICE BRAKES, AIR",
+        "gpt-5-mini": "ELECTRONIC STABILITY CONTROL",
+        "gpt-5.4-mini": "SERVICE BRAKES, AIR",
+        "gpt-5.4-nano": "ELECTRONIC STABILITY CONTROL"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Text explicitly names 'a dangerous faulty hydraulic control unit (and ABS system)' -- confirms the hydraulic subtype directly, no air-brake evidence on this pickup."
+    },
+    {
+      "cmplid": 1988713,
+      "accept": [
+        "VEHICLE SPEED CONTROL"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "POWER TRAIN",
+        "claude-sonnet-5": "POWER TRAIN",
+        "gpt-5-mini": "POWER TRAIN",
+        "gpt-5.4-mini": "ENGINE",
+        "gpt-5.4-nano": "POWER TRAIN"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "'Engine Power Reduced' mode causing inability to accelerate at highway speed is functionally the same throttle-response-loss pattern as 928059 and 2026794. Neither original answer is right."
+    },
+    {
+      "cmplid": 2002129,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "STRUCTURE",
+        "claude-sonnet-5": "STRUCTURE",
+        "gpt-5-mini": "EXTERIOR LIGHTING",
+        "gpt-5.4-mini": "STRUCTURE",
+        "gpt-5.4-nano": "STRUCTURE"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Purely cosmetic paint peeling, not a structural-integrity failure -- STRUCTURE overreaches here. Gold is right."
+    },
+    {
+      "cmplid": 2026794,
+      "accept": [
+        "VEHICLE SPEED CONTROL"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "OTHER",
+        "claude-sonnet-5": "OTHER",
+        "gpt-5-mini": "POWER TRAIN",
+        "gpt-5.4-mini": "POWER TRAIN",
+        "gpt-5.4-nano": "POWER TRAIN"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Textbook accelerator-pedal-response delay. Gold is right, teacher's off-list answer is wrong."
+    },
+    {
+      "cmplid": 2124090,
+      "accept": [
+        "ENGINE AND ENGINE COOLING"
+      ],
+      "truth_source": "adjudicated_full_v2",
+      "predictions": {
+        "claude-haiku-4-5": "UNKNOWN OR OTHER",
+        "claude-sonnet-5": "POWER TRAIN",
+        "gpt-5-mini": "POWER TRAIN",
+        "gpt-5.4-mini": "UNKNOWN OR OTHER",
+        "gpt-5.4-nano": "UNKNOWN OR OTHER"
+      },
+      "unanimous_alternative": false,
+      "adjudication_note": "Dealer's actual repair recommendation explicitly named a thermostat replacement (a cooling-system part). Gold is right, teacher too conservative given a specific repair was named."
+    }
+  ],
+  "universally_missed_note": "Every evaluated model disagreed with the gold set on these rows. Where the models unanimously agree on the same alternative label, the gold set (or the underlying adjudication) is the more likely error and should be re-read."
+}

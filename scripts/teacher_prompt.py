@@ -3,13 +3,14 @@
 Design notes (see output/NHTSA_CODING_GOTCHAS.md for the underlying evidence):
 
 - The model chooses "component" from a CLOSED enumeration: the 30 primary categories,
-  10 secondary categories (real, specific systems that are too rare to train on
-  directly but shouldn't be conflated with "unknown"), or "UNKNOWN OR OTHER". This is
+  10 rare categories (real, specific systems that occur too infrequently to train on
+  directly but shouldn't be conflated with "unknown" -- they aren't subordinate to the
+  primary 30, just smaller and disjoint from them), or "UNKNOWN OR OTHER". This is
   deliberately closed-form rather than open-ended free text -- an LLM given "or name
   something more specific" license will happily invent ever-finer subcategories (a
   spark-plug complaint becoming "SPARK PLUGS" instead of ENGINE), which defeats the
   point of having top-level categories at all. The prompt explicitly instructs mapping
-  UP to the enclosing system/category, with contrasting examples, and the secondary
+  UP to the enclosing system/category, with contrasting examples, and the rare-category
   list is exhaustive (backed by an actual count of every real top-level COMPDESC
   string in the cleaned data that didn't make the primary 30) so there's no ambiguity
   about when "go outside the 30" is actually licensed.
@@ -45,7 +46,7 @@ CLASS_DEFINITIONS = {
     "ENGINE": "Engine internals: spark plugs, valves, engine block, misfires, stalling caused by the engine itself; engine-bay fires with confirmed engine origin.",
     "AIR BAGS": "Airbag warning lights, non-deployment, inadvertent deployment, seat belt sensors tied to the airbag system, Takata-style recalls.",
     "STEERING": "Steering wheel, steering column, power steering, rack and pinion.",
-    "ENGINE AND ENGINE COOLING": "Cooling system specifically: radiator, coolant leaks/overheating, water pump, cooling fan. Use over plain ENGINE when overheating/coolant is the central complaint.",
+    "ENGINE AND ENGINE COOLING": "Cooling system specifically: radiator, coolant leaks/overheating, water pump, cooling fan; also the exhaust system (manifold, muffler, catalytic converter, EGR valve) and the heater CORE (it physically sits in the coolant loop, even when the complaint is about heat output rather than overheating). Use over plain ENGINE when overheating/coolant/exhaust/heater-core is the central complaint.",
     "UNKNOWN OR OTHER": "The narrative genuinely does not identify which system is at fault -- vague drivability complaints (car \"died\"/\"shook\"/\"lost power\") with no specific part named, or a failure with no cause identified even after investigation.",
     "SERVICE BRAKES, HYDRAULIC": "Hydraulic brake system: brake lines, master cylinder, brake fluid -- the default bucket for ordinary brake complaints without ABS/air/electric-specific detail.",
     "STRUCTURE": "Body/frame/chassis structural issues: frame rust/cracking, hood/body structural failures; a fire whose origin is attributed to a structural/body component rather than engine or wiring.",
@@ -63,7 +64,7 @@ CLASS_DEFINITIONS = {
     "WHEELS": "Wheel rim cracking/bending or wheel separation, distinct from the tire itself failing.",
     "VISIBILITY/WIPER": "Windshield wiper/washer system specifically.",
     "ELECTRONIC STABILITY CONTROL": "ESC/stability system malfunction or warning light.",
-    "EQUIPMENT": "General aftermarket/OEM accessory equipment not covered by any other category (e.g. roof racks, tonneau covers, cargo equipment).",
+    "EQUIPMENT": "General aftermarket/OEM accessory equipment not covered by any other category (e.g. roof racks, tonneau covers, cargo equipment); also standalone air conditioning/climate-control failures (the AC unit itself -- compressor, refrigerant, blowing warm) when the narrative does NOT mention a defrost/defog/visibility consequence -- if it does, use VISIBILITY instead.",
     "LATCHES/LOCKS/LINKAGES": "Door/hood latches, locks, and related linkages -- the latch/lock mechanism itself, not a structural failure.",
     "BACK OVER PREVENTION": "Backup camera / rearview visibility systems specifically intended for back-over prevention.",
     "LANE DEPARTURE": "Lane departure warning / lane keep assist AND blind-spot monitoring system malfunctions -- NHTSA groups blind-spot detection under this category too, not just literal lane-departure warnings.",
@@ -75,13 +76,15 @@ assert set(CLASS_DEFINITIONS) == set(TOP_30_CLASSES), "definitions must exactly 
 
 # Exhaustive list of real, specific top-level COMPDESC values that exist in the
 # cleaned vehicle data but didn't make the primary-30 cut (all bucket to OTHER at
-# training time via bucket_component()). Sourced directly from a full value_counts()
-# over data/cmpl_clean.parquet -- every other raw string that appears (typo/free-text
-# child-seat artifacts like "Chest Clip, Buckle, Harness", blank strings, "Other/I am
-# not sure", etc: collectively <500 rows) is noise, not a real category, and is
-# deliberately excluded here so the model falls back to UNKNOWN OR OTHER for those
-# rather than inventing/echoing a bogus label.
-SECONDARY_CLASSES = {
+# training time via bucket_component()). These are NOT subordinate/fallback versions
+# of the primary 30 -- they're distinct systems the primary 30 simply don't cover,
+# just too small in volume to be worth their own training class. Sourced directly
+# from a full value_counts() over data/cmpl_clean.parquet -- every other raw string
+# that appears (typo/free-text child-seat artifacts like "Chest Clip, Buckle,
+# Harness", blank strings, "Other/I am not sure", etc: collectively <500 rows) is
+# noise, not a real category, and is deliberately excluded here so the model falls
+# back to UNKNOWN OR OTHER for those rather than inventing/echoing a bogus label.
+RARE_CATEGORIES = {
     "FUEL SYSTEM, DIESEL": "Diesel-specific fuel system (injectors, fuel pump, tank, lines) explicitly tied to a diesel engine.",
     "CHILD SEAT": "A built-in/integrated child-seat feature of the vehicle itself (not a standalone aftermarket car-seat product).",
     "INTERIOR LIGHTING": "Interior cabin lights, dome lights, dashboard illumination -- as distinct from EXTERIOR LIGHTING.",
@@ -94,13 +97,13 @@ SECONDARY_CLASSES = {
     "COMMUNICATION": "Infotainment, telematics, or vehicle-to-X communication systems.",
 }
 
-ALL_VALID_COMPONENTS = set(TOP_30_CLASSES) | set(SECONDARY_CLASSES) | {"UNKNOWN OR OTHER"}
+ALL_VALID_COMPONENTS = set(TOP_30_CLASSES) | set(RARE_CATEGORIES) | {"UNKNOWN OR OTHER"}
 
 SYSTEM_INSTRUCTIONS = """You are labeling NHTSA vehicle owner complaint narratives for a machine-learning training set. For each complaint, read the narrative (and make/model/year if given) and return a single JSON object with these fields:
 
-- "component": the vehicle system/component at fault. Output EXACTLY one of the 41 category names below (30 primary + 10 secondary + "UNKNOWN OR OTHER") -- never invent a new name.
+- "component": the vehicle system/component at fault. Output EXACTLY one of the 41 category names below (30 primary + 10 rare + "UNKNOWN OR OTHER") -- never invent a new name.
   - Use a primary category whenever it fits, even for a specific part (e.g. spark plugs -> ENGINE, ball joint -> SUSPENSION) -- don't get more specific than the list allows.
-  - Use a secondary category only when the complaint is about a system none of the 30 primary categories cover at all (e.g. trailer hitch, hybrid battery, child seat).
+  - The 10 rare categories are for systems none of the 30 primary categories cover at all (e.g. trailer hitch, hybrid battery, child seat) -- not weaker/fallback versions of a primary category.
   - Use "UNKNOWN OR OTHER" only when the narrative doesn't identify any specific system.
 - "crash": "Y" or "N" -- does THIS narrative's own text describe a crash/collision? Do not infer from context outside the text; if the narrative is silent on a crash, answer "N".
 - "fire": "Y" or "N" -- does THIS narrative's own text describe an actual vehicle fire (flames, something burning)? Smoke/glowing from normal friction (e.g. hard-braked brakes) or airbag-deployment discharge is NOT a fire. An external fire (e.g. wildfire) near the vehicle that never ignites the vehicle itself is NOT a fire.
@@ -113,15 +116,17 @@ Important rules:
 1. Mentioning fire/flames/smoke does NOT by itself imply a special "fire" category -- identify the underlying system that caused or is most closely associated with the fire (e.g. a wiring fire -> ELECTRICAL SYSTEM; an engine-bay fire with confirmed engine origin -> ENGINE; a fire with no origin identified -> UNKNOWN OR OTHER).
 2. If the narrative describes multiple problems, pick the ONE most central to the complainant's stated primary concern -- not necessarily the first-mentioned or most technical-sounding detail.
 3. Base crash/fire/injured/deaths ONLY on what this specific narrative says, never on assumptions about a broader incident you're not shown.
-4. Output ONLY the JSON object, no other text.
+4. If the narrative quotes an NHTSA recall Campaign Number with an official category in parentheses (e.g. "Campaign Number: 22V193000 (Electrical System)"), treat that quoted category as strong evidence for "component" -- it is the manufacturer's own defect classification, not the complainant's guess, and should usually be preferred over a system you infer solely from the complainant's own diagnosis of symptoms.
+5. If the narrative describes a crash/collision, distinguish parts merely DAMAGED by the physical impact (e.g. "my radiator, bumper, and steering rack were destroyed in the crash") from the actual defect being alleged (typically flagged by phrasing like "did not deploy," "failed to activate," or "did not work as intended"). Classify based on the alleged defect, not the most specific-sounding item in a list of crash damage.
+6. Output ONLY the JSON object, no other text.
 
 ## The 30 primary categories (top-level systems -- map specific parts up to these)
 
 {class_list}
 
-## The 10 secondary categories (use ONLY when no primary category fits at all)
+## The 10 rare categories (distinct systems the 30 primary categories don't cover)
 
-{secondary_list}
+{rare_list}
 
 ## Examples
 {fewshot_block}
@@ -135,8 +140,8 @@ def _format_class_list():
     return "\n".join(f"- {name}: {desc}" for name, desc in CLASS_DEFINITIONS.items())
 
 
-def _format_secondary_list():
-    return "\n".join(f"- {name}: {desc}" for name, desc in SECONDARY_CLASSES.items())
+def _format_rare_list():
+    return "\n".join(f"- {name}: {desc}" for name, desc in RARE_CATEGORIES.items())
 
 
 def _format_example(ex, component_override=None):
@@ -217,14 +222,14 @@ CURATED_FIELD_EXAMPLES = [
 ]
 
 # Explicit granularity contrasts (component instruction rule #1: map parts UP to the
-# enclosing primary system; only go to a secondary category when NO primary fits).
+# enclosing primary system; only go to a rare category when NO primary fits).
 CURATED_GRANULARITY_EXAMPLES = [
     {  # specific part (spark plug) -> still the primary system, not the part name
         "make": "TOYOTA", "model": "PRIUS", "year": "2010",
         "narrative": "TOYOTA REFUSES TO PROVIDE ANY DOCUMENTATION OR TSB EXPLAINING WHY  2010- 4 CYL. (2ZRFXE) SC20HR11 90919-01253  WAS SUPERSEDED BY  SC16HR11 90919-01275 SPARK PLUG",
         "component": "ENGINE", "crash": "N", "fire": "N", "injured": 0, "deaths": 0,
     },
-    {  # a system with NO primary-category match at all -> correctly use a secondary category
+    {  # a system with NO primary-category match at all -> correctly use a rare category
         "make": "JAYCO", "model": "JAYCO", "year": "2000",
         "narrative": "CONSUMER NOTICED A PROBLEM WHEN PULLING THE JAYCO KIWI TRAILER, TRAILER SWAYING ACROSS THE ROAD. CONTACTED  DEALER, DEALER REPLACED THE TIRES, PROBLEM STILL OCCURRED WHEN DRIVING AT 55 MPH.  TRAVEL TRAILER WAS SWAYING ACROSS THE ROAD, CAUSING THE TRAILER TO FLIP OVER WHICH CAUSED AN ACCIDENT, TOTALING  VEHICLE AND TRAILER. PLEASE PROVIDE ANY FURTHER DETAILS.  *AK",
         "component": "TRAILER HITCHES", "crash": "Y", "fire": "N", "injured": 0, "deaths": 0,
@@ -264,8 +269,8 @@ def build_fewshot_block():
     for ex in cands["other_vs_unknown_examples"]:
         blocks.append(_format_example(ex))
 
-    # granularity contrasts (map parts up to primary; only use secondary when no
-    # primary fits at all) and dedicated crash/injured/deaths coverage
+    # granularity contrasts (map parts up to primary; only use a rare category when
+    # no primary fits at all) and dedicated crash/injured/deaths coverage
     for ex in CURATED_GRANULARITY_EXAMPLES:
         blocks.append(_format_curated(ex))
     for ex in CURATED_FIELD_EXAMPLES:
@@ -277,7 +282,7 @@ def build_fewshot_block():
 def build_system_prompt():
     return SYSTEM_INSTRUCTIONS.format(
         class_list=_format_class_list(),
-        secondary_list=_format_secondary_list(),
+        rare_list=_format_rare_list(),
         fewshot_block=build_fewshot_block(),
     )
 
@@ -289,7 +294,7 @@ def build_user_message(narrative, make="", model="", year=""):
 def bucket_component(raw_component: str) -> str:
     """Map a teacher's raw component string to the final 31-class training label.
 
-    Primary-30 answers pass through verbatim; secondary-category and any other
+    Primary-30 answers pass through verbatim; rare-category and any other
     (off-list / hallucinated) answers all bucket to OTHER. Callers that want to know
     whether the teacher stayed within the closed enumeration should separately check
     `raw_component in ALL_VALID_COMPONENTS` for QA purposes.

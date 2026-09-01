@@ -61,15 +61,23 @@ def call_openai(client, model, system_prompt, user_msg):
 
 
 def call_anthropic(client, model, system_prompt, user_msg):
-    resp = client.messages.create(
+    kwargs = dict(
         model=model,
-        max_tokens=300,
+        max_tokens=1024,
         system=[
             {"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}
         ],
         messages=[{"role": "user", "content": user_msg}],
-        temperature=0,
     )
+    # Sonnet 5 / Opus 5 run *adaptive* thinking by default and reject non-default
+    # temperature/top_p/top_k (HTTP 400). This is closed-form classification with
+    # explicit rules + few-shot examples, so disable thinking rather than pay for
+    # reasoning tokens we don't need. Haiku 4.5 uses *manual* extended thinking,
+    # which defaults to off when the `thinking` field is omitted entirely --
+    # passing type="disabled" is not a valid value for it, so skip the field.
+    if "sonnet-5" in model or "opus-5" in model:
+        kwargs["thinking"] = {"type": "disabled"}
+    resp = client.messages.create(**kwargs)
     text = "".join(block.text for block in resp.content if block.type == "text")
     usage = resp.usage
     return text, {
@@ -173,7 +181,8 @@ def main():
     print(f"Off-list component answers (didn't match any of the 41 valid strings): {n_off_list}/{len(results)}")
     print(f"Total tokens: {total_input:,} input, {total_output:,} output")
 
-    out_path = OUT_DIR / f"teacher_labels_{args.provider}_{args.n}.json"
+    safe_model = model.replace("/", "-").replace(":", "-")
+    out_path = OUT_DIR / f"teacher_labels_{args.provider}_{safe_model}_{args.n}.json"
     with open(out_path, "w") as f:
         json.dump(
             {
