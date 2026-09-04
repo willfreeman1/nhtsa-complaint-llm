@@ -1,23 +1,31 @@
 # NHTSA Complaint Classification — Project Writeup
 
-This document is the full record of what was actually done, what it found, and the
-reasoning behind each decision, across the three-rung comparison laid out in
-`PROJECT_PLAN.md`. It's written as the raw material a final report would draw from
-rather than a polished summary — including inconvenient/nuanced findings (e.g. §3.3's
-skeptical read on the teacher's own error rate, §3.4's gold-set expansion turning up a
-lot of NHTSA mislabeling) that a cleaner writeup might otherwise smooth over. See the
-top-level `README.md` for the short version and repo map.
+**The big picture**: NHTSA's public complaint database tags every complaint with a
+vehicle component, but that tagging is noisy (§3.3–3.4 quantify how noisy). This
+project fine-tunes a small, open-weight LLM that reads a raw complaint narrative and
+assigns the correct component instead — accurately enough to nearly match a frontier
+LLM asked fresh every time, at a small fraction of the ongoing cost once trained. See
+the top-level [`README.md`](README.md) for that framing written for a reader new to
+the project. **This document is the full technical record underneath it**: what was
+actually done, what it found, and the reasoning behind each decision — including
+inconvenient/nuanced findings (e.g. §3.3's skeptical read on the teacher's own error
+rate, §3.4's gold-set expansion turning up a lot of NHTSA mislabeling) that a cleaner
+summary would otherwise smooth over.
 
-## 1. Goal
+## 1. Goal and approach
 
 Given a raw NHTSA vehicle complaint narrative (free text) plus structured metadata
 (make/model/year), predict the affected vehicle **component** (30 primary categories +
 10 rare categories + `UNKNOWN OR OTHER`, deduping to 40 distinct valid strings — see
 `teacher_prompt.ALL_VALID_COMPONENTS`), and secondary flags (`CRASH`, `FIRE`,
-`INJURED`, `DEATHS`). Compare three approaches of increasing
-training-complexity-but-decreasing-inference-cost, to find where the accuracy/cost
-tradeoff actually lands for this task, and produce a deployable fine-tuned model as the
-portfolio deliverable.
+`INJURED`, `DEATHS`).
+
+There's no existing large set of reliably-labeled complaints to fine-tune on — NHTSA's
+own raw field is exactly the noisy thing this project is trying to improve on. So the
+approach builds its own training labels first (§3), then compares two ways of turning
+those labels into a small, deployable model (§4–§5) — structured as three "rungs" of
+increasing training complexity but decreasing per-prediction cost, so the final
+comparison can show exactly where the accuracy/cost tradeoff lands for this task:
 
 Feasibility (green-light verdict, baselines, label-schema gotchas) is documented in
 `output/FINAL_REPORT.md` and `output/NHTSA_CODING_GOTCHAS.md` and isn't repeated here.
