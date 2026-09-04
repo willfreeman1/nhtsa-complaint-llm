@@ -9,7 +9,7 @@ thousands of complaints and catch the next recall early.
 
 NHTSA's own published data already carries a category for each complaint, but it's
 noisy — this project manually re-checked a sample against the actual complaint text and
-found real mislabeling (see [`WRITEUP.md`](WRITEUP.md) §3.3–3.4). Text like this is also
+found real mislabeling (see [`WRITEUP.md`](WRITEUP.md) §2.2). Text like this is also
 exactly the kind of task language models are good at and manual review doesn't scale to.
 
 **This project fine-tunes a small, open-weight LLM (Qwen2.5-7B) that reads a complaint
@@ -27,7 +27,7 @@ to do it fresh, one at a time, forever.**
 
 The fine-tuned model gets within half a point of the expensive frontier model it
 learned from — at effectively zero cost per prediction once trained, with no ongoing
-API bill. See [`WRITEUP.md`](WRITEUP.md) §7 for the full cost comparison, and §3.3 for
+API bill. See [`WRITEUP.md`](WRITEUP.md) §6 for the full cost comparison, and §2.1 for
 an honest look at what that ~87% ceiling actually means (a chunk of the "misses" are
 genuinely ambiguous complaints, not clean model errors).
 
@@ -105,7 +105,7 @@ Other candidates:
 ```
 
 (This demo runs the smaller classifier checkpoint since it's practical on CPU with no
-setup — see [`WRITEUP.md`](WRITEUP.md) §7.2 for how the fine-tuned LLM would be served.)
+setup — see [`WRITEUP.md`](WRITEUP.md) §6.2 for how the fine-tuned LLM would be served.)
 
 ## Repo layout
 
@@ -125,7 +125,7 @@ WRITEUP.md          Full writeup: methodology, every metric, error analysis, dec
 2. **Label schema + gold set** — `scripts/schema.py`, `output/label_schema.json`,
    `output/NHTSA_CODING_GOTCHAS.md`. The hand-checked answer key was built/expanded via
    `scripts/build_gold_eval_set*.py` and `scripts/build_rare_gold_expansion.py`
-   (see `WRITEUP.md` §3.4 for that methodology).
+   (see `WRITEUP.md` §2.2 for that methodology).
 3. **Teacher labeling** — `scripts/teacher_prompt.py` (prompt/schema definitions) +
    `scripts/run_batch_cascade_labeling.py` (the cheap-model-first, escalate-if-uncertain
    cascade, run as a batch job over ~62K complaints + a targeted rare-category top-up
@@ -140,11 +140,11 @@ WRITEUP.md          Full writeup: methodology, every metric, error analysis, dec
    `scripts/eval_checkpoint_llm.py`.
 7. **Novel-category flexibility probe** — `scripts/novel_category_probe.py` (shared
    synthetic narratives) checks whether either fine-tuned model still generalizes to
-   categories it saw little/no training data for — see `WRITEUP.md` §5.5.
+   categories it saw little/no training data for — see `WRITEUP.md` §4.1.
 
 Every eval above runs against the held-out hand-checked answer key the models never saw
 in training — adjudicated against a written rulebook (`scripts/teacher_prompt.py`), not
-just NHTSA's raw, noisy field (see `WRITEUP.md` §3.3–3.4 for how much that adjudication
+just NHTSA's raw, noisy field (see `WRITEUP.md` §2.1–2.2 for how much that adjudication
 actually changes the numbers).
 
 ## Reproducing
@@ -158,7 +158,7 @@ python scripts/prepare_training_data.py
 ```
 
 The small classifier trains in a few hours on a single L4-class GPU; the fine-tuned LLM
-takes roughly a day on an H100 (or longer on smaller cards) — see `WRITEUP.md` §5.2 for
+takes roughly a day on an H100 (or longer on smaller cards) — see `WRITEUP.md` §4 for
 the runtime breakdown and the prompt-shortening optimization that got it there.
 
 ### On model weights
