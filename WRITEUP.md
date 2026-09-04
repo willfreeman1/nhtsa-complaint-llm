@@ -14,6 +14,29 @@ Given a raw NHTSA vehicle complaint narrative (free text) plus structured metada
 see `teacher_prompt.ALL_VALID_COMPONENTS`) and secondary flags (`CRASH`, `FIRE`,
 `INJURED`, `DEATHS`).
 
+### 1.1 Why 40 categories
+
+NHTSA's own raw category field (`COMPDESC`) has 55 distinct top-level values, but
+those don't represent 55 equally-real, equally-common failure types. Counting actual
+complaints per category shows a sharp cliff: the top ~35 categories each have
+thousands of examples, then volume collapses fast — several of the smallest "categories"
+turn out to be data artifacts rather than real distinctions, e.g. `ELECTRONIC STABILITY
+CONTROL` vs. `ELECTRONIC STABILITY CONTROL (ESC)` (335 vs. 21,286 rows for the literal
+same concept, clearly a legacy-naming duplicate) or `COMMUNICATION` vs.
+`COMMUNICATIONS` (a typo pair). A few others are free-text child-seat entries that
+aren't vehicle-component categories at all (e.g. *"I suspect the car seat is
+counterfeit"*).
+
+After merging those duplicate/typo pairs and dropping the non-component noise, the
+schema settled on **30 primary categories** (covering the overwhelming majority of
+real complaint volume, including a general `UNKNOWN OR OTHER` catch-all for narratives
+that genuinely don't name a specific system) plus **10 additional categories** that
+are real, distinct vehicle systems — just rare in volume rather than artifacts (e.g.
+`TRAILER HITCHES`, `HYBRID PROPULSION SYSTEM`, `FIRERELATED`) — for **40 total category
+strings**. This fixed 40-category schema (`scripts/teacher_prompt.py`) is the label
+space used consistently everywhere in this project: the frontier LLM's prompt, the
+encoder classifier's output head, and the fine-tuned LLM's generation target.
+
 There's no existing large set of reliably-labeled complaints to fine-tune on — NHTSA's
 own raw field is exactly the noisy thing this project is trying to improve on. So the
 approach builds its own training labels first (§2), then compares two ways of turning
