@@ -48,14 +48,42 @@ def rates(provider, model):
     return None
 
 
-def cost_usd(provider, model, uncached_input, cached_input, output):
-    """Total USD for one run, or None if this model's rates aren't known."""
+# Both Anthropic's Message Batches API and OpenAI's Batch API give a flat 50% off
+# input, cached-input, and output tokens for asynchronous (<=24h turnaround) jobs --
+# confirmed directly against each vendor's pricing page (fetched 2026-09-01), e.g.
+# Claude Sonnet 5 standard $2/$10 per MTok -> batch $1/$5; Claude Haiku 4.5 standard
+# $1/$5 -> batch $0.50/$2.50; GPT-5.4-mini standard $0.75/$4.50 -> batch $0.375/$2.25.
+# The discount stacks with prompt-cache pricing (halves whatever the cache rate is
+# too), so a flat 0.5x on all three components is correct, not an approximation.
+BATCH_DISCOUNT = 0.5
+
+
+# Anthropic bills cache *writes* at 1.25x the uncached input rate. OpenAI has no
+# equivalent line item (cache writes are just ordinary input).
+ANTHROPIC_CACHE_WRITE_MULTIPLIER = 1.25
+
+
+def cost_usd(provider, model, uncached_input, cached_input, output, batch=False,
+             cache_creation_input=0):
+    """Total USD for one run, or None if this model's rates aren't known.
+
+    `uncached_input` must already be the non-cached tokens: Anthropic reports that
+    as `usage.input_tokens` (cache reads are a separate field, do NOT subtract);
+    OpenAI reports it as `prompt_tokens - cached_tokens`.
+    """
     r = rates(provider, model)
     if r is None:
         return None
     rate_in, rate_cached, rate_out = r
+    rate_write = rate_in * ANTHROPIC_CACHE_WRITE_MULTIPLIER if provider == "anthropic" else rate_in
+    if batch:
+        rate_in *= BATCH_DISCOUNT
+        rate_cached *= BATCH_DISCOUNT
+        rate_write *= BATCH_DISCOUNT
+        rate_out *= BATCH_DISCOUNT
     return (
         uncached_input * rate_in / 1e6
         + cached_input * rate_cached / 1e6
+        + cache_creation_input * rate_write / 1e6
         + output * rate_out / 1e6
     )

@@ -3,37 +3,37 @@
   "model": "claude-haiku-4-5",
   "request_shape": {},
   "eval_set": {
-    "file": "gold_eval_set_v2.json",
-    "n": 498,
-    "n_hard": 258
+    "file": "gold_eval_set_v3.json",
+    "n": 551,
+    "n_hard": 303
   },
-  "elapsed_s": 64.19070339202881,
+  "elapsed_s": 63.735605001449585,
   "metrics": {
-    "n_scored": 498,
+    "n_scored": 551,
     "n_errors": 0,
-    "accuracy": 0.8835341365461847,
-    "accuracy_hard_subset": 0.7829457364341085,
-    "accuracy_dual_agreement_subset": 0.9916666666666667,
-    "macro_f1": 0.793918585840196,
+    "accuracy": 0.8511796733212341,
+    "accuracy_hard_subset": 0.7491749174917491,
+    "accuracy_dual_agreement_subset": 0.9758064516129032,
+    "macro_f1": 0.7522035953272147,
     "off_list_rate": 0.0,
     "accuracy_by_self_reported_confidence": {
       "high": {
-        "n": 390,
-        "accuracy": 0.9461538461538461
+        "n": 432,
+        "accuracy": 0.9050925925925926
       },
       "medium": {
-        "n": 90,
-        "accuracy": 0.6444444444444445
+        "n": 99,
+        "accuracy": 0.6464646464646465
       },
       "low": {
-        "n": 18,
-        "accuracy": 0.7222222222222222
+        "n": 20,
+        "accuracy": 0.7
       }
     },
     "secondary_vs_noisy_nhtsa_flags": {
       "note": "NHTSA CRASH/FIRE flags are themselves unreliable (gotcha B1/B2) -- disagreement here is not necessarily a model error.",
-      "crash_agreement": 0.9899598393574297,
-      "fire_agreement": 0.9879518072289156
+      "crash_agreement": 0.9927404718693285,
+      "fire_agreement": 0.9927404718693285
     }
   },
   "cost": {
@@ -43,14 +43,14 @@
       5.0
     ],
     "tokens": {
-      "input_tokens": 91951,
-      "cached_input_tokens": 4762314,
-      "output_tokens": 40754,
+      "input_tokens": 101871,
+      "cached_input_tokens": 5281661,
+      "output_tokens": 44207,
       "reasoning_tokens": 0
     },
-    "total_usd": 0.7719524,
-    "usd_per_1k_rows": 1.5501052208835342,
-    "usd_per_100k_rows": 155.0105220883534
+    "total_usd": 0.8510721,
+    "usd_per_1k_rows": 1.5445954627949183,
+    "usd_per_100k_rows": 154.45954627949183
   },
   "results": [
     {
@@ -72,7 +72,7 @@
         "input_tokens": 53,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 68,
+        "output_tokens": 62,
         "reasoning_tokens": 0
       },
       "error": null
@@ -96,7 +96,7 @@
         "input_tokens": 149,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 88,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -120,7 +120,7 @@
         "input_tokens": 99,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 87,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -144,7 +144,7 @@
         "input_tokens": 435,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 92,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -168,7 +168,7 @@
         "input_tokens": 195,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 79,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -192,7 +192,7 @@
         "input_tokens": 92,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 83,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -216,7 +216,7 @@
         "input_tokens": 104,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 80,
+        "output_tokens": 64,
         "reasoning_tokens": 0
       },
       "error": null
@@ -264,7 +264,7 @@
         "input_tokens": 401,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 88,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -288,7 +288,7 @@
         "input_tokens": 112,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 87,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -312,7 +312,7 @@
         "input_tokens": 131,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 92,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -338,7 +338,7 @@
         "input_tokens": 164,
         "cached_input_tokens": 0,
         "cache_creation_input_tokens": 9799,
-        "output_tokens": 86,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -386,7 +386,7 @@
         "input_tokens": 150,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -410,7 +410,7 @@
         "input_tokens": 123,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 63,
         "reasoning_tokens": 0
       },
       "error": null
@@ -458,7 +458,7 @@
         "input_tokens": 150,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -482,7 +482,7 @@
         "input_tokens": 140,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -506,7 +506,7 @@
         "input_tokens": 164,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -530,7 +530,7 @@
         "input_tokens": 169,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -554,7 +554,7 @@
         "input_tokens": 653,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -578,7 +578,7 @@
         "input_tokens": 118,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -604,7 +604,7 @@
         "input_tokens": 254,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -628,7 +628,7 @@
         "input_tokens": 88,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -652,7 +652,7 @@
         "input_tokens": 49,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 64,
+        "output_tokens": 62,
         "reasoning_tokens": 0
       },
       "error": null
@@ -676,7 +676,7 @@
         "input_tokens": 189,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -701,7 +701,7 @@
         "input_tokens": 48,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 62,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -725,7 +725,7 @@
         "input_tokens": 172,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -749,7 +749,7 @@
         "input_tokens": 82,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
@@ -759,7 +759,7 @@
       "pred": "STEERING",
       "raw_component": "STEERING",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -773,7 +773,7 @@
         "input_tokens": 161,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 65,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -845,7 +845,7 @@
         "input_tokens": 255,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -870,7 +870,7 @@
         "input_tokens": 34,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -894,7 +894,7 @@
         "input_tokens": 177,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -918,7 +918,7 @@
         "input_tokens": 127,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -942,7 +942,7 @@
         "input_tokens": 294,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
@@ -966,7 +966,7 @@
         "input_tokens": 172,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -990,7 +990,7 @@
         "input_tokens": 176,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 62,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1014,7 +1014,7 @@
         "input_tokens": 34,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1038,7 +1038,7 @@
         "input_tokens": 214,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1062,7 +1062,7 @@
         "input_tokens": 287,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1110,7 +1110,7 @@
         "input_tokens": 110,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1134,7 +1134,7 @@
         "input_tokens": 89,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1158,7 +1158,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1184,7 +1184,7 @@
         "input_tokens": 115,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1208,7 +1208,7 @@
         "input_tokens": 235,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1233,7 +1233,7 @@
         "input_tokens": 76,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1282,7 +1282,7 @@
         "input_tokens": 92,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 102,
+        "output_tokens": 105,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1306,7 +1306,7 @@
         "input_tokens": 66,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1318,7 +1318,7 @@
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
-      "pred_fire": "Y",
+      "pred_fire": "N",
       "correct": true,
       "accept": [
         "ENGINE AND ENGINE COOLING"
@@ -1330,7 +1330,7 @@
         "input_tokens": 91,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1340,9 +1340,9 @@
       "pred": "POWER TRAIN",
       "raw_component": "POWER TRAIN",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
-      "pred_fire": "N",
+      "pred_fire": "Y",
       "correct": true,
       "accept": [
         "POWER TRAIN"
@@ -1354,7 +1354,7 @@
         "input_tokens": 279,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 96,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1378,7 +1378,7 @@
         "input_tokens": 126,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1402,7 +1402,7 @@
         "input_tokens": 352,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1426,7 +1426,7 @@
         "input_tokens": 168,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1451,7 +1451,7 @@
         "input_tokens": 229,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1476,7 +1476,7 @@
         "input_tokens": 216,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1501,15 +1501,15 @@
         "input_tokens": 197,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1278059,
-      "pred": "STEERING",
-      "raw_component": "STEERING",
+      "pred": "SUSPENSION",
+      "raw_component": "SUSPENSION",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
@@ -1526,7 +1526,7 @@
         "input_tokens": 75,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 64,
+        "output_tokens": 96,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1550,7 +1550,7 @@
         "input_tokens": 154,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1574,7 +1574,7 @@
         "input_tokens": 190,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1598,7 +1598,7 @@
         "input_tokens": 52,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1622,7 +1622,7 @@
         "input_tokens": 301,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1694,7 +1694,7 @@
         "input_tokens": 172,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1719,7 +1719,7 @@
         "input_tokens": 189,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 98,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1745,20 +1745,20 @@
         "input_tokens": 443,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 104,
+        "output_tokens": 100,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 2026520,
-      "pred": "ELECTRICAL SYSTEM",
-      "raw_component": "ELECTRICAL SYSTEM",
+      "pred": "EXTERIOR LIGHTING",
+      "raw_component": "EXTERIOR LIGHTING",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "EXTERIOR LIGHTING"
       ],
@@ -1769,7 +1769,7 @@
         "input_tokens": 135,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1793,7 +1793,7 @@
         "input_tokens": 252,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1817,7 +1817,7 @@
         "input_tokens": 109,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1827,7 +1827,7 @@
       "pred": "ENGINE",
       "raw_component": "ENGINE",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -1841,7 +1841,7 @@
         "input_tokens": 195,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 64,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1867,7 +1867,7 @@
         "input_tokens": 402,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1891,7 +1891,7 @@
         "input_tokens": 179,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1915,7 +1915,7 @@
         "input_tokens": 154,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 102,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1939,7 +1939,7 @@
         "input_tokens": 304,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -1987,7 +1987,7 @@
         "input_tokens": 151,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2011,7 +2011,7 @@
         "input_tokens": 184,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2035,7 +2035,7 @@
         "input_tokens": 364,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2059,7 +2059,7 @@
         "input_tokens": 55,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2084,7 +2084,7 @@
         "input_tokens": 144,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2108,7 +2108,7 @@
         "input_tokens": 64,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2118,7 +2118,7 @@
       "pred": "STRUCTURE",
       "raw_component": "STRUCTURE",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -2132,7 +2132,7 @@
         "input_tokens": 80,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2156,7 +2156,7 @@
         "input_tokens": 105,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2180,7 +2180,7 @@
         "input_tokens": 166,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2205,7 +2205,7 @@
         "input_tokens": 201,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 81,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2229,7 +2229,7 @@
         "input_tokens": 59,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2253,7 +2253,7 @@
         "input_tokens": 117,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2325,7 +2325,7 @@
         "input_tokens": 194,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2349,20 +2349,20 @@
         "input_tokens": 153,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1292185,
-      "pred": "POWER TRAIN",
-      "raw_component": "POWER TRAIN",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "POWER TRAIN",
         "UNKNOWN OR OTHER"
@@ -2374,7 +2374,7 @@
         "input_tokens": 363,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2398,7 +2398,7 @@
         "input_tokens": 121,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2423,7 +2423,7 @@
         "input_tokens": 307,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2447,7 +2447,7 @@
         "input_tokens": 37,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2457,7 +2457,7 @@
       "pred": "ELECTRICAL SYSTEM",
       "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -2471,7 +2471,7 @@
         "input_tokens": 62,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2495,7 +2495,7 @@
         "input_tokens": 135,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 65,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2519,7 +2519,7 @@
         "input_tokens": 36,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2567,7 +2567,7 @@
         "input_tokens": 164,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2591,7 +2591,7 @@
         "input_tokens": 55,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 63,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2615,7 +2615,7 @@
         "input_tokens": 57,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2639,7 +2639,7 @@
         "input_tokens": 65,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2663,7 +2663,7 @@
         "input_tokens": 50,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2687,7 +2687,7 @@
         "input_tokens": 189,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2711,7 +2711,7 @@
         "input_tokens": 182,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 77,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2735,7 +2735,7 @@
         "input_tokens": 60,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2759,7 +2759,7 @@
         "input_tokens": 201,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 97,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2783,7 +2783,7 @@
         "input_tokens": 161,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2831,7 +2831,7 @@
         "input_tokens": 281,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2855,7 +2855,7 @@
         "input_tokens": 126,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 62,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2879,7 +2879,7 @@
         "input_tokens": 49,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2927,7 +2927,7 @@
         "input_tokens": 126,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2937,7 +2937,7 @@
       "pred": "WHEELS",
       "raw_component": "WHEELS",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -2952,7 +2952,7 @@
         "input_tokens": 75,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -2976,7 +2976,7 @@
         "input_tokens": 49,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3002,7 +3002,7 @@
         "input_tokens": 222,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3026,7 +3026,7 @@
         "input_tokens": 177,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3050,7 +3050,7 @@
         "input_tokens": 80,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 62,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3074,7 +3074,7 @@
         "input_tokens": 131,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 65,
+        "output_tokens": 81,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3098,7 +3098,7 @@
         "input_tokens": 47,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 60,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3146,7 +3146,7 @@
         "input_tokens": 129,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3171,7 +3171,7 @@
         "input_tokens": 160,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3195,7 +3195,7 @@
         "input_tokens": 145,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3205,7 +3205,7 @@
       "pred": "VISIBILITY",
       "raw_component": "VISIBILITY",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -3220,7 +3220,7 @@
         "input_tokens": 206,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3244,7 +3244,7 @@
         "input_tokens": 132,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3292,7 +3292,7 @@
         "input_tokens": 33,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 79,
+        "output_tokens": 64,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3316,7 +3316,7 @@
         "input_tokens": 136,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3340,7 +3340,7 @@
         "input_tokens": 152,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3364,7 +3364,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 65,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3388,7 +3388,7 @@
         "input_tokens": 145,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3412,7 +3412,7 @@
         "input_tokens": 151,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3436,7 +3436,7 @@
         "input_tokens": 206,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3484,7 +3484,7 @@
         "input_tokens": 194,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3508,7 +3508,7 @@
         "input_tokens": 89,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3532,7 +3532,7 @@
         "input_tokens": 228,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3580,7 +3580,7 @@
         "input_tokens": 140,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3604,7 +3604,7 @@
         "input_tokens": 114,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 62,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3628,7 +3628,7 @@
         "input_tokens": 163,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 106,
+        "output_tokens": 113,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3652,7 +3652,7 @@
         "input_tokens": 118,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3678,7 +3678,7 @@
         "input_tokens": 83,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3702,7 +3702,7 @@
         "input_tokens": 342,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 98,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3713,7 +3713,7 @@
       "raw_component": "AIR BAGS",
       "off_list": false,
       "confidence": "high",
-      "pred_crash": "N",
+      "pred_crash": "Y",
       "pred_fire": "N",
       "correct": true,
       "accept": [
@@ -3726,15 +3726,15 @@
         "input_tokens": 249,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 966611,
-      "pred": "ENGINE",
-      "raw_component": "ENGINE",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -3752,7 +3752,7 @@
         "input_tokens": 156,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3776,7 +3776,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3800,7 +3800,7 @@
         "input_tokens": 540,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3824,7 +3824,7 @@
         "input_tokens": 113,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3848,7 +3848,7 @@
         "input_tokens": 184,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 97,
+        "output_tokens": 101,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3872,7 +3872,7 @@
         "input_tokens": 155,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3896,7 +3896,7 @@
         "input_tokens": 81,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3920,7 +3920,7 @@
         "input_tokens": 264,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3944,7 +3944,7 @@
         "input_tokens": 373,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3968,7 +3968,7 @@
         "input_tokens": 264,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -3993,7 +3993,7 @@
         "input_tokens": 76,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4017,7 +4017,7 @@
         "input_tokens": 169,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4041,20 +4041,20 @@
         "input_tokens": 76,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1375644,
-      "pred": "STRUCTURE",
-      "raw_component": "STRUCTURE",
+      "pred": "SUSPENSION",
+      "raw_component": "SUSPENSION",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "STRUCTURE"
       ],
@@ -4065,15 +4065,15 @@
         "input_tokens": 156,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 63,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1904938,
-      "pred": "ELECTRICAL SYSTEM",
-      "raw_component": "ELECTRICAL SYSTEM",
+      "pred": "STEERING",
+      "raw_component": "STEERING",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
@@ -4090,7 +4090,7 @@
         "input_tokens": 130,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4117,7 +4117,7 @@
         "input_tokens": 199,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4167,20 +4167,20 @@
         "input_tokens": 36,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 557421,
-      "pred": "ENGINE AND ENGINE COOLING",
-      "raw_component": "ENGINE AND ENGINE COOLING",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "ENGINE AND ENGINE COOLING"
       ],
@@ -4191,7 +4191,7 @@
         "input_tokens": 602,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4201,7 +4201,7 @@
       "pred": "POWER TRAIN",
       "raw_component": "POWER TRAIN",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -4240,7 +4240,7 @@
         "input_tokens": 193,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4266,7 +4266,7 @@
         "input_tokens": 241,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 79,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4290,7 +4290,7 @@
         "input_tokens": 45,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4314,7 +4314,7 @@
         "input_tokens": 140,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 99,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4338,7 +4338,7 @@
         "input_tokens": 166,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4362,7 +4362,7 @@
         "input_tokens": 257,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4386,7 +4386,7 @@
         "input_tokens": 237,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 104,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4410,7 +4410,7 @@
         "input_tokens": 249,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4434,7 +4434,7 @@
         "input_tokens": 125,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4458,7 +4458,7 @@
         "input_tokens": 48,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 64,
+        "output_tokens": 63,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4482,7 +4482,7 @@
         "input_tokens": 185,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4506,7 +4506,7 @@
         "input_tokens": 57,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4530,7 +4530,7 @@
         "input_tokens": 180,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4555,7 +4555,7 @@
         "input_tokens": 42,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4579,7 +4579,7 @@
         "input_tokens": 272,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4627,7 +4627,7 @@
         "input_tokens": 306,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4651,7 +4651,7 @@
         "input_tokens": 51,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4675,7 +4675,7 @@
         "input_tokens": 99,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4699,7 +4699,7 @@
         "input_tokens": 158,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4723,7 +4723,7 @@
         "input_tokens": 289,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 98,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4747,7 +4747,7 @@
         "input_tokens": 111,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4771,7 +4771,7 @@
         "input_tokens": 146,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4795,7 +4795,7 @@
         "input_tokens": 99,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4819,7 +4819,7 @@
         "input_tokens": 474,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4843,7 +4843,7 @@
         "input_tokens": 82,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 63,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4867,7 +4867,7 @@
         "input_tokens": 65,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4891,7 +4891,7 @@
         "input_tokens": 165,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4915,7 +4915,7 @@
         "input_tokens": 187,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -4963,7 +4963,7 @@
         "input_tokens": 97,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 65,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5011,7 +5011,7 @@
         "input_tokens": 162,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 97,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5035,7 +5035,7 @@
         "input_tokens": 177,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5060,7 +5060,7 @@
         "input_tokens": 61,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5084,7 +5084,7 @@
         "input_tokens": 163,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5108,7 +5108,7 @@
         "input_tokens": 500,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5133,7 +5133,7 @@
         "input_tokens": 105,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 99,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5157,7 +5157,7 @@
         "input_tokens": 130,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5182,7 +5182,7 @@
         "input_tokens": 141,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5255,15 +5255,15 @@
         "input_tokens": 178,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 463437,
-      "pred": "EXTERIOR LIGHTING",
-      "raw_component": "EXTERIOR LIGHTING",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
@@ -5283,7 +5283,7 @@
         "input_tokens": 358,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 97,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5307,7 +5307,7 @@
         "input_tokens": 217,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 107,
+        "output_tokens": 96,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5317,7 +5317,7 @@
       "pred": "SERVICE BRAKES, HYDRAULIC",
       "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -5333,7 +5333,7 @@
         "input_tokens": 77,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5359,7 +5359,7 @@
         "input_tokens": 131,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5383,7 +5383,7 @@
         "input_tokens": 220,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5431,7 +5431,7 @@
         "input_tokens": 237,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5455,7 +5455,7 @@
         "input_tokens": 81,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5479,7 +5479,7 @@
         "input_tokens": 197,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5503,7 +5503,7 @@
         "input_tokens": 30,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5527,7 +5527,7 @@
         "input_tokens": 311,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5551,7 +5551,7 @@
         "input_tokens": 182,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5575,7 +5575,7 @@
         "input_tokens": 180,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5599,7 +5599,7 @@
         "input_tokens": 124,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5625,7 +5625,7 @@
         "input_tokens": 134,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5650,7 +5650,7 @@
         "input_tokens": 175,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 62,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5674,7 +5674,7 @@
         "input_tokens": 148,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5748,7 +5748,7 @@
         "input_tokens": 45,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5772,7 +5772,7 @@
         "input_tokens": 122,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5797,7 +5797,7 @@
         "input_tokens": 301,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5821,7 +5821,7 @@
         "input_tokens": 170,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5846,7 +5846,7 @@
         "input_tokens": 71,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5918,7 +5918,7 @@
         "input_tokens": 130,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5942,7 +5942,7 @@
         "input_tokens": 563,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 81,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5966,7 +5966,7 @@
         "input_tokens": 58,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 98,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -5990,7 +5990,7 @@
         "input_tokens": 154,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6014,7 +6014,7 @@
         "input_tokens": 210,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 63,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6040,7 +6040,7 @@
         "input_tokens": 434,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6066,7 +6066,7 @@
         "input_tokens": 48,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 65,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6090,7 +6090,7 @@
         "input_tokens": 298,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6114,7 +6114,7 @@
         "input_tokens": 45,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6138,7 +6138,7 @@
         "input_tokens": 133,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6163,7 +6163,7 @@
         "input_tokens": 153,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6188,7 +6188,7 @@
         "input_tokens": 99,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6212,7 +6212,7 @@
         "input_tokens": 173,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6236,7 +6236,7 @@
         "input_tokens": 297,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6260,7 +6260,7 @@
         "input_tokens": 64,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 65,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6284,7 +6284,7 @@
         "input_tokens": 140,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6308,7 +6308,7 @@
         "input_tokens": 173,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6357,7 +6357,7 @@
         "input_tokens": 230,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6381,7 +6381,7 @@
         "input_tokens": 327,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6405,7 +6405,7 @@
         "input_tokens": 97,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6429,7 +6429,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 62,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6454,7 +6454,7 @@
         "input_tokens": 115,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6479,7 +6479,7 @@
         "input_tokens": 40,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6503,7 +6503,7 @@
         "input_tokens": 89,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6528,7 +6528,7 @@
         "input_tokens": 157,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6553,7 +6553,7 @@
         "input_tokens": 33,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 79,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6601,7 +6601,7 @@
         "input_tokens": 138,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6625,7 +6625,7 @@
         "input_tokens": 160,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6649,7 +6649,7 @@
         "input_tokens": 194,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6673,20 +6673,20 @@
         "input_tokens": 127,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1287909,
-      "pred": "OTHER",
-      "raw_component": "COMMUNICATION",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "UNKNOWN OR OTHER"
       ],
@@ -6697,7 +6697,7 @@
         "input_tokens": 145,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6723,7 +6723,7 @@
         "input_tokens": 178,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6747,7 +6747,7 @@
         "input_tokens": 93,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6771,7 +6771,7 @@
         "input_tokens": 57,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6796,7 +6796,7 @@
         "input_tokens": 379,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6820,20 +6820,20 @@
         "input_tokens": 394,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 989697,
-      "pred": "FUEL SYSTEM, GASOLINE",
-      "raw_component": "FUEL SYSTEM, GASOLINE",
+      "pred": "FUEL SYSTEM, OTHER",
+      "raw_component": "FUEL SYSTEM, OTHER",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "FUEL SYSTEM, GASOLINE"
       ],
@@ -6844,7 +6844,7 @@
         "input_tokens": 143,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 101,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6854,7 +6854,7 @@
       "pred": "ENGINE",
       "raw_component": "ENGINE",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -6868,7 +6868,7 @@
         "input_tokens": 67,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6892,7 +6892,7 @@
         "input_tokens": 193,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6916,7 +6916,7 @@
         "input_tokens": 350,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6941,7 +6941,7 @@
         "input_tokens": 418,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -6965,20 +6965,20 @@
         "input_tokens": 40,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 65,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 462702,
-      "pred": "ENGINE",
-      "raw_component": "ENGINE",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "EXTERIOR LIGHTING",
         "SERVICE BRAKES",
@@ -6992,7 +6992,7 @@
         "input_tokens": 126,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 92,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7016,7 +7016,7 @@
         "input_tokens": 29,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7041,17 +7041,17 @@
         "input_tokens": 34,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1605033,
-      "pred": "STEERING",
-      "raw_component": "STEERING",
+      "pred": "VEHICLE SPEED CONTROL",
+      "raw_component": "VEHICLE SPEED CONTROL",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "Y",
       "pred_fire": "N",
       "correct": true,
@@ -7066,15 +7066,15 @@
         "input_tokens": 87,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 549914,
-      "pred": "SERVICE BRAKES, HYDRAULIC",
-      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "pred": "SERVICE BRAKES, AIR",
+      "raw_component": "SERVICE BRAKES, AIR",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
@@ -7092,7 +7092,7 @@
         "input_tokens": 207,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7117,7 +7117,7 @@
         "input_tokens": 355,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7141,7 +7141,7 @@
         "input_tokens": 284,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7165,7 +7165,7 @@
         "input_tokens": 183,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7189,20 +7189,20 @@
         "input_tokens": 611,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1005139,
-      "pred": "VEHICLE SPEED CONTROL",
-      "raw_component": "VEHICLE SPEED CONTROL",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "VEHICLE SPEED CONTROL"
       ],
@@ -7213,7 +7213,7 @@
         "input_tokens": 245,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 79,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7237,7 +7237,7 @@
         "input_tokens": 432,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7261,7 +7261,7 @@
         "input_tokens": 47,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 77,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7285,7 +7285,7 @@
         "input_tokens": 315,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 104,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7333,7 +7333,7 @@
         "input_tokens": 150,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7358,7 +7358,7 @@
         "input_tokens": 169,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7368,7 +7368,7 @@
       "pred": "SERVICE BRAKES, HYDRAULIC",
       "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "Y",
       "pred_fire": "N",
       "correct": true,
@@ -7385,7 +7385,7 @@
         "input_tokens": 164,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7409,17 +7409,17 @@
         "input_tokens": 115,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1212238,
-      "pred": "VEHICLE SPEED CONTROL",
-      "raw_component": "VEHICLE SPEED CONTROL",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -7434,7 +7434,7 @@
         "input_tokens": 155,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7530,7 +7530,7 @@
         "input_tokens": 239,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7554,7 +7554,7 @@
         "input_tokens": 200,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7579,7 +7579,7 @@
         "input_tokens": 192,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7603,7 +7603,7 @@
         "input_tokens": 461,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7627,7 +7627,7 @@
         "input_tokens": 765,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 98,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7651,7 +7651,7 @@
         "input_tokens": 103,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7675,7 +7675,7 @@
         "input_tokens": 260,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7723,7 +7723,7 @@
         "input_tokens": 321,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7747,7 +7747,7 @@
         "input_tokens": 151,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7796,7 +7796,7 @@
         "input_tokens": 116,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 65,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7806,7 +7806,7 @@
       "pred": "ELECTRICAL SYSTEM",
       "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "Y",
       "pred_fire": "N",
       "correct": true,
@@ -7844,20 +7844,20 @@
         "input_tokens": 294,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 394045,
-      "pred": "ENGINE",
-      "raw_component": "ENGINE",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "low",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "ENGINE"
       ],
@@ -7868,7 +7868,7 @@
         "input_tokens": 52,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7893,7 +7893,7 @@
         "input_tokens": 617,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7917,7 +7917,7 @@
         "input_tokens": 93,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 101,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7941,7 +7941,7 @@
         "input_tokens": 169,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7951,7 +7951,7 @@
       "pred": "OTHER",
       "raw_component": "HYBRID PROPULSION SYSTEM",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": false,
@@ -7965,7 +7965,7 @@
         "input_tokens": 185,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 101,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7989,7 +7989,7 @@
         "input_tokens": 38,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -7999,7 +7999,7 @@
       "pred": "ELECTRICAL SYSTEM",
       "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": false,
@@ -8013,20 +8013,20 @@
         "input_tokens": 47,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 428521,
-      "pred": "VISIBILITY",
-      "raw_component": "VISIBILITY",
+      "pred": "EQUIPMENT",
+      "raw_component": "EQUIPMENT",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "VISIBILITY"
       ],
@@ -8037,7 +8037,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8061,7 +8061,7 @@
         "input_tokens": 117,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 64,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8085,7 +8085,7 @@
         "input_tokens": 94,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8109,20 +8109,20 @@
         "input_tokens": 51,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 863000,
-      "pred": "POWER TRAIN",
-      "raw_component": "POWER TRAIN",
+      "pred": "LATCHES/LOCKS/LINKAGES",
+      "raw_component": "LATCHES/LOCKS/LINKAGES",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "POWER TRAIN"
       ],
@@ -8133,7 +8133,7 @@
         "input_tokens": 176,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8157,7 +8157,7 @@
         "input_tokens": 174,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 92,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8181,7 +8181,7 @@
         "input_tokens": 446,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8205,7 +8205,7 @@
         "input_tokens": 132,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8230,7 +8230,7 @@
         "input_tokens": 145,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8257,7 +8257,7 @@
         "input_tokens": 504,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 102,
+        "output_tokens": 105,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8281,7 +8281,7 @@
         "input_tokens": 60,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 92,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8305,7 +8305,7 @@
         "input_tokens": 210,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 96,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8329,7 +8329,7 @@
         "input_tokens": 423,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8354,7 +8354,7 @@
         "input_tokens": 178,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 100,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8378,7 +8378,7 @@
         "input_tokens": 189,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8403,7 +8403,7 @@
         "input_tokens": 109,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8427,15 +8427,15 @@
         "input_tokens": 471,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 101,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 572650,
-      "pred": "SERVICE BRAKES, AIR",
-      "raw_component": "SERVICE BRAKES, AIR",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -8453,7 +8453,7 @@
         "input_tokens": 486,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 108,
+        "output_tokens": 99,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8463,7 +8463,7 @@
       "pred": "UNKNOWN OR OTHER",
       "raw_component": "UNKNOWN OR OTHER",
       "off_list": false,
-      "confidence": "low",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "Y",
       "correct": true,
@@ -8477,7 +8477,7 @@
         "input_tokens": 134,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8502,7 +8502,7 @@
         "input_tokens": 327,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8550,7 +8550,7 @@
         "input_tokens": 248,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8574,7 +8574,7 @@
         "input_tokens": 36,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8600,17 +8600,17 @@
         "input_tokens": 385,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1363654,
-      "pred": "VEHICLE SPEED CONTROL",
-      "raw_component": "VEHICLE SPEED CONTROL",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "Y",
       "pred_fire": "N",
       "correct": false,
@@ -8624,7 +8624,7 @@
         "input_tokens": 130,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8649,7 +8649,7 @@
         "input_tokens": 124,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8673,7 +8673,7 @@
         "input_tokens": 171,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8697,7 +8697,7 @@
         "input_tokens": 94,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8707,7 +8707,7 @@
       "pred": "POWER TRAIN",
       "raw_component": "POWER TRAIN",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -8721,7 +8721,7 @@
         "input_tokens": 199,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8793,7 +8793,7 @@
         "input_tokens": 145,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 81,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8817,7 +8817,7 @@
         "input_tokens": 298,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8841,17 +8841,17 @@
         "input_tokens": 108,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 2019384,
-      "pred": "EQUIPMENT",
-      "raw_component": "EQUIPMENT",
+      "pred": "LATCHES/LOCKS/LINKAGES",
+      "raw_component": "LATCHES/LOCKS/LINKAGES",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": false,
@@ -8865,7 +8865,7 @@
         "input_tokens": 470,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8893,7 +8893,7 @@
         "input_tokens": 246,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8918,7 +8918,7 @@
         "input_tokens": 152,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 97,
+        "output_tokens": 101,
         "reasoning_tokens": 0
       },
       "error": null
@@ -8942,20 +8942,20 @@
         "input_tokens": 685,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 98,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 460238,
-      "pred": "POWER TRAIN",
-      "raw_component": "POWER TRAIN",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "ENGINE"
       ],
@@ -8966,20 +8966,20 @@
         "input_tokens": 119,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1179821,
-      "pred": "SUSPENSION",
-      "raw_component": "SUSPENSION",
+      "pred": "STRUCTURE",
+      "raw_component": "STRUCTURE",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "SUSPENSION"
       ],
@@ -8990,7 +8990,7 @@
         "input_tokens": 171,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9014,7 +9014,7 @@
         "input_tokens": 76,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 77,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9039,7 +9039,7 @@
         "input_tokens": 290,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 115,
+        "output_tokens": 107,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9063,7 +9063,7 @@
         "input_tokens": 173,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9087,7 +9087,7 @@
         "input_tokens": 116,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9111,7 +9111,7 @@
         "input_tokens": 63,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9186,7 +9186,7 @@
         "input_tokens": 207,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9210,7 +9210,7 @@
         "input_tokens": 217,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 88,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9234,7 +9234,7 @@
         "input_tokens": 48,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9258,7 +9258,7 @@
         "input_tokens": 297,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9282,7 +9282,7 @@
         "input_tokens": 342,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9307,15 +9307,15 @@
         "input_tokens": 176,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 359150,
-      "pred": "ELECTRONIC STABILITY CONTROL",
-      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "pred": "SERVICE BRAKES, AIR",
+      "raw_component": "SERVICE BRAKES, AIR",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
@@ -9331,7 +9331,7 @@
         "input_tokens": 97,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9356,20 +9356,20 @@
         "input_tokens": 126,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 2060951,
-      "pred": "VEHICLE SPEED CONTROL",
-      "raw_component": "VEHICLE SPEED CONTROL",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "ENGINE"
       ],
@@ -9380,7 +9380,7 @@
         "input_tokens": 219,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9404,7 +9404,7 @@
         "input_tokens": 179,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9431,7 +9431,7 @@
         "input_tokens": 133,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9456,7 +9456,7 @@
         "input_tokens": 102,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9482,15 +9482,15 @@
         "input_tokens": 145,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1504109,
-      "pred": "STRUCTURE",
-      "raw_component": "STRUCTURE",
+      "pred": "EQUIPMENT",
+      "raw_component": "EQUIPMENT",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -9506,15 +9506,15 @@
         "input_tokens": 141,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1988713,
-      "pred": "POWER TRAIN",
-      "raw_component": "POWER TRAIN",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -9530,7 +9530,7 @@
         "input_tokens": 95,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9554,7 +9554,7 @@
         "input_tokens": 60,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9578,7 +9578,7 @@
         "input_tokens": 156,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9602,7 +9602,7 @@
         "input_tokens": 84,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9626,7 +9626,7 @@
         "input_tokens": 188,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 98,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9650,7 +9650,7 @@
         "input_tokens": 389,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9674,7 +9674,7 @@
         "input_tokens": 423,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 79,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9698,20 +9698,20 @@
         "input_tokens": 209,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1200086,
-      "pred": "FUEL/PROPULSION SYSTEM",
-      "raw_component": "FUEL/PROPULSION SYSTEM",
+      "pred": "FUEL SYSTEM, GASOLINE",
+      "raw_component": "FUEL SYSTEM, GASOLINE",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "FUEL SYSTEM, GASOLINE"
       ],
@@ -9747,7 +9747,7 @@
         "input_tokens": 52,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 81,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9760,9 +9760,11 @@
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
-        "POWER TRAIN"
+        "SERVICE BRAKES",
+        "SERVICE BRAKES, HYDRAULIC",
+        "SERVICE BRAKES, AIR"
       ],
       "truth_source": "adjudicated_full_v2",
       "is_hard": true,
@@ -9795,7 +9797,7 @@
         "input_tokens": 57,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9820,7 +9822,7 @@
         "input_tokens": 297,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 98,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9844,20 +9846,20 @@
         "input_tokens": 290,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1389356,
-      "pred": "FUEL/PROPULSION SYSTEM",
-      "raw_component": "FUEL/PROPULSION SYSTEM",
+      "pred": "FUEL SYSTEM, GASOLINE",
+      "raw_component": "FUEL SYSTEM, GASOLINE",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "FUEL SYSTEM, GASOLINE"
       ],
@@ -9868,7 +9870,7 @@
         "input_tokens": 456,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 103,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9892,7 +9894,7 @@
         "input_tokens": 186,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9916,7 +9918,7 @@
         "input_tokens": 263,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 96,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9941,7 +9943,7 @@
         "input_tokens": 318,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -9990,7 +9992,7 @@
         "input_tokens": 305,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10014,7 +10016,7 @@
         "input_tokens": 134,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10038,7 +10040,7 @@
         "input_tokens": 244,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10086,7 +10088,7 @@
         "input_tokens": 69,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 70,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10135,15 +10137,15 @@
         "input_tokens": 589,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 77,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1842885,
-      "pred": "SERVICE BRAKES, HYDRAULIC",
-      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "pred": "SERVICE BRAKES",
+      "raw_component": "SERVICE BRAKES",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "Y",
@@ -10163,7 +10165,7 @@
         "input_tokens": 55,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10187,7 +10189,7 @@
         "input_tokens": 103,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 79,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10214,7 +10216,7 @@
         "input_tokens": 56,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 81,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10238,15 +10240,15 @@
         "input_tokens": 50,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 843571,
-      "pred": "ENGINE",
-      "raw_component": "ENGINE",
+      "pred": "AIR BAGS",
+      "raw_component": "AIR BAGS",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -10263,7 +10265,7 @@
         "input_tokens": 317,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 89,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10314,7 +10316,7 @@
         "input_tokens": 255,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 74,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10339,7 +10341,7 @@
         "input_tokens": 88,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10349,7 +10351,7 @@
       "pred": "STRUCTURE",
       "raw_component": "STRUCTURE",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": false,
@@ -10363,7 +10365,7 @@
         "input_tokens": 257,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10387,7 +10389,7 @@
         "input_tokens": 82,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 71,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10412,7 +10414,7 @@
         "input_tokens": 214,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 95,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10462,7 +10464,7 @@
         "input_tokens": 421,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10486,7 +10488,7 @@
         "input_tokens": 187,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 65,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10496,7 +10498,7 @@
       "pred": "ELECTRICAL SYSTEM",
       "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": false,
@@ -10510,7 +10512,7 @@
         "input_tokens": 385,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10535,7 +10537,7 @@
         "input_tokens": 390,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 100,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10545,7 +10547,7 @@
       "pred": "SEATS",
       "raw_component": "SEATS",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -10559,20 +10561,20 @@
         "input_tokens": 56,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1024252,
-      "pred": "STRUCTURE",
-      "raw_component": "STRUCTURE",
+      "pred": "VISIBILITY",
+      "raw_component": "VISIBILITY",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "VISIBILITY"
       ],
@@ -10583,7 +10585,7 @@
         "input_tokens": 124,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 67,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10608,7 +10610,7 @@
         "input_tokens": 151,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 97,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10632,7 +10634,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 68,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10656,7 +10658,7 @@
         "input_tokens": 136,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10680,7 +10682,7 @@
         "input_tokens": 32,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10704,7 +10706,7 @@
         "input_tokens": 48,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 82,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10728,7 +10730,7 @@
         "input_tokens": 139,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10752,20 +10754,20 @@
         "input_tokens": 65,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 782433,
-      "pred": "EQUIPMENT",
-      "raw_component": "EQUIPMENT",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "ELECTRICAL SYSTEM"
       ],
@@ -10776,20 +10778,20 @@
         "input_tokens": 87,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 87,
+        "output_tokens": 69,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1247575,
-      "pred": "POWER TRAIN",
-      "raw_component": "POWER TRAIN",
+      "pred": "SUSPENSION",
+      "raw_component": "SUSPENSION",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "POWER TRAIN"
       ],
@@ -10800,7 +10802,7 @@
         "input_tokens": 234,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10824,7 +10826,7 @@
         "input_tokens": 215,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 92,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10872,7 +10874,7 @@
         "input_tokens": 79,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10897,7 +10899,7 @@
         "input_tokens": 470,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 77,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10921,7 +10923,7 @@
         "input_tokens": 45,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 82,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10945,7 +10947,7 @@
         "input_tokens": 133,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10971,7 +10973,7 @@
         "input_tokens": 108,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 78,
+        "output_tokens": 77,
         "reasoning_tokens": 0
       },
       "error": null
@@ -10996,7 +10998,7 @@
         "input_tokens": 183,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 84,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11006,7 +11008,7 @@
       "pred": "ELECTRICAL SYSTEM",
       "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": true,
@@ -11021,7 +11023,7 @@
         "input_tokens": 191,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 75,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11045,7 +11047,7 @@
         "input_tokens": 129,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 67,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11069,7 +11071,7 @@
         "input_tokens": 173,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11117,7 +11119,7 @@
         "input_tokens": 46,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 76,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11141,7 +11143,7 @@
         "input_tokens": 112,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11165,7 +11167,7 @@
         "input_tokens": 357,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 102,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11189,7 +11191,7 @@
         "input_tokens": 204,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 74,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11215,7 +11217,7 @@
         "input_tokens": 313,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 98,
+        "output_tokens": 97,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11239,7 +11241,7 @@
         "input_tokens": 36,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 79,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11263,15 +11265,15 @@
         "input_tokens": 166,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 122836,
-      "pred": "ELECTRONIC STABILITY CONTROL",
-      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -11290,7 +11292,7 @@
         "input_tokens": 359,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 71,
+        "output_tokens": 73,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11314,7 +11316,7 @@
         "input_tokens": 309,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 103,
+        "output_tokens": 98,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11339,7 +11341,7 @@
         "input_tokens": 339,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 70,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11363,7 +11365,7 @@
         "input_tokens": 210,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11390,7 +11392,7 @@
         "input_tokens": 576,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 95,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11421,8 +11423,8 @@
     },
     {
       "cmplid": 1358396,
-      "pred": "SERVICE BRAKES, AIR",
-      "raw_component": "SERVICE BRAKES, AIR",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
@@ -11441,7 +11443,7 @@
         "input_tokens": 101,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 96,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11490,7 +11492,7 @@
         "input_tokens": 414,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 98,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11514,20 +11516,20 @@
         "input_tokens": 108,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 73,
+        "output_tokens": 80,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1284897,
-      "pred": "LATCHES/LOCKS/LINKAGES",
-      "raw_component": "LATCHES/LOCKS/LINKAGES",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "POWER TRAIN"
       ],
@@ -11538,7 +11540,7 @@
         "input_tokens": 78,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 91,
+        "output_tokens": 66,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11562,7 +11564,7 @@
         "input_tokens": 137,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 86,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11586,15 +11588,15 @@
         "input_tokens": 290,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 92,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 945167,
-      "pred": "ELECTRICAL SYSTEM",
-      "raw_component": "ELECTRICAL SYSTEM",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
       "off_list": false,
       "confidence": "medium",
       "pred_crash": "N",
@@ -11610,7 +11612,7 @@
         "input_tokens": 125,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11634,7 +11636,7 @@
         "input_tokens": 68,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 66,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11658,7 +11660,7 @@
         "input_tokens": 247,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 91,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11682,7 +11684,7 @@
         "input_tokens": 207,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 80,
+        "output_tokens": 86,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11692,7 +11694,7 @@
       "pred": "FUEL SYSTEM, OTHER",
       "raw_component": "FUEL SYSTEM, OTHER",
       "off_list": false,
-      "confidence": "medium",
+      "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
       "correct": false,
@@ -11707,7 +11709,7 @@
         "input_tokens": 256,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 81,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11733,20 +11735,20 @@
         "input_tokens": 122,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 72,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 1071637,
-      "pred": "STEERING",
-      "raw_component": "STEERING",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
       "off_list": false,
       "confidence": "high",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": false,
+      "correct": true,
       "accept": [
         "AIR BAGS",
         "ELECTRICAL SYSTEM"
@@ -11758,7 +11760,7 @@
         "input_tokens": 208,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 93,
+        "output_tokens": 94,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11806,7 +11808,7 @@
         "input_tokens": 304,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 92,
+        "output_tokens": 90,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11830,7 +11832,7 @@
         "input_tokens": 540,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 99,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11854,7 +11856,7 @@
         "input_tokens": 100,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 88,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11903,7 +11905,7 @@
         "input_tokens": 66,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 90,
+        "output_tokens": 68,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11927,7 +11929,7 @@
         "input_tokens": 93,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 77,
+        "output_tokens": 76,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11952,7 +11954,7 @@
         "input_tokens": 104,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 92,
+        "output_tokens": 97,
         "reasoning_tokens": 0
       },
       "error": null
@@ -11976,7 +11978,7 @@
         "input_tokens": 109,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 94,
+        "output_tokens": 96,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12000,20 +12002,20 @@
         "input_tokens": 109,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 85,
+        "output_tokens": 78,
         "reasoning_tokens": 0
       },
       "error": null
     },
     {
       "cmplid": 2181131,
-      "pred": "HYBRID PROPULSION SYSTEM",
-      "raw_component": "HYBRID PROPULSION SYSTEM",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
       "off_list": false,
-      "confidence": "high",
+      "confidence": "medium",
       "pred_crash": "N",
       "pred_fire": "N",
-      "correct": true,
+      "correct": false,
       "accept": [
         "HYBRID PROPULSION SYSTEM"
       ],
@@ -12024,7 +12026,7 @@
         "input_tokens": 169,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 103,
+        "output_tokens": 93,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12048,7 +12050,7 @@
         "input_tokens": 70,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 69,
+        "output_tokens": 85,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12072,7 +12074,7 @@
         "input_tokens": 30,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 75,
+        "output_tokens": 87,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12096,7 +12098,7 @@
         "input_tokens": 143,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 83,
+        "output_tokens": 84,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12122,7 +12124,7 @@
         "input_tokens": 254,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 99,
+        "output_tokens": 109,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12146,7 +12148,7 @@
         "input_tokens": 258,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
-        "output_tokens": 72,
+        "output_tokens": 83,
         "reasoning_tokens": 0
       },
       "error": null
@@ -12170,7 +12172,1290 @@
         "input_tokens": 178,
         "cached_input_tokens": 9799,
         "cache_creation_input_tokens": 0,
+        "output_tokens": 88,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "608797",
+      "pred": "SEAT BELTS",
+      "raw_component": "SEAT BELTS",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "SEAT BELTS"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 318,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 76,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1516532",
+      "pred": "OTHER",
+      "raw_component": "CHILD SEAT",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 107,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 83,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "677248",
+      "pred": "OTHER",
+      "raw_component": "CHILD SEAT",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 44,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 63,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "461243",
+      "pred": "CHILD SEAT",
+      "raw_component": "CHILD SEAT",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "CHILD SEAT"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 81,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "279025",
+      "pred": "SEAT BELTS",
+      "raw_component": "SEAT BELTS",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "CHILD SEAT"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 118,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 73,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "550726",
+      "pred": "OTHER",
+      "raw_component": "CHILD SEAT",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 69,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 66,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "714087",
+      "pred": "OTHER",
+      "raw_component": "CHILD SEAT",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "CHILD SEAT",
+      "usage": {
+        "input_tokens": 288,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 68,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1016581",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "ELECTRONIC STABILITY CONTROL",
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 166,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 88,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1696183",
+      "pred": "ELECTRONIC STABILITY CONTROL",
+      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "ELECTRONIC STABILITY CONTROL"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 111,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 89,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1437163",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 176,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 65,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1453743",
+      "pred": "ELECTRONIC STABILITY CONTROL",
+      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 121,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 74,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1335594",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "POWER TRAIN",
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 129,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 77,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1523922",
+      "pred": "SUSPENSION",
+      "raw_component": "SUSPENSION",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "SUSPENSION"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 116,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 63,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1242671",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
+      "off_list": false,
+      "confidence": "low",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "ELECTRONIC STABILITY CONTROL",
+      "usage": {
+        "input_tokens": 87,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 89,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1185717",
+      "pred": "LANE DEPARTURE",
+      "raw_component": "LANE DEPARTURE",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "ELECTRICAL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 233,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
         "output_tokens": 90,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1208068",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "ELECTRICAL SYSTEM",
+        "STRUCTURE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 530,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 92,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "914919",
+      "pred": "EQUIPMENT",
+      "raw_component": "EQUIPMENT",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "EQUIPMENT"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 90,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 67,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1190333",
+      "pred": "EQUIPMENT",
+      "raw_component": "EQUIPMENT",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "EQUIPMENT"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 375,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 82,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1132608",
+      "pred": "AIR BAGS",
+      "raw_component": "AIR BAGS",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "AIR BAGS"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 307,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 84,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1209940",
+      "pred": "SERVICE BRAKES, AIR",
+      "raw_component": "SERVICE BRAKES, AIR",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 193,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 90,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "744932",
+      "pred": "VEHICLE SPEED CONTROL",
+      "raw_component": "VEHICLE SPEED CONTROL",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "VEHICLE SPEED CONTROL"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 207,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 93,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "240212",
+      "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "raw_component": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "EQUIPMENT ADAPTIVE/MOBILITY"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 161,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 93,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "197350",
+      "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "raw_component": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "Y",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "EQUIPMENT ADAPTIVE/MOBILITY"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 130,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 92,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "977756",
+      "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "raw_component": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "EQUIPMENT ADAPTIVE/MOBILITY"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 159,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 70,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1159204",
+      "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "raw_component": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "EQUIPMENT ADAPTIVE/MOBILITY"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "EQUIPMENT ADAPTIVE/MOBILITY",
+      "usage": {
+        "input_tokens": 160,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 73,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "772267",
+      "pred": "VEHICLE SPEED CONTROL",
+      "raw_component": "VEHICLE SPEED CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "VEHICLE SPEED CONTROL"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 231,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 77,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "707562",
+      "pred": "EQUIPMENT",
+      "raw_component": "EQUIPMENT",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "FUEL SYSTEM, OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": false,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 104,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 77,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "383022",
+      "pred": "FUEL SYSTEM, GASOLINE",
+      "raw_component": "FUEL SYSTEM, GASOLINE",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "FUEL SYSTEM, GASOLINE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 96,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 82,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "768442",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "FUEL SYSTEM, GASOLINE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 236,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 68,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "252356",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 89,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 66,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "573467",
+      "pred": "FUEL SYSTEM, DIESEL",
+      "raw_component": "FUEL SYSTEM, DIESEL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "FUEL SYSTEM, DIESEL"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 121,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 91,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1713",
+      "pred": "FUEL/PROPULSION SYSTEM",
+      "raw_component": "FUEL/PROPULSION SYSTEM",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "FUEL SYSTEM, GASOLINE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL SYSTEM, OTHER",
+      "usage": {
+        "input_tokens": 38,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 70,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1705326",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "ENGINE",
+        "FUEL/PROPULSION SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 146,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 66,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1578783",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "POWER TRAIN"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 185,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 77,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1142140",
+      "pred": "FUEL SYSTEM, GASOLINE",
+      "raw_component": "FUEL SYSTEM, GASOLINE",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "FUEL SYSTEM, GASOLINE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 165,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 91,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1709414",
+      "pred": "FUEL SYSTEM, GASOLINE",
+      "raw_component": "FUEL SYSTEM, GASOLINE",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "FUEL SYSTEM, GASOLINE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 239,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 73,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1115614",
+      "pred": "ENGINE",
+      "raw_component": "ENGINE",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "FUEL/PROPULSION SYSTEM",
+        "POWER TRAIN"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 325,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 79,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1329293",
+      "pred": "POWER TRAIN",
+      "raw_component": "POWER TRAIN",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "POWER TRAIN"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 112,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 72,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1728411",
+      "pred": "ENGINE AND ENGINE COOLING",
+      "raw_component": "ENGINE AND ENGINE COOLING",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "ENGINE"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "FUEL/PROPULSION SYSTEM",
+      "usage": {
+        "input_tokens": 28,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 73,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "822481",
+      "pred": "VEHICLE SPEED CONTROL",
+      "raw_component": "VEHICLE SPEED CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "POWER TRAIN"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 357,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 93,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "750966",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, ELECTRIC"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 262,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 92,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "820993",
+      "pred": "ELECTRICAL SYSTEM",
+      "raw_component": "ELECTRICAL SYSTEM",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "ELECTRICAL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 137,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 79,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "760021",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, ELECTRIC"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 315,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 82,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "758906",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, ELECTRIC"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 166,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 89,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "758789",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "off_list": false,
+      "confidence": "medium",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, ELECTRIC"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 231,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 106,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "734318",
+      "pred": "SERVICE BRAKES, AIR",
+      "raw_component": "SERVICE BRAKES, AIR",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "SERVICE BRAKES, ELECTRIC",
+      "usage": {
+        "input_tokens": 193,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 87,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "786293",
+      "pred": "SERVICE BRAKES, AIR",
+      "raw_component": "SERVICE BRAKES, AIR",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC",
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 505,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 101,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "2158233",
+      "pred": "SERVICE BRAKES, HYDRAULIC",
+      "raw_component": "SERVICE BRAKES, HYDRAULIC",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "SERVICE BRAKES, HYDRAULIC",
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 152,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 100,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1023573",
+      "pred": "ELECTRONIC STABILITY CONTROL",
+      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "TRACTION CONTROL SYSTEM",
+        "ELECTRONIC STABILITY CONTROL"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 239,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 78,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "1075370",
+      "pred": "STEERING",
+      "raw_component": "STEERING",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "STEERING",
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 118,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 71,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "840221",
+      "pred": "UNKNOWN OR OTHER",
+      "raw_component": "UNKNOWN OR OTHER",
+      "off_list": false,
+      "confidence": "low",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "UNKNOWN OR OTHER"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 147,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 76,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "2117316",
+      "pred": "ELECTRONIC STABILITY CONTROL",
+      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": true,
+      "accept": [
+        "TRACTION CONTROL SYSTEM",
+        "ELECTRONIC STABILITY CONTROL"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 112,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 84,
+        "reasoning_tokens": 0
+      },
+      "error": null
+    },
+    {
+      "cmplid": "948325",
+      "pred": "ELECTRONIC STABILITY CONTROL",
+      "raw_component": "ELECTRONIC STABILITY CONTROL",
+      "off_list": false,
+      "confidence": "high",
+      "pred_crash": "N",
+      "pred_fire": "N",
+      "correct": false,
+      "accept": [
+        "POWER TRAIN",
+        "TRACTION CONTROL SYSTEM"
+      ],
+      "truth_source": "adjudicated_v3_rare_coverage",
+      "is_hard": true,
+      "nhtsa_gold": "TRACTION CONTROL SYSTEM",
+      "usage": {
+        "input_tokens": 395,
+        "cached_input_tokens": 9799,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 89,
         "reasoning_tokens": 0
       },
       "error": null

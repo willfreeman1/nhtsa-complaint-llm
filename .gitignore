@@ -4,11 +4,24 @@ data/*.txt
 data/*.parquet
 output/*.npy
 
-# Future model artifacts
-checkpoints/
-*.gguf
-*.safetensors
+# Model weight binaries -- big (100MB-900MB), regenerate by re-running the training
+# scripts against a rented GPU (see WRITEUP.md §4/§5). Small config/tokenizer/README
+# files inside checkpoints/ ARE tracked (not excluded here) so the repo documents each
+# run's exact hyperparameters/adapter config without the multi-hundred-MB weights.
+checkpoints/**/*.safetensors
+checkpoints/**/*.bin
+checkpoints/**/*.gguf
+checkpoints/**/training_args.bin
 adapters/
+
+# Raw intermediate Batch API payloads (~30MB of request/response JSON chunks) --
+# regenerate via scripts/run_batch_cascade_labeling.py; the summarized results in
+# data/*.parquet + output/*summary*.json are what actually matters for reproducibility.
+output/batch_chunks/
+
+# Editor/tool scratch, not part of the project
+.specstory/
+*.code-workspace
 
 # Python
 __pycache__/

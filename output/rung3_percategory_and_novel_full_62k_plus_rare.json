@@ -1,0 +1,302 @@
+{
+  "run_name": "full_62k_plus_rare",
+  "adapter_dir": "checkpoints/llm_rung3_full_62k_plus_rare",
+  "gold_metrics": {
+    "n": 498,
+    "n_parse_failures": 0,
+    "accuracy": 0.893574297188755,
+    "accuracy_hard_subset": 0.8062015503875969,
+    "accuracy_dual_agreement_subset": 0.9875,
+    "macro_f1": 0.8504345107729878
+  },
+  "per_class_report": {
+    "AIR BAGS": {
+      "precision": 0.9433962264150944,
+      "recall": 0.9433962264150944,
+      "f1-score": 0.9433962264150944,
+      "support": 53.0
+    },
+    "BACK OVER PREVENTION": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 4.0
+    },
+    "COMMUNICATION": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "ELECTRICAL SYSTEM": {
+      "precision": 0.8421052631578947,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8648648648648649,
+      "support": 36.0
+    },
+    "ELECTRONIC STABILITY CONTROL": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1-score": 0.4,
+      "support": 1.0
+    },
+    "ENGINE": {
+      "precision": 0.8461538461538461,
+      "recall": 0.868421052631579,
+      "f1-score": 0.8571428571428571,
+      "support": 38.0
+    },
+    "ENGINE AND ENGINE COOLING": {
+      "precision": 0.9473684210526315,
+      "recall": 0.8181818181818182,
+      "f1-score": 0.8780487804878049,
+      "support": 22.0
+    },
+    "EQUIPMENT": {
+      "precision": 0.6666666666666666,
+      "recall": 0.8,
+      "f1-score": 0.7272727272727273,
+      "support": 5.0
+    },
+    "EXTERIOR LIGHTING": {
+      "precision": 0.95,
+      "recall": 1.0,
+      "f1-score": 0.9743589743589743,
+      "support": 19.0
+    },
+    "FORWARD COLLISION AVOIDANCE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 8.0
+    },
+    "FUEL SYSTEM, DIESEL": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "FUEL SYSTEM, GASOLINE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 14.0
+    },
+    "HYBRID PROPULSION SYSTEM": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "INTERIOR LIGHTING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "LANE DEPARTURE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "LATCHES/LOCKS/LINKAGES": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 7.0
+    },
+    "OTHER": {
+      "precision": 0.3333333333333333,
+      "recall": 0.25,
+      "f1-score": 0.2857142857142857,
+      "support": 4.0
+    },
+    "PARKING BRAKE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "POWER TRAIN": {
+      "precision": 0.8970588235294118,
+      "recall": 0.953125,
+      "f1-score": 0.9242424242424242,
+      "support": 64.0
+    },
+    "SEAT BELTS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 10.0
+    },
+    "SEATS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "SERVICE BRAKES": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "SERVICE BRAKES, AIR": {
+      "precision": 0.125,
+      "recall": 1.0,
+      "f1-score": 0.2222222222222222,
+      "support": 1.0
+    },
+    "SERVICE BRAKES, HYDRAULIC": {
+      "precision": 0.9736842105263158,
+      "recall": 0.8604651162790697,
+      "f1-score": 0.9135802469135802,
+      "support": 43.0
+    },
+    "STEERING": {
+      "precision": 0.9428571428571428,
+      "recall": 1.0,
+      "f1-score": 0.9705882352941176,
+      "support": 33.0
+    },
+    "STRUCTURE": {
+      "precision": 0.8260869565217391,
+      "recall": 0.9047619047619048,
+      "f1-score": 0.8636363636363636,
+      "support": 21.0
+    },
+    "SUSPENSION": {
+      "precision": 0.9411764705882353,
+      "recall": 0.9411764705882353,
+      "f1-score": 0.9411764705882353,
+      "support": 17.0
+    },
+    "TIRES": {
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    "UNKNOWN OR OTHER": {
+      "precision": 0.8421052631578947,
+      "recall": 0.5925925925925926,
+      "f1-score": 0.6956521739130435,
+      "support": 27.0
+    },
+    "VEHICLE SPEED CONTROL": {
+      "precision": 0.9,
+      "recall": 0.8181818181818182,
+      "f1-score": 0.8571428571428571,
+      "support": 22.0
+    },
+    "VISIBILITY": {
+      "precision": 1.0,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.9230769230769231,
+      "support": 14.0
+    },
+    "VISIBILITY/WIPER": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "WHEELS": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1-score": 0.8888888888888888,
+      "support": 5.0
+    },
+    "accuracy": 0.8955823293172691,
+    "macro avg": {
+      "precision": 0.8515755340594002,
+      "recall": 0.8877676892625412,
+      "f1-score": 0.8504345107729878,
+      "support": 498.0
+    },
+    "weighted avg": {
+      "precision": 0.907244070727659,
+      "recall": 0.8955823293172691,
+      "f1-score": 0.8977504976206372,
+      "support": 498.0
+    }
+  },
+  "novel_category_results": [
+    {
+      "cmplid": "novel_1",
+      "make": "Toyota",
+      "model": "Sienna",
+      "year": "2024",
+      "narrative": "The built-in refrigerated console box between the second-row seats stopped cooling completely and now leaks water onto the floor mats every time we drive on a warm day.",
+      "gen_text": "{\"component\": \"EQUIPMENT\", \"crash\": \"N\", \"fire\": \"N\", \"injured\": 0, \"deaths\": 0}",
+      "parsed": {
+        "component": "EQUIPMENT",
+        "crash": "N",
+        "fire": "N",
+        "injured": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "cmplid": "novel_2",
+      "make": "Ford",
+      "model": "F-150",
+      "year": "2023",
+      "narrative": "The power-retracting tonneau cover motor on my truck bed burned out and the cover is now stuck half-open. It will not respond to the remote or the switch inside the cab.",
+      "gen_text": "{\"component\": \"EQUIPMENT\", \"crash\": \"N\", \"fire\": \"N\", \"injured\": 0, \"deaths\": 0}",
+      "parsed": {
+        "component": "EQUIPMENT",
+        "crash": "N",
+        "fire": "N",
+        "injured": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "cmplid": "novel_3",
+      "make": "Cadillac",
+      "model": "Escalade",
+      "year": "2025",
+      "narrative": "The heated and cooled cupholders in the center console started making a burning smell and one of them got hot enough to melt the plastic insert holding a water bottle.",
+      "gen_text": "{\"component\": \"EQUIPMENT\", \"crash\": \"N\", \"fire\": \"N\", \"injured\": 0, \"deaths\": 0}",
+      "parsed": {
+        "component": "EQUIPMENT",
+        "crash": "N",
+        "fire": "N",
+        "injured": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "cmplid": "novel_4",
+      "make": "Honda",
+      "model": "Odyssey",
+      "year": "2024",
+      "narrative": "The built-in dash cam and cabin-watch camera system randomly reboots itself several times per drive and loses the last week of recorded footage every time it does.",
+      "gen_text": "{\"component\": \"COMMUNICATION\", \"crash\": \"N\", \"fire\": \"N\", \"injured\": 0, \"deaths\": 0}",
+      "parsed": {
+        "component": "COMMUNICATION",
+        "crash": "N",
+        "fire": "N",
+        "injured": 0,
+        "deaths": 0
+      }
+    },
+    {
+      "cmplid": "novel_5",
+      "make": "Rivian",
+      "model": "R1S",
+      "year": "2024",
+      "narrative": "The vehicle-to-home bidirectional charging feature stopped exporting power to my house during a planned outage test, even though the app said the feature was active and the battery was at 80 percent.",
+      "gen_text": "{\"component\": \"HYBRID PROPULSION SYSTEM\", \"crash\": \"N\", \"fire\": \"N\", \"injured\": 0, \"deaths\": 0}",
+      "parsed": {
+        "component": "HYBRID PROPULSION SYSTEM",
+        "crash": "N",
+        "fire": "N",
+        "injured": 0,
+        "deaths": 0
+      }
+    }
+  ]
+}

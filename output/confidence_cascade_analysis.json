@@ -91,26 +91,31 @@
     "anthropic/claude-haiku-4-5": {
       "n": 498,
       "accuracy": 0.8835341365461847,
+      "accuracy_se": 0.01437461828400282,
       "usd_per_100k_rows": 155.01052208835364
     },
     "anthropic/claude-sonnet-5": {
       "n": 498,
       "accuracy": 0.9036144578313253,
+      "accuracy_se": 0.013224609637312089,
       "usd_per_100k_rows": 465.88080321285173
     },
     "openai/gpt-5-mini": {
       "n": 496,
       "accuracy": 0.8165322580645161,
+      "accuracy_se": 0.017379036407719615,
       "usd_per_100k_rows": 52.90494959677418
     },
     "openai/gpt-5.4-mini": {
       "n": 493,
       "accuracy": 0.8681541582150102,
+      "accuracy_se": 0.015237305812243054,
       "usd_per_100k_rows": 150.63879310344836
     },
     "openai/gpt-5.4-nano": {
       "n": 493,
       "accuracy": 0.7809330628803245,
+      "accuracy_se": 0.018628241671999675,
       "usd_per_100k_rows": 49.529598377281935
     }
   },
@@ -121,6 +126,7 @@
       "escalation_policy": "low_only",
       "n": 496,
       "accuracy": 0.8205645161290323,
+      "accuracy_se": 0.017229381728778505,
       "pct_escalated": 0.014112903225806451,
       "usd_per_100k_rows": 54.94311491935482
     },
@@ -130,8 +136,19 @@
       "escalation_policy": "low_only",
       "n": 496,
       "accuracy": 0.8205645161290323,
+      "accuracy_se": 0.017229381728778505,
       "pct_escalated": 0.014112903225806451,
       "usd_per_100k_rows": 59.05833669354842
+    },
+    {
+      "cheap_model": "openai/gpt-5-mini",
+      "smart_model": "anthropic/claude-haiku-4-5",
+      "escalation_policy": "medium_only",
+      "n": 496,
+      "accuracy": 0.8286290322580645,
+      "accuracy_se": 0.01692029221447555,
+      "pct_escalated": 0.06653225806451613,
+      "usd_per_100k_rows": 63.4794858870968
     },
     {
       "cheap_model": "openai/gpt-5-mini",
@@ -139,6 +156,7 @@
       "escalation_policy": "low_and_medium",
       "n": 496,
       "accuracy": 0.8326612903225806,
+      "accuracy_se": 0.016760677020794673,
       "pct_escalated": 0.08064516129032258,
       "usd_per_100k_rows": 65.51765120967745
     },
@@ -148,8 +166,19 @@
       "escalation_policy": "low_only",
       "n": 493,
       "accuracy": 0.8154158215010142,
+      "accuracy_se": 0.017472833712506665,
       "pct_escalated": 0.1724137931034483,
       "usd_per_100k_rows": 75.78324949290065
+    },
+    {
+      "cheap_model": "openai/gpt-5-mini",
+      "smart_model": "anthropic/claude-sonnet-5",
+      "escalation_policy": "medium_only",
+      "n": 496,
+      "accuracy": 0.8266129032258065,
+      "accuracy_se": 0.01699881467917085,
+      "pct_escalated": 0.06653225806451613,
+      "usd_per_100k_rows": 84.81527217741939
     },
     {
       "cheap_model": "openai/gpt-5-mini",
@@ -157,8 +186,19 @@
       "escalation_policy": "low_and_medium",
       "n": 496,
       "accuracy": 0.8306451612903226,
+      "accuracy_se": 0.01684091703330835,
       "pct_escalated": 0.08064516129032258,
       "usd_per_100k_rows": 90.9686592741936
+    },
+    {
+      "cheap_model": "openai/gpt-5.4-nano",
+      "smart_model": "anthropic/claude-haiku-4-5",
+      "escalation_policy": "medium_only",
+      "n": 493,
+      "accuracy": 0.8377281947261663,
+      "accuracy_se": 0.016605411425635135,
+      "pct_escalated": 0.3894523326572008,
+      "usd_per_100k_rows": 110.58521703853957
     },
     {
       "cheap_model": "openai/gpt-5.4-nano",
@@ -166,6 +206,7 @@
       "escalation_policy": "low_only",
       "n": 493,
       "accuracy": 0.8235294117647058,
+      "accuracy_se": 0.017169287153088204,
       "pct_escalated": 0.1724137931034483,
       "usd_per_100k_rows": 128.850490872211
     },
@@ -175,6 +216,7 @@
       "escalation_policy": "low_and_medium",
       "n": 493,
       "accuracy": 0.8722109533468559,
+      "accuracy_se": 0.015036062546217407,
       "pct_escalated": 0.5618661257606491,
       "usd_per_100k_rows": 136.83886815415832
     },
@@ -184,6 +226,7 @@
       "escalation_policy": "low_only",
       "n": 493,
       "accuracy": 0.8742393509127789,
+      "accuracy_se": 0.014933585779579825,
       "pct_escalated": 0.04056795131845842,
       "usd_per_100k_rows": 156.85177484787027
     },
@@ -193,6 +236,7 @@
       "escalation_policy": "low_only",
       "n": 493,
       "accuracy": 0.8782961460446247,
+      "accuracy_se": 0.014724792872137484,
       "pct_escalated": 0.04056795131845842,
       "usd_per_100k_rows": 169.2282454361056
     },
@@ -202,8 +246,19 @@
       "escalation_policy": "low_only",
       "n": 498,
       "accuracy": 0.8815261044176707,
+      "accuracy_se": 0.014481523448217678,
       "pct_escalated": 0.03614457831325301,
       "usd_per_100k_rows": 171.0890763052209
+    },
+    {
+      "cheap_model": "openai/gpt-5.4-mini",
+      "smart_model": "anthropic/claude-haiku-4-5",
+      "escalation_policy": "medium_only",
+      "n": 493,
+      "accuracy": 0.8782961460446247,
+      "accuracy_se": 0.014724792872137484,
+      "pct_escalated": 0.2231237322515213,
+      "usd_per_100k_rows": 185.39682555780934
     },
     {
       "cheap_model": "openai/gpt-5.4-mini",
@@ -211,8 +266,39 @@
       "escalation_policy": "low_and_medium",
       "n": 493,
       "accuracy": 0.8843813387423936,
+      "accuracy_se": 0.014401585050991568,
       "pct_escalated": 0.26369168356997974,
       "usd_per_100k_rows": 191.6098073022312
+    },
+    {
+      "cheap_model": "openai/gpt-5.4-nano",
+      "smart_model": "anthropic/claude-sonnet-5",
+      "escalation_policy": "medium_only",
+      "n": 493,
+      "accuracy": 0.8519269776876268,
+      "accuracy_se": 0.015996158411514718,
+      "pct_escalated": 0.3894523326572008,
+      "usd_per_100k_rows": 233.25073427991893
+    },
+    {
+      "cheap_model": "anthropic/claude-haiku-4-5",
+      "smart_model": "anthropic/claude-sonnet-5",
+      "escalation_policy": "medium_only",
+      "n": 498,
+      "accuracy": 0.8995983935742972,
+      "accuracy_se": 0.01346728326649448,
+      "pct_escalated": 0.18072289156626506,
+      "usd_per_100k_rows": 240.5474698795183
+    },
+    {
+      "cheap_model": "openai/gpt-5.4-mini",
+      "smart_model": "anthropic/claude-sonnet-5",
+      "escalation_policy": "medium_only",
+      "n": 493,
+      "accuracy": 0.8884381338742393,
+      "accuracy_se": 0.014179078962604945,
+      "pct_escalated": 0.2231237322515213,
+      "usd_per_100k_rows": 255.3084888438134
     },
     {
       "cheap_model": "anthropic/claude-haiku-4-5",
@@ -220,6 +306,7 @@
       "escalation_policy": "low_and_medium",
       "n": 498,
       "accuracy": 0.8975903614457831,
+      "accuracy_se": 0.013586100894697742,
       "pct_escalated": 0.21686746987951808,
       "usd_per_100k_rows": 256.6260240963856
     },
@@ -229,6 +316,7 @@
       "escalation_policy": "low_and_medium",
       "n": 493,
       "accuracy": 0.8985801217038539,
+      "accuracy_se": 0.013596166875892693,
       "pct_escalated": 0.26369168356997974,
       "usd_per_100k_rows": 273.89794117647057
     },
@@ -238,6 +326,7 @@
       "escalation_policy": "low_and_medium",
       "n": 493,
       "accuracy": 0.8945233265720081,
+      "accuracy_se": 0.013834089710375577,
       "pct_escalated": 0.5618661257606491,
       "usd_per_100k_rows": 312.57162677484797
     }

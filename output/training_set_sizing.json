@@ -1,0 +1,304 @@
+{
+  "n_classes": 31,
+  "class_availability": {
+    "ELECTRICAL SYSTEM": 247804,
+    "POWER TRAIN": 217760,
+    "ENGINE": 168418,
+    "AIR BAGS": 156232,
+    "STEERING": 143803,
+    "ENGINE AND ENGINE COOLING": 120804,
+    "UNKNOWN OR OTHER": 116653,
+    "SERVICE BRAKES, HYDRAULIC": 106754,
+    "STRUCTURE": 103855,
+    "SUSPENSION": 89423,
+    "VEHICLE SPEED CONTROL": 85066,
+    "SERVICE BRAKES": 78584,
+    "EXTERIOR LIGHTING": 62646,
+    "FUEL/PROPULSION SYSTEM": 62131,
+    "FUEL SYSTEM, GASOLINE": 56025,
+    "VISIBILITY": 52959,
+    "TIRES": 41874,
+    "SEAT BELTS": 38935,
+    "SEATS": 28728,
+    "FORWARD COLLISION AVOIDANCE": 28121,
+    "WHEELS": 24356,
+    "VISIBILITY/WIPER": 24042,
+    "ELECTRONIC STABILITY CONTROL": 21617,
+    "EQUIPMENT": 21601,
+    "LATCHES/LOCKS/LINKAGES": 20639,
+    "OTHER": 17614,
+    "BACK OVER PREVENTION": 8175,
+    "LANE DEPARTURE": 7828,
+    "FUEL SYSTEM, OTHER": 5910,
+    "PARKING BRAKE": 4919,
+    "SERVICE BRAKES, AIR": 4520
+  },
+  "note": "All 31 classes have >=4,520 rows available even after PROD_TYPE=='V' scoping and duplicate-merge, so every per-class target up to 4,000 is achievable without running out of real examples for any class -- no class requires taking 100% of its population below a 4,000/class target.",
+  "sizing_options": [
+    {
+      "per_class_target": 500,
+      "total_rows_labeled": 15500,
+      "n_classes_below_target": 0,
+      "train_rows_after_val_holdout": 13175,
+      "val_holdout_rows": 2325,
+      "cost_by_strategy_usd": {
+        "openai/gpt-5.4-nano (solo)": 7.68,
+        "openai/gpt-5-mini (solo)": 8.2,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]": 8.52,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]": 9.15,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 10.16,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]": 11.75,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 14.1,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]": 19.97,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]": 21.21,
+        "openai/gpt-5.4-mini (solo)": 23.35,
+        "anthropic/claude-haiku-4-5 (solo)": 24.03,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]": 24.31,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]": 26.23,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]": 26.52,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 29.7,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]": 39.78,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 42.45,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]": 48.45,
+        "anthropic/claude-sonnet-5 (solo)": 72.21
+      }
+    },
+    {
+      "per_class_target": 1000,
+      "total_rows_labeled": 31000,
+      "n_classes_below_target": 0,
+      "train_rows_after_val_holdout": 26350,
+      "val_holdout_rows": 4650,
+      "cost_by_strategy_usd": {
+        "openai/gpt-5.4-nano (solo)": 15.35,
+        "openai/gpt-5-mini (solo)": 16.4,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]": 17.03,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]": 18.31,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 20.31,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]": 23.49,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 28.2,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]": 39.94,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]": 42.42,
+        "openai/gpt-5.4-mini (solo)": 46.7,
+        "anthropic/claude-haiku-4-5 (solo)": 48.05,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]": 48.62,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]": 52.46,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]": 53.04,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 59.4,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]": 79.55,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 84.91,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]": 96.9,
+        "anthropic/claude-sonnet-5 (solo)": 144.42
+      }
+    },
+    {
+      "per_class_target": 1500,
+      "total_rows_labeled": 46500,
+      "n_classes_below_target": 0,
+      "train_rows_after_val_holdout": 39525,
+      "val_holdout_rows": 6975,
+      "cost_by_strategy_usd": {
+        "openai/gpt-5.4-nano (solo)": 23.03,
+        "openai/gpt-5-mini (solo)": 24.6,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]": 25.55,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]": 27.46,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 30.47,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]": 35.24,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 42.3,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]": 59.92,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]": 63.63,
+        "openai/gpt-5.4-mini (solo)": 70.05,
+        "anthropic/claude-haiku-4-5 (solo)": 72.08,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]": 72.94,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]": 78.69,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]": 79.56,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 89.1,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]": 119.33,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 127.36,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]": 145.35,
+        "anthropic/claude-sonnet-5 (solo)": 216.63
+      }
+    },
+    {
+      "per_class_target": 2000,
+      "total_rows_labeled": 62000,
+      "n_classes_below_target": 0,
+      "train_rows_after_val_holdout": 52700,
+      "val_holdout_rows": 9300,
+      "cost_by_strategy_usd": {
+        "openai/gpt-5.4-nano (solo)": 30.71,
+        "openai/gpt-5-mini (solo)": 32.8,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]": 34.06,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]": 36.62,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 40.62,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]": 46.99,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 56.4,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]": 79.89,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]": 84.84,
+        "openai/gpt-5.4-mini (solo)": 93.4,
+        "anthropic/claude-haiku-4-5 (solo)": 96.11,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]": 97.25,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]": 104.92,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]": 106.08,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 118.8,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]": 159.11,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 169.82,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]": 193.79,
+        "anthropic/claude-sonnet-5 (solo)": 288.85
+      }
+    },
+    {
+      "per_class_target": 3000,
+      "total_rows_labeled": 93000,
+      "n_classes_below_target": 0,
+      "train_rows_after_val_holdout": 79050,
+      "val_holdout_rows": 13950,
+      "cost_by_strategy_usd": {
+        "openai/gpt-5.4-nano (solo)": 46.06,
+        "openai/gpt-5-mini (solo)": 49.2,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]": 51.1,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]": 54.92,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 60.93,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]": 70.48,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 84.6,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]": 119.83,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]": 127.26,
+        "openai/gpt-5.4-mini (solo)": 140.09,
+        "anthropic/claude-haiku-4-5 (solo)": 144.16,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]": 145.87,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]": 157.38,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]": 159.11,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 178.2,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]": 238.66,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 254.73,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]": 290.69,
+        "anthropic/claude-sonnet-5 (solo)": 433.27
+      }
+    },
+    {
+      "per_class_target": 4000,
+      "total_rows_labeled": 124000,
+      "n_classes_below_target": 0,
+      "train_rows_after_val_holdout": 105400,
+      "val_holdout_rows": 18600,
+      "cost_by_strategy_usd": {
+        "openai/gpt-5.4-nano (solo)": 61.42,
+        "openai/gpt-5-mini (solo)": 65.6,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]": 68.13,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]": 73.23,
+        "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 81.24,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]": 93.97,
+        "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 112.8,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]": 159.77,
+        "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]": 169.68,
+        "openai/gpt-5.4-mini (solo)": 186.79,
+        "anthropic/claude-haiku-4-5 (solo)": 192.21,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]": 194.5,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]": 209.84,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]": 212.15,
+        "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]": 237.6,
+        "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]": 318.22,
+        "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]": 339.63,
+        "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]": 387.59,
+        "anthropic/claude-sonnet-5 (solo)": 577.69
+      }
+    }
+  ],
+  "pricing_options_used": [
+    {
+      "strategy": "openai/gpt-5.4-nano (solo)",
+      "accuracy": 0.7730923694779116,
+      "usd_per_100k_rows": 49.52959837728195
+    },
+    {
+      "strategy": "openai/gpt-5-mini (solo)",
+      "accuracy": 0.8132530120481928,
+      "usd_per_100k_rows": 52.90494959677419
+    },
+    {
+      "strategy": "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_only]",
+      "accuracy": 0.8205645161290323,
+      "usd_per_100k_rows": 54.94311491935482
+    },
+    {
+      "strategy": "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_only]",
+      "accuracy": 0.8205645161290323,
+      "usd_per_100k_rows": 59.05833669354842
+    },
+    {
+      "strategy": "openai/gpt-5-mini -> anthropic/claude-haiku-4-5 [low_and_medium]",
+      "accuracy": 0.8326612903225806,
+      "usd_per_100k_rows": 65.51765120967745
+    },
+    {
+      "strategy": "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_only]",
+      "accuracy": 0.8154158215010142,
+      "usd_per_100k_rows": 75.78324949290065
+    },
+    {
+      "strategy": "openai/gpt-5-mini -> anthropic/claude-sonnet-5 [low_and_medium]",
+      "accuracy": 0.8306451612903226,
+      "usd_per_100k_rows": 90.9686592741936
+    },
+    {
+      "strategy": "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_only]",
+      "accuracy": 0.8235294117647058,
+      "usd_per_100k_rows": 128.850490872211
+    },
+    {
+      "strategy": "openai/gpt-5.4-nano -> anthropic/claude-haiku-4-5 [low_and_medium]",
+      "accuracy": 0.8722109533468559,
+      "usd_per_100k_rows": 136.83886815415832
+    },
+    {
+      "strategy": "openai/gpt-5.4-mini (solo)",
+      "accuracy": 0.8594377510040161,
+      "usd_per_100k_rows": 150.63879310344828
+    },
+    {
+      "strategy": "anthropic/claude-haiku-4-5 (solo)",
+      "accuracy": 0.8835341365461847,
+      "usd_per_100k_rows": 155.0105220883534
+    },
+    {
+      "strategy": "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_only]",
+      "accuracy": 0.8742393509127789,
+      "usd_per_100k_rows": 156.85177484787027
+    },
+    {
+      "strategy": "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_only]",
+      "accuracy": 0.8782961460446247,
+      "usd_per_100k_rows": 169.2282454361056
+    },
+    {
+      "strategy": "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_only]",
+      "accuracy": 0.8815261044176707,
+      "usd_per_100k_rows": 171.0890763052209
+    },
+    {
+      "strategy": "openai/gpt-5.4-mini -> anthropic/claude-haiku-4-5 [low_and_medium]",
+      "accuracy": 0.8843813387423936,
+      "usd_per_100k_rows": 191.6098073022312
+    },
+    {
+      "strategy": "anthropic/claude-haiku-4-5 -> anthropic/claude-sonnet-5 [low_and_medium]",
+      "accuracy": 0.8975903614457831,
+      "usd_per_100k_rows": 256.6260240963856
+    },
+    {
+      "strategy": "openai/gpt-5.4-mini -> anthropic/claude-sonnet-5 [low_and_medium]",
+      "accuracy": 0.8985801217038539,
+      "usd_per_100k_rows": 273.89794117647057
+    },
+    {
+      "strategy": "openai/gpt-5.4-nano -> anthropic/claude-sonnet-5 [low_and_medium]",
+      "accuracy": 0.8945233265720081,
+      "usd_per_100k_rows": 312.57162677484797
+    },
+    {
+      "strategy": "anthropic/claude-sonnet-5 (solo)",
+      "accuracy": 0.9036144578313253,
+      "usd_per_100k_rows": 465.88080321285145
+    }
+  ]
+}

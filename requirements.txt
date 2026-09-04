@@ -5,6 +5,12 @@ scikit-learn==1.9.0
 lightgbm==4.7.0
 sentence-transformers==6.0.0
 torch==2.13.0
+transformers==5.16.1
+accelerate==1.14.0
+sentencepiece==0.2.2
+protobuf==7.36.1
+peft==0.18.0
+bitsandbytes==0.48.1
 openai==3.5.0
 anthropic==1.2.0
 python-dotenv==1.2.3

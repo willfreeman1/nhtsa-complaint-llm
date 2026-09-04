@@ -1,0 +1,31 @@
+{
+  "run_name": "full_62k_plus_rare",
+  "model_name": "microsoft/deberta-v3-base",
+  "n_train": 58006,
+  "n_val": 10237,
+  "class_weighted": true,
+  "hyperparams": {
+    "epochs": 4,
+    "batch_size": 16,
+    "lr": 2e-05,
+    "max_length": 256
+  },
+  "validation_metrics": {
+    "eval_loss": 0.6918551921844482,
+    "eval_accuracy": 0.8316889713783335,
+    "eval_macro_f1": 0.7829882649016824,
+    "eval_runtime": 48.4904,
+    "eval_samples_per_second": 211.114,
+    "eval_steps_per_second": 6.599,
+    "epoch": 4.0
+  },
+  "gold_metrics": {
+    "n": 498,
+    "accuracy": 0.8534136546184738,
+    "accuracy_hard_subset": 0.7713178294573644,
+    "accuracy_dual_agreement_subset": 0.9416666666666667,
+    "macro_f1": 0.7782974495386779
+  },
+  "gold_metrics_note": "macro_f1 corrected post-hoc (was 0.6421 in the original training run) -- the original evaluate_on_gold() call passed labels=LABELS (all 40 classes) to sklearn's f1_score, which forces the 9 classes with zero examples in the 498-row gold set to contribute a guaranteed 0 to the macro average. Rung 1 (eval_models_on_gold.py) and Rung 3 (train_llm_lora.py) both omit `labels=` and only average over classes actually appearing in y_true/y_pred, so the original 0.6421 was not comparable to their macro_f1 numbers. Fixed in scripts/train_deberta.py and recomputed against the saved checkpoint via scripts/eval_checkpoint_deberta.py -- see output/rung2_percategory_and_novel_full_62k_plus_rare.json and WRITEUP.md section 4.",
+  "checkpoint_dir": "/home/willf/nhtsa-complaint-llm/checkpoints/deberta_rung2_full_62k_plus_rare/final"
+}

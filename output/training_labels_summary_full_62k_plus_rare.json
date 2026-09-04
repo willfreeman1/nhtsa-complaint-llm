@@ -1,0 +1,60 @@
+{
+  "n_total_merged": 68252,
+  "n_full_62k": 62000,
+  "n_topup_added": 6252,
+  "duplicate_cmplids_found": 0,
+  "duplicate_handling_note": null,
+  "rare_categories_before_after": {
+    "FUEL SYSTEM, DIESEL": {
+      "before": 364,
+      "after": 895
+    },
+    "CHILD SEAT": {
+      "before": 359,
+      "after": 1039
+    },
+    "INTERIOR LIGHTING": {
+      "before": 180,
+      "after": 506
+    },
+    "SERVICE BRAKES, ELECTRIC": {
+      "before": 63,
+      "after": 83
+    },
+    "TRACTION CONTROL SYSTEM": {
+      "before": 249,
+      "after": 472
+    },
+    "EQUIPMENT ADAPTIVE/MOBILITY": {
+      "before": 19,
+      "after": 50
+    },
+    "TRAILER HITCHES": {
+      "before": 195,
+      "after": 890
+    },
+    "HYBRID PROPULSION SYSTEM": {
+      "before": 368,
+      "after": 820
+    },
+    "FIRERELATED": {
+      "before": 1,
+      "after": 2
+    },
+    "COMMUNICATION": {
+      "before": 619,
+      "after": 639
+    }
+  },
+  "primary_30_classes_before": {
+    "min": 142,
+    "median": 1907,
+    "max": 4190
+  },
+  "primary_30_classes_after": {
+    "min": 152,
+    "median": 1941,
+    "max": 4676
+  },
+  "output_parquet": "training_labels_full_62k_plus_rare.parquet"
+}

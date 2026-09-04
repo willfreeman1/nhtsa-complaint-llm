@@ -17,6 +17,7 @@ Usage:
 """
 import glob
 import json
+import math
 from pathlib import Path
 
 from pricing import cost_usd
@@ -32,6 +33,7 @@ CHEAP_CANDIDATES = [
 ]
 ESCALATION_POLICIES = {
     "low_only": ("low",),
+    "medium_only": ("medium",),
     "low_and_medium": ("low", "medium"),
 }
 
@@ -74,7 +76,7 @@ def solo(models, key):
     n = len(rows)
     acc = sum(r["correct"] for r in rows) / n
     cost = sum(row_cost(m["provider"], m["model"], r["usage"]) for r in rows) / n * 100_000
-    return {"n": n, "accuracy": acc, "usd_per_100k_rows": cost}
+    return {"n": n, "accuracy": acc, "accuracy_se": math.sqrt(acc * (1 - acc) / n), "usd_per_100k_rows": cost}
 
 
 def cascade(models, cheap_key, smart_key, escalate_levels):
@@ -96,9 +98,11 @@ def cascade(models, cheap_key, smart_key, escalate_levels):
         total_cost += cost
         n_correct += int(correct)
     n = len(common_ids)
+    acc = n_correct / n
     return {
         "n": n,
-        "accuracy": n_correct / n,
+        "accuracy": acc,
+        "accuracy_se": math.sqrt(acc * (1 - acc) / n),
         "pct_escalated": n_escalated / n,
         "usd_per_100k_rows": total_cost / n * 100_000,
     }
@@ -145,12 +149,12 @@ def main():
     print("\n=== Solo baselines (cheapest first) ===")
     for key in sorted(solo_baselines, key=lambda k: solo_baselines[k]["usd_per_100k_rows"]):
         s = solo_baselines[key]
-        print(f"  {key:32s} acc={s['accuracy']*100:5.1f}%  ${s['usd_per_100k_rows']:7.2f}/100k rows")
+        print(f"  {key:32s} acc={s['accuracy']*100:5.1f}%+-{s['accuracy_se']*100:.1f}  ${s['usd_per_100k_rows']:7.2f}/100k rows")
 
     print("\n=== Cascades (cheapest first) ===")
     for c in out["cascades"]:
         print(f"  {c['cheap_model']:26s} -> {c['smart_model']:26s} [{c['escalation_policy']:15s}] "
-              f"acc={c['accuracy']*100:5.1f}%  escalated={c['pct_escalated']*100:5.1f}%  "
+              f"acc={c['accuracy']*100:5.1f}%+-{c['accuracy_se']*100:.1f}  escalated={c['pct_escalated']*100:5.1f}%  "
               f"${c['usd_per_100k_rows']:7.2f}/100k rows")
 
 

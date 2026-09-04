@@ -1,0 +1,31 @@
+{
+  "run_name": "full_62k_plus_rare",
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "n_train": 58006,
+  "n_val": 10237,
+  "hyperparams": {
+    "epochs": 3,
+    "batch_size": 4,
+    "grad_accum_steps": 4,
+    "lr": 0.0002,
+    "max_length": 1280,
+    "lora_r": 16,
+    "lora_alpha": 32
+  },
+  "validation_metrics": {
+    "eval_loss": 0.010473832488059998,
+    "eval_runtime": 392.4699,
+    "eval_samples_per_second": 26.084,
+    "eval_steps_per_second": 6.523,
+    "epoch": 3.0
+  },
+  "gold_metrics": {
+    "n": 498,
+    "n_parse_failures": 0,
+    "accuracy": 0.893574297188755,
+    "accuracy_hard_subset": 0.8062015503875969,
+    "accuracy_dual_agreement_subset": 0.9875,
+    "macro_f1": 0.8503450063432606
+  },
+  "adapter_dir": "/home/ubuntu/nhtsa/checkpoints/llm_rung3_full_62k_plus_rare/final"
+}

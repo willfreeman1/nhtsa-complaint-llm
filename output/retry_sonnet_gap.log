@@ -1,0 +1,27 @@
+Found 591 canceled cmplids in rare_topup_stage2_sonnet_chunk_00.json
+Submitting retry batch: 591 requests to claude-sonnet-5
+  batch_id=msgbatch_01Cm3ArpwLYsfDANLxNrSZUr status=in_progress
+  0s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  31s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  61s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  91s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  121s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  152s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  182s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  212s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  243s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  273s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  303s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  333s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  364s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  394s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  424s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  455s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  485s elapsed: processing=591 succeeded=0 errored=0 canceled=0 expired=0 status=in_progress
+  515s elapsed: processing=0 succeeded=591 errored=0 canceled=0 expired=0 status=ended
+  GATE [stage2_sonnet/retry_chunk00_gap] n=591 parsed=591 errors=0 parse_rate=100.0% off_list=0.0% conf={'medium': 531, 'low': 38, 'high': 22} cost=$1.4356
+Retry resolved 591/591 previously-canceled rows
+Wrote merged C:\Users\willf\git_proj\nhtsa-complaint-llm\output\batch_chunks\rare_topup_stage2_sonnet_chunk_00.json
+=== Final (gap-filled): 6,252 rows, 18 failed/unparseable, 949 escalated to sonnet, total cost $8.8641 (batch-rate) ===
+Wrote C:\Users\willf\git_proj\nhtsa-complaint-llm\data\training_labels_rare_topup.parquet
+Wrote C:\Users\willf\git_proj\nhtsa-complaint-llm\output\training_labels_summary_rare_topup.json

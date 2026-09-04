@@ -1,0 +1,30 @@
+{
+  "run_name": "full_62k_v2_raw40",
+  "model_name": "microsoft/deberta-v3-base",
+  "n_train": 52694,
+  "n_val": 9299,
+  "class_weighted": true,
+  "hyperparams": {
+    "epochs": 4,
+    "batch_size": 16,
+    "lr": 2e-05,
+    "max_length": 256
+  },
+  "validation_metrics": {
+    "eval_loss": 0.7891507148742676,
+    "eval_accuracy": 0.8305194106893214,
+    "eval_macro_f1": 0.7555899407871774,
+    "eval_runtime": 43.9773,
+    "eval_samples_per_second": 211.45,
+    "eval_steps_per_second": 6.617,
+    "epoch": 4.0
+  },
+  "gold_metrics": {
+    "n": 498,
+    "accuracy": 0.857429718875502,
+    "accuracy_hard_subset": 0.7713178294573644,
+    "accuracy_dual_agreement_subset": 0.95,
+    "macro_f1": 0.6606514582792126
+  },
+  "checkpoint_dir": "/home/willf/nhtsa/checkpoints/deberta_rung2_full_62k_v2_raw40/final"
+}

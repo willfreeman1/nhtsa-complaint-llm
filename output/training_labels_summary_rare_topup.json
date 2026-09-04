@@ -1,0 +1,31 @@
+{
+  "run_name": "rare_topup",
+  "n_rows": 6252,
+  "n_failed": 2,
+  "n_escalated": 949,
+  "pct_escalated": 0.1517914267434421,
+  "total_cost_usd": 8.8641,
+  "cost_per_100k_rows": 141.78,
+  "output_parquet": "training_labels_rare_topup.parquet",
+  "stage1_summary": {
+    "n": 6252,
+    "n_errors": 18,
+    "cost_usd": 6.5513
+  },
+  "recovery_note": "stage2_sonnet/chunk_00 batch was force-canceled mid-run (591/899 requests) when the parent process was killed by the environment; 591 canceled rows were resubmitted in a follow-up batch and 591 were successfully re-labeled by sonnet. See retry_summary below.",
+  "retry_summary": {
+    "n": 591,
+    "n_errors": 0,
+    "n_parsed": 591,
+    "parse_rate": 1.0,
+    "error_rate": 0.0,
+    "off_list_rate": 0.0,
+    "confidence": {
+      "medium": 531,
+      "low": 38,
+      "high": 22
+    },
+    "cost_usd": 1.4356
+  },
+  "n_manual_relabeled": 16
+}
