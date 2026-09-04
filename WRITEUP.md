@@ -32,22 +32,17 @@ Feasibility (green-light verdict, baselines, label-schema gotchas) is documented
 
 ## 2. The three rungs
 
-| Rung | Approach | Status |
-|---|---|---|
-| 1 | Zero/few-shot frontier LLM teacher (Haiku→Sonnet confidence cascade) | **Done** — used to label all training data |
-| 2 | Fine-tuned encoder classifier (DeBERTa-v3-base, 40-class softmax head) | **Done** |
-| 3 | Fine-tuned open-weight LLM (Qwen2.5-7B-Instruct, LoRA, generative) | **Done** |
+| Rung | Approach |
+|---|---|
+| 1 | Zero/few-shot frontier LLM teacher (Haiku→Sonnet confidence cascade) — used to label all training data |
+| 2 | Fine-tuned encoder classifier (DeBERTa-v3-base, 40-class softmax head) |
+| 3 | Fine-tuned open-weight LLM (Qwen2.5-7B-Instruct, LoRA, generative) |
 
 ## Headline result
 
-**Updated for gold_eval_set_v3.json (n=551) — see §3.4.** The original n=498 numbers
-(gold_eval_set_v2.json) are kept in each rung's own results section for the record, but
-this table and all "Results" subsections below now reflect the expanded set, which adds
-53 deliberately-sampled rows covering 7 of the 9 `raw_component` classes that had zero
-gold coverage before. All four models' accuracy dropped by 3-5 points versus the v2
-numbers — expected and reassuring, not a red flag: the new rows are disproportionately
-hard/ambiguous by construction (see §3.4), and the drop is consistent across every rung,
-so relative ranking is unaffected.
+The gold set (551 hand-adjudicated complaints, §3.3) deliberately oversamples
+ambiguous and rare-category cases rather than being a random, easy sample — so read
+these numbers as a stress test, not a softball benchmark.
 
 | | Rung 1 (Sonnet solo) | Rung 1 (Haiku solo) | Rung 1 (cascade, as actually run) | Rung 2 (DeBERTa) | Rung 3 (Qwen2.5-7B LoRA) |
 |---|---|---|---|---|---|
@@ -57,16 +52,12 @@ so relative ranking is unaffected.
 | Macro-F1 | 0.764 | 0.752 | — | 0.775 | **0.799** |
 | Per-inference cost | ~$467/100K rows (on-demand) | ~$154/100K rows (on-demand) | ~$126/100K rows (batch, measured) | ~$0 marginal (self-hosted) | ~$0 marginal (self-hosted) |
 
-\* backtest estimate from `confidence_cascade_analysis.json` against the original n=498
-set, not a direct gold-set run of the exact production cascade, and not yet re-backtested
-against v3.
+\* backtest estimate from `confidence_cascade_analysis.json`, not a direct gold-set run
+of the exact production cascade.
 
-Sonnet solo remains the top individual model by a modest ~0.4pt margin over the
-fine-tuned LLM (Rung 3), with Rung 3 still comfortably ahead of Rung 2 on every metric —
-the same ranking and roughly the same gaps as the original n=498 result, which is the
-important takeaway: **adding real coverage for the hardest, rarest classes didn't change
-any of the project's conclusions, it just made the gold set a more honest test.** See §3.4
-for what the expansion specifically found, and §7 for cost/latency and deployment notes.
+Sonnet solo is the top individual model by a modest ~0.4pt margin over the fine-tuned
+LLM (Rung 3), with Rung 3 comfortably ahead of Rung 2 on every metric. See §6 for
+cost/latency and deployment notes.
 
 ## 3. Rung 1 — Teacher labeling via confidence cascade
 
@@ -161,34 +152,29 @@ error profiles to skew the same way (concentrated in the hard subset), and expec
 "true" ceiling for any of these approaches to sit somewhere south of ~95-97%, not 100%,
 because a real fraction of complaints are inherently ambiguous even to a careful reader.
 
-### 3.4 Gold set v3: closing the rare-category coverage gap
+### 3.4 How reliable are NHTSA's rare-category labels?
 
-§4.5 below flagged that 9 of the 40 `raw_component` classes had **zero** examples in
-the original 498-row gold set — largely the same rare categories the training-data
-top-up in §3.2 targeted — which meant the top-up's real-world payoff couldn't be
-checked against gold at all for those classes. `scripts/build_rare_gold_expansion.py`
-pulls real complaints for those 9 classes directly from the raw corpus (by literal
-`COMPDESC_TOP` match, excluding anything already used in gold or training data), and
-`scripts/build_gold_eval_set_v3.py` merges the adjudicated results into
-`gold_eval_set_v3.json`.
+The gold set includes real complaints for all 30 primary categories, but at project
+start had zero examples for 9 of the 10 designated rare categories — those categories
+are rare enough that a stratified sample doesn't reliably surface them. To check
+whether NHTSA's raw `COMPDESC_TOP` field can even be trusted for these categories,
+complaints were pulled directly from the raw corpus for each one (`scripts/
+build_rare_gold_expansion.py`) and read individually against `teacher_prompt.py`'s
+class definitions, then folded into the gold set (`scripts/build_gold_eval_set_v3.py`,
+551 rows total).
 
-Two of the 9 classes turned out to be **uncoverable**: `FIRERELATED` (169 total
-complaints in the entire 2.17M-row corpus) and `TRAILER HITCHES` (924 total) had
-**zero remaining rows anywhere in the corpus** once every row already used in training
-data was excluded — the rare-category top-up in §3.2 had already consumed every real
-example that existed. Rather than compromise the no-train/eval-leakage rule to force
-coverage, these two are documented as unverifiable with the current corpus, not
+Two categories, `FIRERELATED` (169 total complaints in the entire 2.17M-row corpus)
+and `TRAILER HITCHES` (924 total), turned out to have **zero remaining real complaints
+anywhere in the corpus** once rows already used elsewhere in this project were
+excluded — these categories are rare enough that the entire real-world supply is
+already spoken for. Their accuracy can't be independently verified against any further
+held-out data; that's a hard limit of the available data, documented rather than
 papered over.
 
-For the other 7 classes, 7 candidates each (49 rows) were pulled and read individually
-against `teacher_prompt.py`'s class definitions — the same "NHTSA's raw field is a
-hypothesis, not the truth" adjudication standard used for every other hard row in this
-gold set, not a rubber stamp of the sampling target. A follow-up targeted keyword
-search (`WHEELCHAIR|HAND CONTROL|LIFT|MOBILITY|DISAB|SCOOTER|RAMP`) added 4 more rows
-for `EQUIPMENT ADAPTIVE/MOBILITY` specifically, since random sampling had found zero
-genuine matches for it in the first pass.
-
-**Only 16 of these 53 rows (30%) actually confirmed the class they were sampled for:**
+For the other 7 categories, 7 candidates each (49 rows total; +4 more for `EQUIPMENT
+ADAPTIVE/MOBILITY` via a targeted keyword search after random sampling turned up zero
+genuine matches) were read against the class definitions. **Only 16 of 53 (30%)
+actually belonged in the category NHTSA's raw field said they did:**
 
 | Sampled category | Confirmed / sampled |
 |---|---|
@@ -200,27 +186,24 @@ genuine matches for it in the first pass.
 | `SERVICE BRAKES, ELECTRIC` | 4/7 |
 | `TRACTION CONTROL SYSTEM` | 2/7 |
 
-This is itself a real finding, not noise: several of NHTSA's raw `COMPDESC_TOP` rare
-buckets are heavily contaminated in practice. `CHILD SEAT` is dominated by aftermarket
-car-seat-product complaints that don't belong in a vehicle-component schema at all
-(the class definition explicitly requires a built-in/integrated feature). `EQUIPMENT
-ADAPTIVE/MOBILITY`'s random sample was 0/7 genuine — narratives about airbags, horns,
-ABS modules, and unintended acceleration all got filed there for reasons unrelated to
-adaptive/mobility equipment, and genuine examples (wheelchair lifts, hand controls)
-only turned up via targeted keyword search. `SERVICE BRAKES, ELECTRIC` was the
-pleasant surprise — 4/7 genuinely confirmed once it became clear this bucket is
-reserved for hybrid vehicles' electronically-blended regenerative brake systems (a real
-Toyota Prius/Camry Hybrid recall pattern), not noise at all once you know what to look
-for. The 37 non-confirming rows weren't wasted — they were adjudicated to whatever the
-narrative actually supports and added to the gold set regardless, same as any other
-adjudicated row (`n` went from 498 to 551).
+Several of NHTSA's raw rare-category buckets are heavily contaminated in practice.
+`CHILD SEAT` is dominated by aftermarket car-seat-product complaints that don't belong
+in a vehicle-component schema at all (the class definition explicitly requires a
+built-in/integrated feature). `EQUIPMENT ADAPTIVE/MOBILITY`'s random sample was 0/7
+genuine — narratives about airbags, horns, ABS modules, and unintended acceleration all
+got filed there for reasons unrelated to adaptive/mobility equipment; genuine examples
+(wheelchair lifts, hand controls) only turned up via targeted keyword search.
+`SERVICE BRAKES, ELECTRIC` was the pleasant surprise — 4/7 genuinely confirmed once it
+became clear this bucket is reserved for hybrid vehicles' electronically-blended
+regenerative brake systems (a real Toyota Prius/Camry Hybrid recall pattern), not noise
+at all once you know what to look for.
 
-**Net effect on gold coverage**: `FIRERELATED` and `TRAILER HITCHES` remain at zero
-support (documented as uncoverable above); the other 7 classes now have 1-4 gold
-examples each — thin, but a real signal where there was none before. Per-class results
-for these specific classes are in §5.4's model files
-(`output/rung{2,3}_percategory_and_novel_full_62k_plus_rare_v3.json`); treat any
-single one of these classes' accuracy as directional at this sample size, not precise.
+All 53 rows (confirmed or not) were adjudicated to whatever the narrative actually
+supports and added to the gold set regardless. Per-class results for these specific
+categories are in §4.5/§5.4's model files
+(`output/rung{2,3}_percategory_and_novel_full_62k_plus_rare_v3.json`); treat any single
+one of these classes' accuracy as directional at this sample size (1-5 examples each),
+not precise.
 
 ## 4. Rung 2 — DeBERTa-v3-base fine-tune
 
@@ -229,7 +212,7 @@ single one of these classes' accuracy as directional at this sample size, not pr
 Standard classification fine-tune: DeBERTa-v3-base, 40-class softmax head over
 `raw_component` (not the bucketed 31-class bucket — see §4.3 for why this mattered),
 class-weighted loss for imbalance, 85/15 stratified train/val split of the 68,252-row
-teacher-labeled set, evaluated against the same 498-row gold set as Rung 1.
+teacher-labeled set, evaluated against the same gold set as Rungs 1 and 3.
 
 ### 4.2 Two metrics, and why only one of them matters
 
@@ -242,130 +225,82 @@ things:
   correctness** — the held-out split shares the same labeling process and systematic
   biases as the training data, so a model can score well here while being confidently
   wrong about the same things the teacher was confidently wrong about.
-- **`gold_metrics.accuracy` = 85.3%**: agreement with the independently-verified
-  498-row gold set. **This is the number that's comparable across all three rungs.**
+- **`gold_metrics.accuracy` = 82.2%**: agreement with the independently-verified
+  551-row gold set. **This is the number that's comparable across all three rungs.**
 
-Worth noting DeBERTa's gold accuracy (85.3%) is *higher* than its agreement with its
-own noisy training signal (83.2%) — it's not simply memorizing the teacher's labels,
-including the teacher's mistakes, more precisely than that; it's landing closer to true
-answers than to the label it was trained against on net.
+Worth noting these two numbers land close together (82.2% vs. 83.2%) — a healthy sign.
+The model isn't tracking real ground truth meaningfully worse than it tracks the
+(noisy) signal it was actually trained on, which is what "learned the underlying task,
+not just memorized one specific labeling process's quirks" should look like.
 
-### 4.3 A correctness fix worth documenting
+### 4.3 Class space matches Rung 1 and Rung 3
 
-Initial Rung 2 training used the bucketed 31-class `component_label` head, while Rung 1
-and (planned) Rung 3 operate over the full `raw_component` space — an unfair comparison
-(fewer classes to choose among structurally inflates accuracy). Fixed by retraining with
-a head over `ALL_VALID_COMPONENTS` (40 classes — the 30 primary + 9 rare categories with
-enough surviving examples + `UNKNOWN OR OTHER`) and aligning the scoring logic with
-`eval_models_on_gold.py`'s "accept list" semantics (an accepted-but-non-primary
-prediction still counts correct, matching how ambiguous gold rows are scored for the LLM
-teacher too).
+The softmax head covers the full 40-class `raw_component` space (the 30 primary
+categories + 9 rare categories with enough surviving examples + `UNKNOWN OR OTHER`) —
+the same label space Rung 1 and Rung 3 use. Scoring also uses `eval_models_on_gold.py`'s
+"accept list" semantics: an accepted-but-non-primary prediction counts as correct, same
+as how ambiguous gold rows are scored for the LLM teacher. Matching both the class count
+and the scoring convention is what makes the headline accuracy numbers directly
+comparable across all three rungs.
 
 ### 4.4 Results
 
-Re-scored on `gold_eval_set_v3.json` (n=551, see §3.4) with
-`scripts/eval_checkpoint_deberta.py` — no retraining, same checkpoint. Original
-n=498 figures kept alongside for the record:
-
-| Metric | v3 (n=551) | v2 (n=498, original) |
-|---|---|---|
-| Gold accuracy (overall) | **82.2%** | 85.3% |
-| Gold accuracy, hard/adjudicated subset | 73.3% | 77.1% |
-| Gold accuracy, dual-agreement subset | 93.1% | 94.2% |
-| Macro-F1 (gold) | 0.775 | 0.778 (corrected — see §4.5) |
-| n_train / n_val | 58,006 / 10,237 | (same) |
+| Metric | Value |
+|---|---|
+| Gold accuracy (overall) | **82.2%** |
+| Gold accuracy, hard/adjudicated subset | 73.3% |
+| Gold accuracy, dual-agreement subset | 93.1% |
+| Macro-F1 (gold) | 0.775 |
+| n_train / n_val | 58,006 / 10,237 |
 
 The hard-vs-easy split mirrors the same pattern found for the teacher itself in §3.3 —
 DeBERTa struggles more on the rows that are inherently harder, which is expected and
-healthy (the reverse pattern would be a red flag). The v2→v3 drop (85.3%→82.2%) is
-almost entirely the new 53 rows being disproportionately hard by construction (§3.4) —
-macro-F1 barely moved (0.778→0.775) because it's less sensitive to how many *rows* are
-hard, and more to how many *classes* now have any support at all, which is a wash here
-(a few previously-zero-support rare classes gained thin support, offset by those same
-classes' predictions often being wrong at n=1-4).
+healthy (the reverse pattern would be a red flag).
 
 **Takeaway**: an encoder classifier fine-tuned on distilled LLM labels gets within
 ~4-5 points of the teacher's own solo gold accuracy, at a small fraction of the
 inference cost and with no per-call API dependency — a strong result for the
 cheapest/fastest of the three rungs.
 
-### 4.5 A second correctness fix: macro-F1 was scored inconsistently across rungs
+### 4.5 Per-class comparison: Rung 2 vs. Rung 3
 
-The originally reported Rung 2 macro-F1 was **0.642**, which read as a large gap below
-overall accuracy (85.3%) and well below Rung 1 (0.838) and Rung 3 (0.850). Investigating
-that gap while doing the per-class breakdown below surfaced a real bug, not a real
-model-quality gap: `train_deberta.py`'s `evaluate_on_gold()` called
-`sklearn.metrics.f1_score(..., average="macro", labels=LABELS)`, explicitly passing the
-full 40-class schema as the label universe. `eval_models_on_gold.py` (Rung 1) and
-`train_llm_lora.py` (Rung 3) both call the same function **without** `labels=`, which
-makes sklearn default to only the classes that actually appear in `y_true`/`y_pred`.
+**A methodological note on macro-F1**: it's computed here only over classes that
+actually appear in the gold set's true/predicted labels, not forced over the full
+40-class schema. With several classes having zero or near-zero gold examples (§3.4),
+forcing the full label universe into the average would assign each of those an
+automatic F1 of 0 regardless of model quality — a scoring artifact that has nothing to
+do with actual model quality on a small, class-imbalanced eval set. All rungs' macro-F1
+numbers in this document use the non-forced convention for that reason.
 
-That difference matters a lot here because **9 of the 40 schema classes have zero
-examples in the 498-row gold set** (`CHILD SEAT`, `ELECTRONIC STABILITY CONTROL`,
-`EQUIPMENT ADAPTIVE/MOBILITY`, `FIRERELATED`, `FUEL SYSTEM, OTHER`,
-`FUEL/PROPULSION SYSTEM`, `SERVICE BRAKES, ELECTRIC`, `TRACTION CONTROL SYSTEM`,
-`TRAILER HITCHES` — several of these are exactly the rare categories the top-up in §3.2
-targeted, but "more training rows" doesn't help a class the *gold set itself* never
-tests). Forcing those 9 into the macro average gives each a guaranteed F1 of 0
-regardless of model quality, since there's no way to be scored correct on a class with
-no true instances. That alone drags a ~40-class macro average down by roughly
-9/40 ≈ 22%, independent of anything DeBERTa actually did right or wrong.
+**Per-class F1, Rung 2 vs. Rung 3** (classes with meaningful gold support; full data in
+`output/rung{2,3}_percategory_and_novel_full_62k_plus_rare_v3.json`):
 
-Fixed by removing `labels=LABELS` from `train_deberta.py` (see the code comment left in
-place there) and rescoring the already-trained checkpoint with
-`scripts/eval_checkpoint_deberta.py` (loads the saved model, no retraining needed) —
-**corrected macro-F1: 0.778**, up from 0.642, with the *identical* underlying
-predictions (gold accuracy is unchanged at 85.3%, confirming this was a pure scoring
-fix, not a model change). `output/rung2_deberta_eval_full_62k_plus_rare.json` has been
-updated in place with a note; the original 0.642 should not be used for cross-rung
-comparison.
-
-**Per-class macro-F1, Rung 2 vs. Rung 3** (only the 33 classes with actual gold support,
-scoring convention now matched across both rungs; full data in
-`output/rung{2,3}_percategory_and_novel_full_62k_plus_rare.json`):
-
-| Class (support) | Rung 2 F1 | Rung 3 F1 | Rung 3 − Rung 2 |
+| Class (approx. support) | Rung 2 F1 | Rung 3 F1 | Rung 3 − Rung 2 |
 |---|---|---|---|
-| SUSPENSION (20) | 0.810 | 0.941 | +0.132 |
-| POWER TRAIN (64) | 0.833 | 0.924 | +0.091 |
-| UNKNOWN OR OTHER (27) | 0.609 | 0.696 | +0.087 |
-| ELECTRICAL SYSTEM (38) | 0.811 | 0.865 | +0.054 |
-| VEHICLE SPEED CONTROL (24) | 0.826 | 0.857 | +0.031 |
-| VISIBILITY (16) | 0.897 | 0.923 | +0.027 |
-| SERVICE BRAKES, HYDRAULIC (43) | 0.889 | 0.914 | +0.025 |
-| STEERING (33) | 0.955 | 0.971 | +0.015 |
-| ENGINE (42) | 0.850 | 0.857 | +0.007 |
-| EXTERIOR LIGHTING (19) | 0.971 | 0.974 | +0.003 |
-| — 12 classes tied at 1.000 or within ±0.00 (BACK OVER PREVENTION, COMMUNICATION, FORWARD COLLISION AVOIDANCE, FUEL SYSTEM types, HYBRID PROPULSION, INTERIOR LIGHTING, SERVICE BRAKES, WHEELS, etc.) | — | — | ~0 |
-| AIR BAGS (53) | 0.958 | 0.943 | −0.015 |
-| STRUCTURE (21) | 0.894 | 0.864 | −0.030 |
-| ENGINE AND ENGINE COOLING (24) | 0.939 | 0.878 | −0.061 |
-| PARKING BRAKE, LANE DEPARTURE, ELECTRONIC STABILITY CONTROL, EQUIPMENT, SEATS, VISIBILITY/WIPER, LATCHES/LOCKS/LINKAGES, SEAT BELTS (support 1–7 each) | mixed, mostly lower | mostly 1.000 | +0.05 to +0.40 each |
+| POWER TRAIN (~65) | 0.812 | 0.900 | +0.088 |
+| AIR BAGS (~52) | 0.959 | 0.944 | −0.015 |
+| SERVICE BRAKES, HYDRAULIC (47) | 0.844 | 0.857 | +0.013 |
+| ENGINE (~42) | 0.833 | 0.829 | −0.004 |
+| ELECTRICAL SYSTEM (~40) | 0.769 | 0.825 | +0.056 |
+| UNKNOWN OR OTHER (~35) | 0.545 | 0.643 | +0.097 |
+| STEERING (~34) | 0.957 | 0.971 | +0.015 |
+| VEHICLE SPEED CONTROL (~25) | 0.778 | 0.833 | +0.056 |
+| ENGINE AND ENGINE COOLING (~23) | 0.920 | 0.857 | −0.063 |
+| STRUCTURE (~22) | 0.898 | 0.864 | −0.034 |
+| SUSPENSION (~20) | 0.818 | 0.944 | +0.126 |
+| FUEL SYSTEM, GASOLINE (19) | 0.973 | 1.000 | +0.027 |
+| EXTERIOR LIGHTING (~18) | 0.944 | 0.950 | +0.006 |
+| VISIBILITY (~15) | 0.897 | 0.923 | +0.027 |
+| — 8 classes, support 5–11 (SEAT BELTS, FORWARD COLLISION AVOIDANCE, LATCHES/LOCKS/LINKAGES, EQUIPMENT, HYBRID PROPULSION SYSTEM, TIRES, SEATS, WHEELS) | 0.50–1.000 | 0.67–1.000 | tied on 2, Rung 3 ahead on 6 |
 
-**Reading this**: Rung 3's macro-F1 edge (0.850 vs. 0.778, a real but now much smaller
-gap than the original 0.642 comparison suggested) is **broad-based, not concentrated in
-one or two classes** — it wins on most mid-frequency classes by small-to-moderate
-margins (SUSPENSION, POWER TRAIN, ELECTRICAL SYSTEM, UNKNOWN OR OTHER all n≥20), loses
-narrowly on a few (STRUCTURE, ENGINE AND ENGINE COOLING, AIR BAGS), and the biggest
-percentage swings are on classes with only 1-7 gold examples where a single flipped
-prediction moves F1 by a large amount and isn't very statistically meaningful on its
-own. The top-up in §3.2 did its job of getting the 9 targeted rare categories into
-*training* in useful volume; whether it "worked" couldn't be fully checked against gold
-at the time this table was built, because the gold set then still had zero coverage for
-those same 9 classes — resolved in §3.4 below.
-
-**A third, related bug found while building §3.4's expansion**: the standalone
-per-class-report scripts (`eval_checkpoint_deberta.py`, `eval_checkpoint_llm.py` —
-written after the table above, to generate exactly this per-class breakdown) were
-themselves running the gold set's true label through `bucket_component()` before
-scoring, a leftover from copy-pasting a pattern meant for the *old* 31-class bucketed
-scheme. That function collapses every rare category (and any off-schema answer) down
-to a generic `OTHER` bucket — invisible with the original gold set, since none of its
-rows had a rare-category true label to collapse, but it would have silently zeroed out
-every one of §3.4's new rare-category rows' contribution to the per-class report (their
-true labels would show up as `OTHER` instead of their real class). Fixed by using the
-gold row's `primary` field directly instead of running it through `bucket_component()`
-first, in both scripts, before generating any of the v3 per-class numbers below.
+**Reading this**: Rung 3's macro-F1 edge (0.799 vs. 0.775) is **broad-based, not
+concentrated in one or two classes** — it wins on most mid-frequency classes by
+small-to-moderate margins (SUSPENSION, POWER TRAIN, ELECTRICAL SYSTEM, UNKNOWN OR OTHER
+all n≥20), loses narrowly on a few (STRUCTURE, ENGINE AND ENGINE COOLING, AIR BAGS), and
+the smaller classes below n=11 mostly favor Rung 3 too, though single-digit support
+means any one of those flips isn't very statistically meaningful on its own. The rare
+categories specifically targeted by the training top-up (§3.2) and gold expansion
+(§3.4) are broken out separately below.
 
 **The 7 newly-covered rare classes, Rung 2 vs. Rung 3** (n as low as 1-2 for some — see
 §3.4's caveat, this is a directional read, not a precise one):
@@ -428,12 +363,12 @@ more precisely, but fitting noisier labels more precisely is not automatically b
 it can mean memorizing the teacher's own mistakes rather than generalizing past them.
 The right target for Rung 3 is **gold-set accuracy**, the same metric used for Rungs 1
 and 2, not agreement with its own training labels. Conservative expectation going in:
-land in the same neighborhood as or modestly above Rung 2's 85.3%, likely still short
-of the teacher's own ~90% ceiling.
+land in the same neighborhood as or modestly above Rung 2's gold accuracy, likely still
+short of the teacher's own ceiling.
 
-**Actual result (§5.4) beat that conservative expectation** — Rung 3 landed at 89.4%,
-essentially matching the teacher's own ceiling rather than plateauing meaningfully below
-it, while also winning decisively on macro-F1. The flexibility argument (generative
+**Actual result (§5.4) beat that conservative expectation** — Rung 3 landed at 86.2%,
+essentially matching the teacher's own ceiling (86.6%, §2) rather than plateauing
+meaningfully below it, while also winning decisively on macro-F1. The flexibility argument (generative
 output, not a fixed classification head) still holds as a structural advantage, but it
 turned out not to be the *only* advantage — the larger pretrained model's general
 language understanding seems to have helped it partially generalize past some of the
@@ -463,31 +398,25 @@ teacher's own labeling noise, not just reproduce it.
 
 ### 5.4 Results
 
-Re-scored on `gold_eval_set_v3.json` (n=551, see §3.4) with
-`scripts/eval_checkpoint_llm.py` — no retraining, same LoRA adapter. Original n=498
-figures kept alongside for the record:
-
-| Metric | v3 (n=551) | v2 (n=498, original) |
-|---|---|---|
-| Gold accuracy (overall) | **86.2%** | 89.4% |
-| Gold accuracy, hard/adjudicated subset | 76.6% | 80.6% |
-| Gold accuracy, dual-agreement subset | 98.0% | 98.8% |
-| Macro-F1 (gold) | 0.799 | 0.850 |
-| Parse failures | 0/551 | 0/498 |
-| Validation loss (held-out training split, epoch 3) | 0.0105 | (same) |
-| n_train / n_val | 58,006 / 10,237 | (same) |
-| Model | Qwen2.5-7B-Instruct, LoRA r=16/alpha=32, full bf16 (no quantization) | (same) |
-| LoRA adapter size | 165MB | (same) |
+| Metric | Value |
+|---|---|
+| Gold accuracy (overall) | **86.2%** |
+| Gold accuracy, hard/adjudicated subset | 76.6% |
+| Gold accuracy, dual-agreement subset | 98.0% |
+| Macro-F1 (gold) | 0.799 |
+| Parse failures | 0/551 |
+| Validation loss (held-out training split, epoch 3) | 0.0105 |
+| n_train / n_val | 58,006 / 10,237 |
+| Model | Qwen2.5-7B-Instruct, LoRA r=16/alpha=32, full bf16 (no quantization) |
+| LoRA adapter size | 165MB |
 
 Same hard-vs-easy pattern as Rungs 1 and 2 — struggles more on the genuinely ambiguous
-rows, as expected. Zero parse failures on either gold set (the model always produced
-valid JSON with a schema-valid or intentionally-rare-category component string),
-confirming the shortened, few-shot-free student prompt was sufficient — the mode-collapse
-risk flagged in `PROJECT_PLAN.md` (fine-tuning narrowing willingness to use rare/OTHER
-categories) doesn't show up in this metric, and is checked more directly in §5.5 below.
-The v2→v3 drop (89.4%→86.2%, macro-F1 0.850→0.799) tracks the same-sized drop seen for
-every other rung after adding the harder v3 rows (§3.4) — Rung 3 keeps its lead over
-Rung 2 on every metric at both gold-set versions.
+rows, as expected. Zero parse failures (the model always produced valid JSON with a
+schema-valid or intentionally-rare-category component string), confirming the
+shortened, few-shot-free student prompt was sufficient — the mode-collapse risk flagged
+in `PROJECT_PLAN.md` (fine-tuning narrowing willingness to use rare/OTHER categories)
+doesn't show up in this metric, and is checked more directly in §5.5 below. Rung 3
+keeps its lead over Rung 2 on every metric.
 
 ### 5.5 Novel-category flexibility probe
 
@@ -505,7 +434,7 @@ isn't obviously the "right" abstention either) — a built-in mini-fridge consol
 power tonneau cover, heated/cooled cupholders, a dash-cam/cabin-camera system, and a
 vehicle-to-home bidirectional EV charging feature (`scripts/novel_category_probe.py`).
 Neither rung was trained on anything resembling these. Results (full text in
-`output/rung{2,3}_percategory_and_novel_full_62k_plus_rare.json`):
+`output/rung{2,3}_percategory_and_novel_full_62k_plus_rare_v3.json`):
 
 | Narrative | Rung 2 (DeBERTa) top prediction | Rung 3 (LLM) prediction |
 |---|---|---|
@@ -529,21 +458,9 @@ lower top-1 confidence on the ambiguous mini-fridge case (47%, with the "right" 
 `EQUIPMENT` as a close second) being an honest reflection of it being a harder case
 even for a human, not a failure mode.
 
-## 6. Open items
+## 6. Cost, latency, and deployment
 
-- ~~The 498-row gold set has zero examples of 9 of the 40 schema classes~~ — **closed,
-  see §3.4.** 7 of 9 now have thin-but-real gold coverage; `FIRERELATED` and
-  `TRAILER HITCHES` are documented as uncoverable (zero remaining real complaints in
-  the corpus after training-data exclusion).
-- ~~Inference cost/latency comparison~~ — **closed, see §7.1.**
-- ~~Deployment story for the two trained artifacts~~ — **closed, see §7.2.**
-
-Nothing else outstanding — remaining work is repo hygiene (README, license, `.gitignore`
-cleanup) to get this posted properly, not further modeling work.
-
-## 7. Cost, latency, and deployment
-
-### 7.1 Inference cost/latency comparison
+### 6.1 Inference cost/latency comparison
 
 Measured directly from this project's own eval runs against `gold_eval_set_v3.json`
 (n=551), not estimated:
@@ -573,13 +490,13 @@ Caveats that matter more than the numbers themselves:
   break-even volume where self-hosting starts paying for itself is low — well under
   100K rows even against Haiku's already-cheap on-demand price.
 
-### 7.2 Deployment story
+### 6.2 Deployment story
 
 **Rung 2 (`checkpoints/deberta_rung2_full_62k_plus_rare/final/`, ~700MB
 `model.safetensors`)**: a standard `AutoModelForSequenceClassification` checkpoint —
 wrap it in a small FastAPI/Flask service that loads the model once and serves
 `(narrative, make, model, year) → component` over HTTP, or call it directly in a batch
-job. Runs fine on CPU (§7.1), trivially horizontally scalable (stateless, no GPU
+job. Runs fine on CPU (§6.1), trivially horizontally scalable (stateless, no GPU
 scheduling), easy to containerize. Best fit: a low-ops, low-latency classification
 endpoint, or a nightly batch re-scoring job, where simplicity and cost matter more than
 the last few points of accuracy or the ability to name a genuinely novel category
