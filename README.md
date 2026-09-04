@@ -30,6 +30,49 @@ inference cost once trained. See `WRITEUP.md` §7 for the full cost/latency/depl
 breakdown, and §3.3 for a skeptical read on what that ~87% actually means (the teacher
 isn't a perfect oracle; several of its "errors" are genuinely ambiguous complaints).
 
+## Try it
+
+`scripts/predict.py` loads the trained Rung 2 (DeBERTa-v3) checkpoint and classifies a
+complaint narrative into one of the 40 component categories — CPU-only, no GPU or
+hosted API needed.
+
+```bash
+python scripts/predict.py --demo
+# or classify your own narrative:
+python scripts/predict.py "The brake pedal went to the floor..." --make Toyota --model Camry --year 2019
+```
+
+Real output from `python scripts/predict.py --demo` (CPU, ~10s including model load):
+
+```text
+Device: cpu
+Loading checkpoint: checkpoints/deberta_rung2_full_62k_plus_rare/final
+
+Narrative: The brake pedal went to the floor without stopping the vehicle. I had to use the emergency brake to...
+Vehicle: 2019 Toyota Camry
+
+Predicted component: SERVICE BRAKES, HYDRAULIC  (96.9%)
+Other candidates:
+  SERVICE BRAKES                 1.4%
+  SERVICE BRAKES, AIR            0.7%
+
+Narrative: During a minor fender bender at low speed, the driver's side airbag deployed unexpectedly and caused...
+Vehicle: 2020 Honda Accord
+
+Predicted component: AIR BAGS  (99.9%)
+Other candidates:
+  SEAT BELTS                     0.0%
+  ELECTRICAL SYSTEM              0.0%
+
+Narrative: While driving on the highway at 65 mph, the steering wheel became extremely loose and the vehicle wa...
+Vehicle: 2018 Ford F-150
+
+Predicted component: STEERING  (99.7%)
+Other candidates:
+  ELECTRICAL SYSTEM              0.0%
+  EQUIPMENT ADAPTIVE/MOBILITY    0.0%
+```
+
 ## Repo layout
 
 ```
