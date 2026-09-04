@@ -1,8 +1,11 @@
 # Project plan: NHTSA complaint classification — from feasibility to fine-tune
 
-Feasibility verdict (see `output/FINAL_REPORT.md`): **green-light.** This doc picks up
-from there and lays out the build plan, including a three-way model comparison that
-became part of the plan during the feasibility discussion.
+An earlier feasibility pass (manual review of narratives, simple baselines, a blind
+zero-shot LLM probe) came back green-light: complaint text is substantive, NHTSA's own
+labels are usable but noisy, and a properly-prompted LLM clears the bar simple
+baselines can't reach. This doc picks up from there and lays out the build plan,
+including a three-way model comparison that became part of the plan during the
+feasibility discussion.
 
 ## The three-way comparison
 

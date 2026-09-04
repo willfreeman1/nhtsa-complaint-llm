@@ -123,9 +123,12 @@ WRITEUP.md          Full writeup: methodology, every metric, error analysis, dec
 1. **Data prep** — `scripts/load_data.py` (raw NHTSA flat file → parquet) →
    `scripts/prepare_training_data.py` (clean, scope to `PROD_TYPE='V'`, dedupe).
 2. **Label schema + gold set** — `scripts/schema.py`, `output/label_schema.json`,
-   `output/NHTSA_CODING_GOTCHAS.md`. The hand-checked answer key was built/expanded via
-   `scripts/build_gold_eval_set*.py` and `scripts/build_rare_gold_expansion.py`
-   (see `WRITEUP.md` §2.2 for that methodology).
+   `output/NHTSA_CODING_GOTCHAS.md`. The hand-checked answer key went through several
+   rounds of manual review before landing on `output/gold_eval_set_v3.json` (551 rows);
+   only the last, best-documented expansion step is kept as a runnable script —
+   `scripts/build_rare_gold_expansion.py` (samples real complaints for gold-missing
+   rare categories) + `scripts/build_gold_eval_set_v3.py` (adjudicates and merges them
+   in) — see `WRITEUP.md` §2.2 for that methodology.
 3. **Teacher labeling** — `scripts/teacher_prompt.py` (prompt/schema definitions) +
    `scripts/run_batch_cascade_labeling.py` (the cheap-model-first, escalate-if-uncertain
    cascade, run as a batch job over ~62K complaints + a targeted rare-category top-up

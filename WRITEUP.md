@@ -1,14 +1,11 @@
 # NHTSA Complaint Classification — Project Writeup
 
-**The big picture**: NHTSA's public complaint database tags every complaint with a
+**The National Highway Traffic Safety Administration's (NHTSA's) public complaint database tags every complaint with a
 vehicle component, but that tagging is noisy. This project fine-tunes a small,
 open-weight LLM that reads a raw complaint narrative and assigns the correct component
 instead — accurately enough to nearly match a frontier LLM asked fresh every time, at a
-small fraction of the ongoing cost once trained. See the top-level
-[`README.md`](README.md) for that framing written for a reader new to the project.
-**This document is the full technical record underneath it**, kept to what a reader
-actually needs to evaluate the approach and its results — not a lab notebook of every
-step taken along the way.
+small fraction of the ongoing cost once trained.**
+
 
 ## 1. Goal and approach
 
@@ -23,9 +20,6 @@ approach builds its own training labels first (§2), then compares two ways of t
 those labels into a small, deployable model — a fine-tuned encoder classifier (§3) and
 a fine-tuned open-weight LLM (§4) — against each other and against the frontier LLM
 that generated their training labels in the first place (§5).
-
-Feasibility (green-light verdict, baselines, label-schema gotchas) is documented in
-`output/FINAL_REPORT.md` and `output/NHTSA_CODING_GOTCHAS.md` and isn't repeated here.
 
 ## 2. Building the training labels: a frontier LLM as teacher
 
@@ -76,9 +70,7 @@ Before training, the gold test set had zero real examples for 9 of the rarest
 categories in the schema, so we pulled and manually read real complaints for each one
 to check whether NHTSA's own raw category field can even be trusted there. **Only 30%
 of the complaints NHTSA had tagged into a given rare category actually belonged in
-it.** Several of these buckets are heavily contaminated in practice — e.g. most
-complaints filed under `CHILD SEAT` are actually about aftermarket car seats, which
-isn't a vehicle component at all, and most complaints filed under
+it.** Several of these buckets are heavily contaminated in practice — e.g. most complaints filed under
 `EQUIPMENT ADAPTIVE/MOBILITY` turned out to be misfiled airbag, horn, or ABS
 complaints unrelated to adaptive/mobility equipment. One pleasant exception:
 `SERVICE BRAKES, ELECTRIC` turned out to be legitimately reserved for hybrid vehicles'

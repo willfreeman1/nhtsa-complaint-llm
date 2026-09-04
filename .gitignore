@@ -5,7 +5,7 @@ data/*.parquet
 output/*.npy
 
 # Model weight binaries -- big (100MB-900MB), regenerate by re-running the training
-# scripts against a rented GPU (see WRITEUP.md §4/§5). Small config/tokenizer/README
+# scripts against a rented GPU (see WRITEUP.md §6.2). Small config/tokenizer/README
 # files inside checkpoints/ ARE tracked (not excluded here) so the repo documents each
 # run's exact hyperparameters/adapter config without the multi-hundred-MB weights.
 checkpoints/**/*.safetensors
