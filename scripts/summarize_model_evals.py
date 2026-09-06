@@ -7,11 +7,18 @@ may itself be wrong and should be re-read.
 """
 import glob
 import json
+from collections import Counter
 from pathlib import Path
 
 from pricing import rates
 
 OUT_DIR = Path(__file__).parent.parent / "output"
+
+
+def _load_gold(path: Path):
+    with open(path) as f:
+        gold = json.load(f)
+    return gold, {r["cmplid"]: r for r in gold["rows"]}
 
 
 def main():
@@ -23,9 +30,13 @@ def main():
         print("No model_eval_*.json files found.")
         return
 
-    with open(OUT_DIR / "gold_eval_set_v2.json") as f:
-        gold = json.load(f)
-    gold_by_id = {r["cmplid"]: r for r in gold["rows"]}
+    eval_files = [e.get("eval_set", {}).get("file") for e in evals]
+    eval_files = [f for f in eval_files if f]
+    if not eval_files:
+        raise RuntimeError("No eval_set.file found in model_eval_*.json files")
+
+    primary_gold_file = Counter(eval_files).most_common(1)[0][0]
+    gold, gold_by_id = _load_gold(OUT_DIR / primary_gold_file)
 
     table = []
     for e in evals:
@@ -56,17 +67,20 @@ def main():
     table.sort(key=lambda r: (-(r["accuracy"] or 0)))
 
     # Rows nobody got right -- suspect the gold set here, not the models.
-    per_model_correct = {}
-    for e in evals:
-        for r in e["results"]:
-            per_model_correct.setdefault(r["cmplid"], []).append(r["correct"])
+    result_ids = [set(r["cmplid"] for r in e["results"]) for e in evals]
+    common_ids = set.intersection(*result_ids) if result_ids else set()
     universally_missed = []
-    for cid, flags in per_model_correct.items():
-        if len(flags) == len(evals) and not any(flags):
-            g = gold_by_id[cid]
+    missing_in_primary_gold = []
+    for cid in sorted(common_ids, key=str):
+        hits = [next((r for r in e["results"] if r["cmplid"] == cid), None) for e in evals]
+        flags = [bool(h and h.get("correct")) for h in hits]
+        if not any(flags):
+            g = gold_by_id.get(cid)
+            if g is None:
+                missing_in_primary_gold.append(cid)
+                continue
             preds = {}
-            for e in evals:
-                hit = next((r for r in e["results"] if r["cmplid"] == cid), None)
+            for e, hit in zip(evals, hits):
                 if hit:
                     preds[e["model"]] = hit["pred"]
             universally_missed.append({
@@ -77,15 +91,16 @@ def main():
                 "unanimous_alternative": len(set(preds.values())) == 1,
                 "adjudication_note": g["adjudication_note"],
             })
-    universally_missed.sort(key=lambda r: (not r["unanimous_alternative"], r["cmplid"]))
+    universally_missed.sort(key=lambda r: (not r["unanimous_alternative"], str(r["cmplid"])))
 
     out = {
         "eval_set": {
-            "file": "gold_eval_set_v2.json",
+            "file": primary_gold_file,
             "n": gold["n"],
             "n_hard": gold["n_hard"],
             "caveats": gold.get("caveats"),
         },
+        "eval_sets_seen": sorted(set(eval_files)),
         "models": table,
         "cost_note":
             "Cost is dominated by the ~7.4k-token system prompt resent on every row. "
@@ -94,6 +109,9 @@ def main():
             "examples -- all of which move cost far more than switching between models in "
             "this tier.",
         "universally_missed_rows": universally_missed,
+        "universally_missed_scope_note":
+            "Computed over rows common to every model_eval file in this run.",
+        "rows_missing_in_primary_gold": missing_in_primary_gold,
         "universally_missed_note":
             "Every evaluated model disagreed with the gold set on these rows. Where the "
             "models unanimously agree on the same alternative label, the gold set (or the "
@@ -104,6 +122,9 @@ def main():
 
     hdr = f"{'model':<16} {'effort':<8} {'acc':>7} {'hard':>7} {'macroF1':>8} {'$/100k':>9} {'in/row':>8} {'out/row':>8} {'s/row':>6}"
     print(f"\n=== Quality vs cost on curated gold set (n={gold['n']}, {gold['n_hard']} hard) ===")
+    print(f"Primary eval set: {primary_gold_file}")
+    if len(set(eval_files)) > 1:
+        print(f"Mixed eval sets detected: {sorted(set(eval_files))}")
     print(hdr)
     print("-" * len(hdr))
     for r in table:
@@ -115,6 +136,8 @@ def main():
     print(f"\n{len(universally_missed)} rows missed by ALL {len(evals)} models "
           f"({sum(r['unanimous_alternative'] for r in universally_missed)} with a unanimous "
           f"alternative label -> likely gold-set errors worth re-reading)")
+    if missing_in_primary_gold:
+        print(f"Skipped {len(missing_in_primary_gold)} common rows not found in {primary_gold_file}")
     print(f"Wrote {OUT_DIR / 'model_comparison.json'}")
 
 

@@ -244,7 +244,7 @@ def main():
                          "level the model supports, or is dropped if unsupported.")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--limit", type=int, default=None, help="Score only the first N rows (smoke test).")
-    ap.add_argument("--gold-file", default="gold_eval_set_v2.json",
+    ap.add_argument("--gold-file", default="gold_eval_set_v3.json",
                      help="Gold set file in output/ to score against.")
     args = ap.parse_args()
 

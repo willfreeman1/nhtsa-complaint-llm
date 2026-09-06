@@ -278,7 +278,7 @@ def main():
                      help="Cascade-labeled parquet from run_batch_cascade_labeling.py")
     ap.add_argument("--run-name", default=None)
     ap.add_argument("--model-name", default="Qwen/Qwen2.5-7B-Instruct")
-    ap.add_argument("--gold-file", default="gold_eval_set_v2.json")
+    ap.add_argument("--gold-file", default="gold_eval_set_v3.json")
     ap.add_argument("--val-frac", type=float, default=0.15)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--epochs", type=int, default=3)

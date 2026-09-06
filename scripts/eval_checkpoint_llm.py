@@ -31,7 +31,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--adapter-dir", required=True)
     ap.add_argument("--model-name", default="Qwen/Qwen2.5-7B-Instruct")
-    ap.add_argument("--gold-file", default="gold_eval_set_v2.json")
+    ap.add_argument("--gold-file", default="gold_eval_set_v3.json")
     ap.add_argument("--run-name", default="full_62k_plus_rare")
     ap.add_argument("--max-new-tokens", type=int, default=128)
     args = ap.parse_args()

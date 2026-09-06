@@ -161,7 +161,7 @@ python scripts/prepare_training_data.py
 ```
 
 The small classifier trains in a few hours on a single L4-class GPU; the fine-tuned LLM
-takes roughly a day on an H100 (or longer on smaller cards) — see `WRITEUP.md` §4 for
+took under 7 hours on a rented H100 in this run (and will take longer on smaller cards) — see `WRITEUP.md` §4 for
 the runtime breakdown and the prompt-shortening optimization that got it there.
 
 ### On model weights

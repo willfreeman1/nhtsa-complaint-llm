@@ -29,7 +29,7 @@ OUT_DIR = Path(__file__).parent.parent / "output"
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--checkpoint", required=True)
-    ap.add_argument("--gold-file", default="gold_eval_set_v2.json")
+    ap.add_argument("--gold-file", default="gold_eval_set_v3.json")
     ap.add_argument("--run-name", default="full_62k_plus_rare")
     ap.add_argument("--max-length", type=int, default=256)
     ap.add_argument("--batch-size", type=int, default=32)
