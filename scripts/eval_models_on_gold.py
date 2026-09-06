@@ -22,12 +22,39 @@ from dotenv import load_dotenv
 from sklearn.metrics import f1_score
 
 from pricing import cost_usd, rates
-from run_teacher_labeling import call_anthropic, parse_json_response
 from teacher_prompt import ALL_VALID_COMPONENTS, build_system_prompt, build_user_message, bucket_component
 
 load_dotenv(override=True)
 
 OUT_DIR = Path(__file__).parent.parent / "output"
+JSON_RE = re.compile(r"\{.*\}", re.S)
+
+
+def parse_json_response(text):
+    m = JSON_RE.search(text or "")
+    if not m:
+        raise ValueError(f"No JSON object found in response: {str(text)[:200]!r}")
+    return json.loads(m.group(0))
+
+
+def call_anthropic(client, model, system_prompt, user_msg):
+    params = {
+        "model": model,
+        "max_tokens": 1024,
+        "system": [{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
+        "messages": [{"role": "user", "content": user_msg}],
+    }
+    if "sonnet-5" in model or "opus-5" in model:
+        params["thinking"] = {"type": "disabled"}
+    msg = client.messages.create(**params)
+    text = "".join(b.text for b in msg.content if getattr(b, "type", None) == "text")
+    usage = {
+        "input_tokens": msg.usage.input_tokens,
+        "output_tokens": msg.usage.output_tokens,
+        "cache_read_input_tokens": getattr(msg.usage, "cache_read_input_tokens", 0) or 0,
+        "cache_creation_input_tokens": getattr(msg.usage, "cache_creation_input_tokens", 0) or 0,
+    }
+    return text, usage
 
 
 def openai_usage(resp):

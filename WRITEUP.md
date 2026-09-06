@@ -111,9 +111,9 @@ be faulted for.
 
 **Setup**: DeBERTa-v3-base with a 40-category output head matching the label space
 used everywhere else in this project (so its accuracy is directly comparable to the
-other two approaches), fine-tuned on the 68,252 teacher-labeled complaints (85/15
-train/validation split) with class-weighted loss to handle the imbalance across
-categories.
+other two approaches), fine-tuned on 68,243 usable teacher-labeled complaints (from a
+68,252-row merged pool after dropping 9 parse/off-schema rows; 85/15 train/validation
+split) with class-weighted loss to handle the imbalance across categories.
 
 Training produces two different "accuracy" numbers, and only one of them matters:
 agreement with the teacher's own training labels (83.2%) isn't a real correctness
@@ -141,8 +141,9 @@ own accuracy, at a small fraction of the inference cost and no per-call API depe
 
 Unlike the encoder, this model generates its answer as free text rather than picking
 from a fixed list of 40 — meaning a genuinely new category is just a new string, not a
-retrain. It's fine-tuned (LoRA) on the same 68,252-row training set and scored the
-same way as the other two approaches for direct comparability. One practical finding:
+retrain. It's fine-tuned (LoRA) on the same 68,243-row usable training set (same
+68,252-row merged pool minus 9 dropped rows) and scored the same way as the other two
+approaches for direct comparability. One practical finding:
 cutting the fine-tuning prompt from ~1,775 to ~400 tokens (dropping the worked examples
 the teacher needed, since fine-tuning bakes that knowledge into the model's weights
 directly instead) roughly halved training time with no accuracy cost. Trained via LoRA

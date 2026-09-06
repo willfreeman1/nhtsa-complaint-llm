@@ -110,15 +110,26 @@ def cascade(models, cheap_key, smart_key, escalate_levels):
 
 def main():
     models = load_models()
+    available = set(models)
 
     calibration = confidence_calibration(models)
 
     solo_baselines = {key: solo(models, key) for key in models}
 
     cascades = []
+    skipped_pairs = []
     for cheap_key in CHEAP_CANDIDATES:
+        if cheap_key not in available:
+            continue
         for smart_key in SMART_TARGETS:
             if smart_key == cheap_key:
+                continue
+            if smart_key not in available:
+                skipped_pairs.append({
+                    "cheap_model": cheap_key,
+                    "smart_model": smart_key,
+                    "reason": "missing_eval_artifact",
+                })
                 continue
             for policy_name, levels in ESCALATION_POLICIES.items():
                 r = cascade(models, cheap_key, smart_key, levels)
@@ -139,6 +150,8 @@ def main():
         ),
         "confidence_calibration_by_model": calibration,
         "solo_baselines": solo_baselines,
+        "available_models": sorted(available),
+        "skipped_pairs": skipped_pairs,
         "cascades": sorted(cascades, key=lambda c: c["usd_per_100k_rows"]),
     }
     path = OUT_DIR / "confidence_cascade_analysis.json"
