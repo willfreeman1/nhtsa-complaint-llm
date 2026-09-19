@@ -1,0 +1,29 @@
+{
+  "probed_at": "2026-09-19T20:46:31.179613+00:00",
+  "files": [
+    {
+      "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/FLAT_CMPL.zip",
+      "status": 200,
+      "headers": {
+        "Last-Modified": "Sat, 19 Sep 2026 10:23:52 GMT",
+        "Content-Length": null,
+        "ETag": "\"e1620fc8c13721b85fd6f9003ec4bff5\"",
+        "Content-Type": "application/octet-stream",
+        "Date": "Sat, 19 Sep 2026 20:46:31 GMT"
+      }
+    },
+    {
+      "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
+      "status": 200,
+      "headers": {
+        "Last-Modified": "Sat, 19 Sep 2026 09:28:49 GMT",
+        "Content-Length": null,
+        "ETag": "\"f93b099c6fc26bf8a25e321bd1f6a786\"",
+        "Content-Type": "application/octet-stream",
+        "Date": "Sat, 19 Sep 2026 20:46:31 GMT"
+      }
+    }
+  ],
+  "page": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+  "notes": "NHTSA's CMPL.txt says the file is published daily and that CMPLID and component names can change between dumps. HEAD Last-Modified is the ground truth for 'how often', not the datasets page copy."
+}

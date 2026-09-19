@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-09-19",
+  "machine": "Intel i9-10900, 128 GB RAM, CPU-only PyTorch 2.13",
+  "gold": "output/gold_eval_set_v3.json",
+  "rows": [
+    {
+      "variant": "DeBERTa-v3-base (rung2 full_62k_plus_rare)",
+      "device": "cpu",
+      "accuracy": 0.822141560798548,
+      "wilson_95": [0.7880143690738753, 0.8518078792939471],
+      "rows_per_second": 4.339366424826978,
+      "peak_rss_gb": 1.27,
+      "est_monthly_host_usd": "0-10",
+      "notes": "Exact reproduction of published 0.822. 300 complaints/day is ~70 seconds."
+    },
+    {
+      "variant": "Qwen2.5-7B LoRA (rung3)",
+      "device": "not measured this sitting",
+      "accuracy": 0.8620689655172413,
+      "accuracy_source": "published v3 eval, not rerun",
+      "rows_per_second": null,
+      "peak_rss_gb": null,
+      "est_monthly_host_usd": "GPU: well above $30 if always-on",
+      "notes": "No local base-model cache. Full CPU generate of 551 rows deferred. Offline benchmark until a later sitting measures GGUF/GPU."
+    }
+  ],
+  "provisional_serving_champion": "deberta"
+}

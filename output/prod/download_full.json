@@ -1,0 +1,12 @@
+{
+  "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/FLAT_CMPL.zip",
+  "kind": "full",
+  "zip_path": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\data\\incoming\\FLAT_CMPL_20260919.zip",
+  "extract_dir": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\data\\incoming\\FLAT_CMPL_20260919",
+  "names": [
+    "FLAT_CMPL.txt"
+  ],
+  "bytes": 372236110,
+  "last_modified": "Sat, 19 Sep 2026 10:23:52 GMT",
+  "downloaded_at": "2026-09-19T20:48:40.407647+00:00"
+}

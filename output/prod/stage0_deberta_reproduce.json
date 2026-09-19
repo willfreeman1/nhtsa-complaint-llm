@@ -1,0 +1,128 @@
+{
+  "device": "cpu",
+  "checkpoint": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\checkpoints\\deberta_rung2_full_62k_plus_rare\\final",
+  "gold_metrics": {
+    "n": 551,
+    "accuracy": 0.822141560798548,
+    "accuracy_hard_subset": 0.7326732673267327,
+    "accuracy_dual_agreement_subset": 0.9314516129032258,
+    "macro_f1": 0.7746955110198922
+  },
+  "ci": {
+    "overall": {
+      "n": 551,
+      "successes": 453,
+      "accuracy": 0.822141560798548,
+      "wilson_95": {
+        "lo": 0.7880143690738753,
+        "hi": 0.8518078792939471
+      },
+      "label": "overall"
+    },
+    "hard": {
+      "n": 303,
+      "successes": 222,
+      "accuracy": 0.7326732673267327,
+      "wilson_95": {
+        "lo": 0.6801552404482337,
+        "hi": 0.7793652417810336
+      },
+      "label": "hard"
+    },
+    "easy": {
+      "n": 248,
+      "successes": 231,
+      "accuracy": 0.9314516129032258,
+      "wilson_95": {
+        "lo": 0.8929754562101135,
+        "hi": 0.9567650155785028
+      },
+      "label": "easy"
+    }
+  },
+  "reproduction": {
+    "pass": true,
+    "published_overall": 0.822141560798548,
+    "observed_overall": 0.822141560798548,
+    "abs_diff": 0.0,
+    "threshold": "agree to 3 decimal places (THRESHOLDS.md Stage 0 reproduction)"
+  },
+  "timing": {
+    "load_seconds": 1.1343059000209905,
+    "score_seconds": 126.9770621000207,
+    "rows_per_second": 4.339366424826978,
+    "n": 551,
+    "batch_size": 32
+  },
+  "memory_bytes": {
+    "rss_before": 452464640,
+    "rss_after_load": 591020032,
+    "rss_after_score": 1274920960,
+    "rss_delta_load": 138555392
+  },
+  "year_slice": {
+    "missing_date_join": 0,
+    "by_received_year": {
+      "1995-2009": {
+        "n": 172,
+        "successes": 141,
+        "accuracy": 0.8197674418604651,
+        "wilson_95": {
+          "lo": 0.7555393738198233,
+          "hi": 0.8700236328862121
+        }
+      },
+      "2010-2014": {
+        "n": 110,
+        "successes": 87,
+        "accuracy": 0.7909090909090909,
+        "wilson_95": {
+          "lo": 0.7057473462909243,
+          "hi": 0.8564373032572199
+        }
+      },
+      "2015-2019": {
+        "n": 138,
+        "successes": 118,
+        "accuracy": 0.855072463768116,
+        "wilson_95": {
+          "lo": 0.7867293519728862,
+          "hi": 0.904182200068264
+        }
+      },
+      "2020-2022": {
+        "n": 49,
+        "successes": 44,
+        "accuracy": 0.8979591836734694,
+        "wilson_95": {
+          "lo": 0.7824337583502992,
+          "hi": 0.9556211075129601
+        }
+      },
+      "2023-2024": {
+        "n": 45,
+        "successes": 35,
+        "accuracy": 0.7777777777777778,
+        "wilson_95": {
+          "lo": 0.637304262026367,
+          "hi": 0.8745544813399436
+        }
+      },
+      "2025-2026": {
+        "n": 37,
+        "successes": 28,
+        "accuracy": 0.7567567567567568,
+        "wilson_95": {
+          "lo": 0.5988239750929105,
+          "hi": 0.8663879656733671
+        }
+      },
+      "unknown_ldate": {
+        "n": 0,
+        "successes": 0,
+        "accuracy": null,
+        "wilson_95": null
+      }
+    }
+  }
+}

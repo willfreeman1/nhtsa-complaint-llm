@@ -2,6 +2,7 @@
 data/*.zip
 data/*.txt
 data/*.parquet
+data/incoming/
 output/*.npy
 
 # Model weight binaries -- big (100MB-900MB), regenerate by re-running the training

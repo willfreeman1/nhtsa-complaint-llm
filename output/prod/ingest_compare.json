@@ -1,0 +1,337 @@
+{
+  "old_n": 2239860,
+  "new_n": 195389,
+  "old_n_in_new_file_ldate_window": 187556,
+  "compare_scoped_to_new_file_window": true,
+  "window_ldate_min": "20250101",
+  "window_ldate_max": "20260917",
+  "added": 7833,
+  "removed": 0,
+  "common": 187556,
+  "added_vehicle": 7676,
+  "new_vehicle": 192677,
+  "old_ldate_max": "20260826",
+  "new_ldate_max": "20260917",
+  "old_datea_max": "20260826",
+  "new_datea_max": "20260917",
+  "added_ldate_min": "20260826",
+  "added_ldate_max": "20260917",
+  "field_changes_on_common_ids": {
+    "COMPDESC": {
+      "n": 38696,
+      "examples": [
+        {
+          "CMPLID": "2188850",
+          "COMPDESC_new": "ELECTRICAL SYSTEM:ADAS:AUTONOMOUS/SELF DRIVING",
+          "COMPDESC_old": "POWER TRAIN"
+        },
+        {
+          "CMPLID": "2188851",
+          "COMPDESC_new": "POWER TRAIN",
+          "COMPDESC_old": "ELECTRICAL SYSTEM"
+        },
+        {
+          "CMPLID": "2188852",
+          "COMPDESC_new": "ELECTRICAL SYSTEM",
+          "COMPDESC_old": "LANE DEPARTURE: WARNING"
+        },
+        {
+          "CMPLID": "2188853",
+          "COMPDESC_new": "LANE DEPARTURE: WARNING",
+          "COMPDESC_old": "FORWARD COLLISION AVOIDANCE: AUTOMATIC EMERGENCY BRAKING"
+        },
+        {
+          "CMPLID": "2188854",
+          "COMPDESC_new": "FORWARD COLLISION AVOIDANCE: AUTOMATIC EMERGENCY BRAKING",
+          "COMPDESC_old": "ENGINE"
+        },
+        {
+          "CMPLID": "2188855",
+          "COMPDESC_new": "ENGINE",
+          "COMPDESC_old": "SERVICE BRAKES"
+        },
+        {
+          "CMPLID": "2188856",
+          "COMPDESC_new": "SERVICE BRAKES",
+          "COMPDESC_old": "POWER TRAIN"
+        },
+        {
+          "CMPLID": "2188857",
+          "COMPDESC_new": "POWER TRAIN",
+          "COMPDESC_old": "FORWARD COLLISION AVOIDANCE: AUTOMATIC EMERGENCY BRAKING"
+        }
+      ]
+    },
+    "CDESCR": {
+      "n": 36094,
+      "examples": [
+        {
+          "CMPLID": "2188850",
+          "CDESCR_new": "Per a video posted on LinkedIn on March 20, 2026 by Chris Hackney, a Fountainhead Logistics Class 8 tractor displaying a Texas License plate on the front bumper & equipped with the Kodiak Robotics \"Kodiak Driver\" autonomous system was pulling three 40' belly dump trailers used to transport frac sand on an unknown public roadway in the West Texas Permian Basin in violation of Texas State law which prohibits triple trailers on public roadways. I can't confirm that the movement of the triple trailers shown in the video actually occurred on a public roadway vs a private lease road in the oil & natural gas fields where Fountainhead Logistics operates. I request NHTSA reach out to Fountainhead Logistics &/or Kodiak Robotics to confirm if such alleged illegal movement was made on a public roadway. ",
+          "CDESCR_old": "Torque converter failure caused a transmission rebuilt covered under the 5 year 75,000 mile warranty. Approximately 14 months later it failed again this time Ford wants me to pay for their incompetence upwards of $5000 because it is past the 5 years. This is a major ongoing problem with the Ford Edge and should be subjected to a recall because the failure rate is so high.    "
+        },
+        {
+          "CMPLID": "2188851",
+          "CDESCR_new": "Torque converter failure caused a transmission rebuilt covered under the 5 year 75,000 mile warranty. Approximately 14 months later it failed again this time Ford wants me to pay for their incompetence upwards of $5000 because it is past the 5 years. This is a major ongoing problem with the Ford Edge and should be subjected to a recall because the failure rate is so high.    ",
+          "CDESCR_old": "Our electrical system is going craze. The electronic door handles will lock us in and out of the car, the instrument cluster will black out for periods, safety sensors go off at random, other screens in car will black out leaving controls in operable, and wireless car charger will heat the phone so hot that we have been burnt. We have take to the dealer several times. Some visits they claim they can not duplicate. They have replaced two of the door handles but they still at random do the same thing. There have been numerous system updates done to the car but it does not seem to help. We are told that the solution for these problems have not been developed yet by the manufacturer. There are no warning signs as to when these items will fail, it just happens at random. We do not feel safe driving the car as all the safety components are tied to the electrical system such as steering, braking, lighting, etc. "
+        },
+        {
+          "CMPLID": "2188854",
+          "CDESCR_new": "Our electrical system is going craze. The electronic door handles will lock us in and out of the car, the instrument cluster will black out for periods, safety sensors go off at random, other screens in car will black out leaving controls in operable, and wireless car charger will heat the phone so hot that we have been burnt. We have take to the dealer several times. Some visits they claim they can not duplicate. They have replaced two of the door handles but they still at random do the same thing. There have been numerous system updates done to the car but it does not seem to help. We are told that the solution for these problems have not been developed yet by the manufacturer. There are no warning signs as to when these items will fail, it just happens at random. We do not feel safe driving the car as all the safety components are tied to the electrical system such as steering, braking, lighting, etc. ",
+          "CDESCR_old": "Cars stalls at intersection and is had to restart. We have been disabling the auto start feature to avoid this potentially dangerous situation."
+        },
+        {
+          "CMPLID": "2188855",
+          "CDESCR_new": "Cars stalls at intersection and is had to restart. We have been disabling the auto start feature to avoid this potentially dangerous situation.",
+          "CDESCR_old": "While driving at approximately 60 mph on an open road with no obstacles present and no braking input, the rear wheels spontaneously locked up without warning. No brake pedal input. No warning light prior to the event. No obstruction in the road. The vehicle has been subject to an active manufacturer recall for rear wheel lockup due to transmission control valve failure. The dealer's own diagnostic system generated a report showing six active fault codes in the following days including lost communication with the Brake System Control Module and Transmission Control Module. These codes were not addressed on the repair order. The dealer attributed the lockup to an Automatic Emergency Braking activation without diagnostic confirmation and performed no repair. The manufacturer's own internal bulletin dated January 22, 2026 acknowledges the exact fault codes present on this vehicle as a known defect. The dealer cited this bulletin to dismiss the concern while stating no problems exist. A persistent brake noise has been confirmed by two separate authorized dealers across three visits with no repair performed at any visit. The vehicle has required five dealer visits in 77 days of ownership with 1,729 miles. The defect remains unresolved and poses serious risk of loss of vehicle control at highway speed."
+        },
+        {
+          "CMPLID": "2188858",
+          "CDESCR_new": "While driving at approximately 60 mph on an open road with no obstacles present and no braking input, the rear wheels spontaneously locked up without warning. No brake pedal input. No warning light prior to the event. No obstruction in the road. The vehicle has been subject to an active manufacturer recall for rear wheel lockup due to transmission control valve failure. The dealer's own diagnostic system generated a report showing six active fault codes in the following days including lost communication with the Brake System Control Module and Transmission Control Module. These codes were not addressed on the repair order. The dealer attributed the lockup to an Automatic Emergency Braking activation without diagnostic confirmation and performed no repair. The manufacturer's own internal bulletin dated January 22, 2026 acknowledges the exact fault codes present on this vehicle as a known defect. The dealer cited this bulletin to dismiss the concern while stating no problems exist. A persistent brake noise has been confirmed by two separate authorized dealers across three visits with no repair performed at any visit. The vehicle has required five dealer visits in 77 days of ownership with 1,729 miles. The defect remains unresolved and poses serious risk of loss of vehicle control at highway speed.",
+          "CDESCR_old": "I am writing to formally document a recurring and dangerous safety defect involving the B&O audio system. On multiple occasions, the vehicle has emitted an ear-shattering popping noise followed by high-decibel electrical static. This issue is not merely a \"speaker glitch\"; it is a violent acoustic event that persists even after the ignition is turned off.  Critical Safety Concerns:  Driver Incapacitation: The volume is loud enough to cause immediate disorientation and potential hearing damage. If this occurs at highway speeds, the risk of a collision is extreme due to the \"startle response\" and inability to hear sirens or road cues.  Electrical Instability: The static is accompanied by a sensation of electrical discharge throughout the cabin. To stop the noise, I am forced to manually disconnect the battery\u00e2\u0080\u0094which itself emits static popping during the process.  Repeated Component Failure: The vehicle has already exhausted two batteries and requires a third. I suspect a faulty amplifier is creating a parasitic draw and low-voltage condition, triggering this catastrophic system failure.  Lack of Professional Response:  Despite SSM 51663 addressing this exact issue, dealerships have refused to perform the software/hardware fix due to the \"sporadic\" nature of the problem. Furthermore, when I contacted Ford Customer Service, my concerns regarding a potential crash were met with derision.  I am requesting an immediate escalation, a formal inspection of the B&O amplifier, and the application of the relevant TSB/SSM software updates. I no longer feel safe operating this vehicle, and I am documenting this for the purpose of a Lemon Law evaluation and an NHTSA safety report."
+        },
+        {
+          "CMPLID": "2188859",
+          "CDESCR_new": "I am writing to formally document a recurring and dangerous safety defect involving the B&O audio system. On multiple occasions, the vehicle has emitted an ear-shattering popping noise followed by high-decibel electrical static. This issue is not merely a \"speaker glitch\"; it is a violent acoustic event that persists even after the ignition is turned off.  Critical Safety Concerns:  Driver Incapacitation: The volume is loud enough to cause immediate disorientation and potential hearing damage. If this occurs at highway speeds, the risk of a collision is extreme due to the \"startle response\" and inability to hear sirens or road cues.  Electrical Instability: The static is accompanied by a sensation of electrical discharge throughout the cabin. To stop the noise, I am forced to manually disconnect the battery\u00e2\u0080\u0094which itself emits static popping during the process.  Repeated Component Failure: The vehicle has already exhausted two batteries and requires a third. I suspect a faulty amplifier is creating a parasitic draw and low-voltage condition, triggering this catastrophic system failure.  Lack of Professional Response:  Despite SSM 51663 addressing this exact issue, dealerships have refused to perform the software/hardware fix due to the \"sporadic\" nature of the problem. Furthermore, when I contacted Ford Customer Service, my concerns regarding a potential crash were met with derision.  I am requesting an immediate escalation, a formal inspection of the B&O amplifier, and the application of the relevant TSB/SSM software updates. I no longer feel safe operating this vehicle, and I am documenting this for the purpose of a Lemon Law evaluation and an NHTSA safety report.",
+          "CDESCR_old": "2023 Hyundai Ioniq 5 displayed a \"Check Vehicle Electrical System\" warning on the dashboard. The Integrated Charging Control Unit(ICCU) failed, and it rendered the car inoperable. I could not drive it and was left stranded, waiting for a tow truck in below-freezing temperatures as the car completely died. Hyundai has previously recalled the vehicle for this, and my car had been serviced in the recall campaign, so the issue is clear: the recall did not fix this issue. The car has been sitting at the service center for two weeks, waiting in the repair queue behind other Ioniq 5 cars with the same ICCU failure. "
+        },
+        {
+          "CMPLID": "2188860",
+          "CDESCR_new": "2023 Hyundai Ioniq 5 displayed a \"Check Vehicle Electrical System\" warning on the dashboard. The Integrated Charging Control Unit(ICCU) failed, and it rendered the car inoperable. I could not drive it and was left stranded, waiting for a tow truck in below-freezing temperatures as the car completely died. Hyundai has previously recalled the vehicle for this, and my car had been serviced in the recall campaign, so the issue is clear: the recall did not fix this issue. The car has been sitting at the service center for two weeks, waiting in the repair queue behind other Ioniq 5 cars with the same ICCU failure. ",
+          "CDESCR_old": "My car will rev up to 4000 rpm\u00e2\u0080\u0099s and my car will not go about 20 mph. My cruise stopped working after my car went into reduce engine power. The dealership said they fixed all issues but was back to doing the high rev within a week. It started this week telling me to shift to park even though my car was in park. The shift to park cable has been replaced twice now. I have been dealing with this since July of 2025. My car has been in the shop more times than I can count. "
+        },
+        {
+          "CMPLID": "2188863",
+          "CDESCR_new": "My car will rev up to 4000 rpm\u00e2\u0080\u0099s and my car will not go about 20 mph. My cruise stopped working after my car went into reduce engine power. The dealership said they fixed all issues but was back to doing the high rev within a week. It started this week telling me to shift to park even though my car was in park. The shift to park cable has been replaced twice now. I have been dealing with this since July of 2025. My car has been in the shop more times than I can count. ",
+          "CDESCR_old": "Wipers stopped working an it\u00e2\u0080\u0099s not showing an active recall but research shows this model does have wiper blade motor recalls"
+        }
+      ]
+    },
+    "DATEA": {
+      "n": 255,
+      "examples": [
+        {
+          "CMPLID": "2188993",
+          "DATEA_new": "20260321",
+          "DATEA_old": "20260322"
+        },
+        {
+          "CMPLID": "2189185",
+          "DATEA_new": "20260322",
+          "DATEA_old": "20260323"
+        },
+        {
+          "CMPLID": "2189678",
+          "DATEA_new": "20260323",
+          "DATEA_old": "20260324"
+        },
+        {
+          "CMPLID": "2190155",
+          "DATEA_new": "20260324",
+          "DATEA_old": "20260325"
+        },
+        {
+          "CMPLID": "2190557",
+          "DATEA_new": "20260325",
+          "DATEA_old": "20260326"
+        },
+        {
+          "CMPLID": "2190919",
+          "DATEA_new": "20260326",
+          "DATEA_old": "20260327"
+        },
+        {
+          "CMPLID": "2191268",
+          "DATEA_new": "20260327",
+          "DATEA_old": "20260328"
+        },
+        {
+          "CMPLID": "2191451",
+          "DATEA_new": "20260328",
+          "DATEA_old": "20260329"
+        }
+      ]
+    },
+    "LDATE": {
+      "n": 255,
+      "examples": [
+        {
+          "CMPLID": "2188993",
+          "LDATE_new": "20260321",
+          "LDATE_old": "20260322"
+        },
+        {
+          "CMPLID": "2189185",
+          "LDATE_new": "20260322",
+          "LDATE_old": "20260323"
+        },
+        {
+          "CMPLID": "2189678",
+          "LDATE_new": "20260323",
+          "LDATE_old": "20260324"
+        },
+        {
+          "CMPLID": "2190155",
+          "LDATE_new": "20260324",
+          "LDATE_old": "20260325"
+        },
+        {
+          "CMPLID": "2190557",
+          "LDATE_new": "20260325",
+          "LDATE_old": "20260326"
+        },
+        {
+          "CMPLID": "2190919",
+          "LDATE_new": "20260326",
+          "LDATE_old": "20260327"
+        },
+        {
+          "CMPLID": "2191268",
+          "LDATE_new": "20260327",
+          "LDATE_old": "20260328"
+        },
+        {
+          "CMPLID": "2191451",
+          "LDATE_new": "20260328",
+          "LDATE_old": "20260329"
+        }
+      ]
+    },
+    "MAKETXT": {
+      "n": 33505,
+      "examples": [
+        {
+          "CMPLID": "2183691",
+          "MAKETXT_new": "FREIGHTLINER",
+          "MAKETXT_old": "FORD"
+        },
+        {
+          "CMPLID": "2188850",
+          "MAKETXT_new": "KODIAK ROBOTICS",
+          "MAKETXT_old": "FORD"
+        },
+        {
+          "CMPLID": "2188851",
+          "MAKETXT_new": "FORD",
+          "MAKETXT_old": "AUDI"
+        },
+        {
+          "CMPLID": "2188854",
+          "MAKETXT_new": "AUDI",
+          "MAKETXT_old": "JEEP"
+        },
+        {
+          "CMPLID": "2188855",
+          "MAKETXT_new": "JEEP",
+          "MAKETXT_old": "GMC"
+        },
+        {
+          "CMPLID": "2188858",
+          "MAKETXT_new": "GMC",
+          "MAKETXT_old": "FORD"
+        },
+        {
+          "CMPLID": "2188859",
+          "MAKETXT_new": "FORD",
+          "MAKETXT_old": "HYUNDAI"
+        },
+        {
+          "CMPLID": "2188860",
+          "MAKETXT_new": "HYUNDAI",
+          "MAKETXT_old": "CHEVROLET"
+        }
+      ]
+    },
+    "MODELTXT": {
+      "n": 35787,
+      "examples": [
+        {
+          "CMPLID": "2056347",
+          "MODELTXT_new": "EQUINOX",
+          "MODELTXT_old": "EXPRESS"
+        },
+        {
+          "CMPLID": "2068784",
+          "MODELTXT_new": "redundant R 1 T",
+          "MODELTXT_old": "R 1 T"
+        },
+        {
+          "CMPLID": "2085023",
+          "MODELTXT_new": "CR-V HYBRID",
+          "MODELTXT_old": "CR-V"
+        },
+        {
+          "CMPLID": "2085024",
+          "MODELTXT_new": "CR-V HYBRID",
+          "MODELTXT_old": "CR-V"
+        },
+        {
+          "CMPLID": "2095109",
+          "MODELTXT_new": "S 580 E 4MATIC",
+          "MODELTXT_old": "S 580 E"
+        },
+        {
+          "CMPLID": "2141888",
+          "MODELTXT_new": "EQUINOX",
+          "MODELTXT_old": "EXPRESS"
+        },
+        {
+          "CMPLID": "2141889",
+          "MODELTXT_new": "EQUINOX",
+          "MODELTXT_old": "EXPRESS"
+        },
+        {
+          "CMPLID": "2142102",
+          "MODELTXT_new": "S 580 4MATIC",
+          "MODELTXT_old": "S 580"
+        }
+      ]
+    },
+    "YEARTXT": {
+      "n": 33453,
+      "examples": [
+        {
+          "CMPLID": "2188850",
+          "YEARTXT_new": "9999",
+          "YEARTXT_old": "2019"
+        },
+        {
+          "CMPLID": "2188851",
+          "YEARTXT_new": "2019",
+          "YEARTXT_old": "2024"
+        },
+        {
+          "CMPLID": "2188854",
+          "YEARTXT_new": "2024",
+          "YEARTXT_old": "2022"
+        },
+        {
+          "CMPLID": "2188855",
+          "YEARTXT_new": "2022",
+          "YEARTXT_old": "2026"
+        },
+        {
+          "CMPLID": "2188858",
+          "YEARTXT_new": "2026",
+          "YEARTXT_old": "2022"
+        },
+        {
+          "CMPLID": "2188859",
+          "YEARTXT_new": "2022",
+          "YEARTXT_old": "2023"
+        },
+        {
+          "CMPLID": "2188860",
+          "YEARTXT_new": "2023",
+          "YEARTXT_old": "2016"
+        },
+        {
+          "CMPLID": "2188863",
+          "YEARTXT_new": "2016",
+          "YEARTXT_old": "2015"
+        }
+      ]
+    }
+  },
+  "new_path": "data\\incoming\\COMPLAINTS_RECEIVED_2025-2026_20260919\\COMPLAINTS_RECEIVED_2025-2026.txt"
+}

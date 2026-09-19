@@ -1,0 +1,17 @@
+{
+  "eligible": 7589,
+  "random_n": 150,
+  "adas_oversample_n": 50,
+  "cutoff_ldate_exclusive": "20260826",
+  "seed": 20260919,
+  "source": "data\\incoming\\COMPLAINTS_RECEIVED_2025-2026_20260919\\COMPLAINTS_RECEIVED_2025-2026.txt",
+  "ldate_min": "20260827",
+  "ldate_max": "20260917",
+  "blocked_n": 68803,
+  "files": {
+    "queue": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\output\\prod\\gold_current_v1_queue.json",
+    "sealed": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\output\\prod\\gold_current_v1_sealed.json",
+    "adas_queue": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\output\\prod\\gold_current_adas_queue.json",
+    "adas_sealed": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\output\\prod\\gold_current_adas_sealed.json"
+  }
+}

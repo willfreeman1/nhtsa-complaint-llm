@@ -1,0 +1,4410 @@
+[
+  {
+    "cmplid": 664075,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 894497,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 432171,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 939389,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 838322,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2000864,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1941896,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1837120,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 295172,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1353705,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1819530,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 840438,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 267628,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2078845,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1983848,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 678994,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 407854,
+    "pred": "VISIBILITY/WIPER",
+    "raw_pred": "VISIBILITY/WIPER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1875395,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1202984,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1247013,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1299085,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1249147,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 838311,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 534171,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 46468,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 926929,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 17193,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 1447735,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1101001,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 891883,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1556644,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2163446,
+    "pred": "LANE DEPARTURE",
+    "raw_pred": "LANE DEPARTURE",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1138775,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 102280,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 1332253,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1141069,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1062377,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1036181,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1545758,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 620355,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1659686,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 471641,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_teacher_clean_miss"
+  },
+  {
+    "cmplid": 1113898,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 262465,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1357373,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 389594,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 90354,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1392091,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 8010,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 688271,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1555192,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 350498,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1699903,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1681708,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 988703,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1293783,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1121758,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1233285,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1476775,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 158241,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1278059,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 1285453,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1366767,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1820938,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1807202,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1632150,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 344134,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1581191,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1447285,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1970679,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 2026520,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 137818,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 156653,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1435252,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 668182,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 1638020,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2187989,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1194286,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 910190,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 730709,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1784429,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 782002,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2189268,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1035928,
+    "pred": "WHEELS",
+    "raw_pred": "WHEELS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 13253,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1703867,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1185492,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1109049,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 545767,
+    "pred": "WHEELS",
+    "raw_pred": "WHEELS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 417212,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1934405,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 21547,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 843306,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1037398,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 657648,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1292185,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 783121,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1593091,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 117133,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2010798,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1222338,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 144805,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 57507,
+    "pred": "LATCHES/LOCKS/LINKAGES",
+    "raw_pred": "LATCHES/LOCKS/LINKAGES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 747746,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 97533,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1452363,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 860105,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 73852,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1242453,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1525992,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 2045668,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1938571,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1346344,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 868517,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 581035,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1341874,
+    "pred": "SEATS",
+    "raw_pred": "SEATS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 54688,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 11740,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1415889,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 387622,
+    "pred": "WHEELS",
+    "raw_pred": "WHEELS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 39635,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 774679,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 974045,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1524034,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1513832,
+    "pred": "SEATS",
+    "raw_pred": "SEATS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 868493,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 51636,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1504931,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1498347,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 1190708,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1087950,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1630718,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 791972,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 120629,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 290692,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1031345,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 658201,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 931486,
+    "pred": "SEATS",
+    "raw_pred": "SEATS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1596626,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 794730,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 957573,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 760616,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1338343,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 743666,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1422179,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1240270,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 527856,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2036042,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 531452,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1779673,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1986994,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 591684,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 966611,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 55325,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 983948,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 693788,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1072538,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1119843,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 463855,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise_contested_by_rerun"
+  },
+  {
+    "cmplid": 1831587,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1327423,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1383266,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1766614,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2088898,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 317210,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1375644,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1904938,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1056493,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 382401,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 221625,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 557421,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 718504,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1335413,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 818512,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 297310,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1965745,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 823692,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 683472,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1719869,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 477823,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1575837,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 351459,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1356587,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 472211,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1470895,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 888230,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1369018,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1705007,
+    "pred": "LATCHES/LOCKS/LINKAGES",
+    "raw_pred": "LATCHES/LOCKS/LINKAGES",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1357399,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 139369,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 309573,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 514745,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1151756,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2128818,
+    "pred": "BACK OVER PREVENTION",
+    "raw_pred": "BACK OVER PREVENTION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1511617,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1847144,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 444698,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 226112,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 135030,
+    "pred": "VISIBILITY/WIPER",
+    "raw_pred": "VISIBILITY/WIPER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1110853,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2100644,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 338555,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 816625,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1034966,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1767234,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1283606,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 117121,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2170080,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1980912,
+    "pred": "OTHER",
+    "raw_pred": "SERVICE BRAKES, ELECTRIC",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1938753,
+    "pred": "BACK OVER PREVENTION",
+    "raw_pred": "BACK OVER PREVENTION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1628028,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 201374,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1347909,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1783953,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 1250801,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 463437,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 452061,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 267346,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1438894,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 976954,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 296449,
+    "pred": "SEATS",
+    "raw_pred": "SEATS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 694209,
+    "pred": "WHEELS",
+    "raw_pred": "WHEELS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 150094,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 952182,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1420271,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1308716,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 517233,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1250189,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1035667,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 661134,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 589776,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2082219,
+    "pred": "LATCHES/LOCKS/LINKAGES",
+    "raw_pred": "LATCHES/LOCKS/LINKAGES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1563476,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 330689,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1886408,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1179406,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 738767,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1762063,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 294483,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 448301,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 655123,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 790896,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 638394,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1057813,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2002748,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1415310,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1053189,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 1170160,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 1369087,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1312887,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 823995,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 634339,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_multi_issue_ambiguity"
+  },
+  {
+    "cmplid": 155840,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 276904,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1111602,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 345687,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1150453,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1504906,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 95038,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 1678589,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_gold_noise"
+  },
+  {
+    "cmplid": 1534238,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 865101,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 783222,
+    "pred": "SEATS",
+    "raw_pred": "SEATS",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1855719,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 152424,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2161376,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 928232,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 134879,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_subtype_ambiguity"
+  },
+  {
+    "cmplid": 1811665,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 189835,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 674305,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 626679,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 2000852,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "dual_agreement"
+  },
+  {
+    "cmplid": 1287909,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1242204,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2108203,
+    "pred": "BACK OVER PREVENTION",
+    "raw_pred": "BACK OVER PREVENTION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 283782,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1399890,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1658969,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 989697,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 388351,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1034122,
+    "pred": "LATCHES/LOCKS/LINKAGES",
+    "raw_pred": "LATCHES/LOCKS/LINKAGES",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1604612,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1726043,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 216774,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 462702,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 126690,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 88661,
+    "pred": "VISIBILITY/WIPER",
+    "raw_pred": "VISIBILITY/WIPER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1605033,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 549914,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 209372,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1637082,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 550395,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1421952,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1005139,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1708527,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 257510,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1490171,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 861622,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1502030,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1988195,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2148719,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1573951,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1212238,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 80946,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 940956,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1554540,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2072561,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1846415,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1132085,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1205834,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 894184,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1728337,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1832628,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 609936,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1513028,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1870763,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 514440,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2034900,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 452598,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1610123,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 394045,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 976367,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1567323,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1966802,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2026794,
+    "pred": "OTHER",
+    "raw_pred": "HYBRID PROPULSION SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1719129,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 849421,
+    "pred": "INTERIOR LIGHTING",
+    "raw_pred": "INTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 428521,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 192027,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 152341,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 659495,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 863000,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1766618,
+    "pred": "HYBRID PROPULSION SYSTEM",
+    "raw_pred": "HYBRID PROPULSION SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2118023,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2080924,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1981710,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2154365,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1884483,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1002486,
+    "pred": "FUEL SYSTEM, DIESEL",
+    "raw_pred": "FUEL SYSTEM, DIESEL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1987953,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1189297,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 973343,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 446184,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 977031,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 572650,
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1883690,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1502644,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1205066,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 952990,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1307431,
+    "pred": "LATCHES/LOCKS/LINKAGES",
+    "raw_pred": "LATCHES/LOCKS/LINKAGES",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 560529,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1363654,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 771550,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 105591,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 607680,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1328849,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1453167,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1648612,
+    "pred": "LANE DEPARTURE",
+    "raw_pred": "LANE DEPARTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2039665,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 928059,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 644785,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2019384,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1486883,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1293141,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 697239,
+    "pred": "VISIBILITY/WIPER",
+    "raw_pred": "VISIBILITY/WIPER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 460238,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1179821,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1510319,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2150180,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2184671,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 909086,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2002129,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2077921,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1593024,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 496703,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 533047,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1984408,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 589673,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1643613,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 121246,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 359150,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2234910,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2060951,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1938977,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1334858,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 400869,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 52237,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1504109,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1988713,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1562152,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 197609,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2147042,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1060313,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1791138,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1720164,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1097764,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1200086,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 185271,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1915489,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2194114,
+    "pred": "BACK OVER PREVENTION",
+    "raw_pred": "BACK OVER PREVENTION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2220589,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1517004,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1389356,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 475942,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1938591,
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 878167,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1520664,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 795728,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1788904,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1309378,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 612998,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 121457,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1746101,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1408398,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1842885,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 133953,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 362156,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 347953,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 843571,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2089694,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 458475,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1037472,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1710439,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 598642,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1799741,
+    "pred": "FORWARD COLLISION AVOIDANCE",
+    "raw_pred": "FORWARD COLLISION AVOIDANCE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 862157,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2166621,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1726115,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1494092,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 390788,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2187395,
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1024252,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 265951,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2035712,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1063555,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2177856,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2016886,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1951723,
+    "pred": "COMMUNICATION",
+    "raw_pred": "COMMUNICATION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 642208,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 782433,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1247575,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1790974,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 570936,
+    "pred": "TIRES",
+    "raw_pred": "TIRES",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2214951,
+    "pred": "HYBRID PROPULSION SYSTEM",
+    "raw_pred": "HYBRID PROPULSION SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 823215,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1185049,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1332082,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 201313,
+    "pred": "LATCHES/LOCKS/LINKAGES",
+    "raw_pred": "LATCHES/LOCKS/LINKAGES",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1657624,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1251723,
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 994443,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2086444,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 63242,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1378972,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 682397,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1984362,
+    "pred": "HYBRID PROPULSION SYSTEM",
+    "raw_pred": "HYBRID PROPULSION SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1745028,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 932523,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 116833,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 595094,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 122836,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 978176,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1592948,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2124090,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 617279,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1596900,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1358396,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 744315,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2114918,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 221141,
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1284897,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1230307,
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1619136,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 945167,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2236630,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 690387,
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1707657,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 907572,
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1011055,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1071637,
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1629868,
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1527118,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1433585,
+    "pred": "PARKING BRAKE",
+    "raw_pred": "PARKING BRAKE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1458807,
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1433445,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 148711,
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 195790,
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 61079,
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2049086,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2214522,
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2181131,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 2001479,
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1937966,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1878713,
+    "pred": "VISIBILITY",
+    "raw_pred": "VISIBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1900560,
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 1290193,
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": 497486,
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_full_v2"
+  },
+  {
+    "cmplid": "608797",
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1516532",
+    "pred": "OTHER",
+    "raw_pred": "CHILD SEAT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "677248",
+    "pred": "OTHER",
+    "raw_pred": "CHILD SEAT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "461243",
+    "pred": "CHILD SEAT",
+    "raw_pred": "CHILD SEAT",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "279025",
+    "pred": "SEAT BELTS",
+    "raw_pred": "SEAT BELTS",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "550726",
+    "pred": "OTHER",
+    "raw_pred": "CHILD SEAT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "714087",
+    "pred": "OTHER",
+    "raw_pred": "CHILD SEAT",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1016581",
+    "pred": "EXTERIOR LIGHTING",
+    "raw_pred": "EXTERIOR LIGHTING",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1696183",
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1437163",
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1453743",
+    "pred": "TRACTION CONTROL SYSTEM",
+    "raw_pred": "TRACTION CONTROL SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1335594",
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1523922",
+    "pred": "SUSPENSION",
+    "raw_pred": "SUSPENSION",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1242671",
+    "pred": "UNKNOWN OR OTHER",
+    "raw_pred": "UNKNOWN OR OTHER",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1185717",
+    "pred": "LANE DEPARTURE",
+    "raw_pred": "LANE DEPARTURE",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1208068",
+    "pred": "STRUCTURE",
+    "raw_pred": "STRUCTURE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "914919",
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1190333",
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1132608",
+    "pred": "AIR BAGS",
+    "raw_pred": "AIR BAGS",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1209940",
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "744932",
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "240212",
+    "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+    "raw_pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "197350",
+    "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+    "raw_pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "977756",
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1159204",
+    "pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+    "raw_pred": "EQUIPMENT ADAPTIVE/MOBILITY",
+    "correct": true,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "772267",
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "707562",
+    "pred": "EQUIPMENT",
+    "raw_pred": "EQUIPMENT",
+    "correct": false,
+    "is_hard": false,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "383022",
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "768442",
+    "pred": "FUEL/PROPULSION SYSTEM",
+    "raw_pred": "FUEL/PROPULSION SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "252356",
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "573467",
+    "pred": "FUEL SYSTEM, DIESEL",
+    "raw_pred": "FUEL SYSTEM, DIESEL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1713",
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1705326",
+    "pred": "ENGINE",
+    "raw_pred": "ENGINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1578783",
+    "pred": "ELECTRICAL SYSTEM",
+    "raw_pred": "ELECTRICAL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1142140",
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1709414",
+    "pred": "FUEL SYSTEM, GASOLINE",
+    "raw_pred": "FUEL SYSTEM, GASOLINE",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1115614",
+    "pred": "FUEL/PROPULSION SYSTEM",
+    "raw_pred": "FUEL/PROPULSION SYSTEM",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1329293",
+    "pred": "POWER TRAIN",
+    "raw_pred": "POWER TRAIN",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1728411",
+    "pred": "ENGINE AND ENGINE COOLING",
+    "raw_pred": "ENGINE AND ENGINE COOLING",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "822481",
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "750966",
+    "pred": "OTHER",
+    "raw_pred": "TRACTION CONTROL SYSTEM",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "820993",
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "760021",
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "758906",
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "758789",
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "734318",
+    "pred": "SERVICE BRAKES, AIR",
+    "raw_pred": "SERVICE BRAKES, AIR",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "786293",
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "2158233",
+    "pred": "SERVICE BRAKES, HYDRAULIC",
+    "raw_pred": "SERVICE BRAKES, HYDRAULIC",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1023573",
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "1075370",
+    "pred": "STEERING",
+    "raw_pred": "STEERING",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "840221",
+    "pred": "VEHICLE SPEED CONTROL",
+    "raw_pred": "VEHICLE SPEED CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "2117316",
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": true,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  },
+  {
+    "cmplid": "948325",
+    "pred": "ELECTRONIC STABILITY CONTROL",
+    "raw_pred": "ELECTRONIC STABILITY CONTROL",
+    "correct": false,
+    "is_hard": true,
+    "truth_source": "adjudicated_v3_rare_coverage"
+  }
+]

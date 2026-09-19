@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Current-complaints answer key — first pass (blind)</title>
+  <style>
+    :root { font-family: Georgia, "Times New Roman", serif; color: #1a1a1a; background: #f6f3ec; }
+    body { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+    .meta { color: #555; margin-bottom: 1rem; }
+    .card { background: #fff; border: 1px solid #d9d3c5; padding: 16px 18px; margin-bottom: 16px; }
+    .narrative { white-space: pre-wrap; line-height: 1.45; font-size: 1.02rem; }
+    .defs { max-height: 360px; overflow: auto; border-top: 1px solid #eee; padding-top: 8px; }
+    label.cls { display: block; padding: 4px 0; cursor: pointer; }
+    label.cls:hover { background: #f3efe4; }
+    input[type=text], textarea { width: 100%; box-sizing: border-box; }
+    button { font: inherit; padding: 8px 14px; margin-right: 8px; cursor: pointer; }
+    .warn { background: #fff3cd; padding: 8px 12px; border: 1px solid #e6d38a; }
+    .done { color: #0b6b2b; }
+  </style>
+</head>
+<body>
+  <h1>Blind first pass</h1>
+  <p class="meta">Narrative, make/model/year, and class definitions only. No NHTSA field, no model, no teacher.</p>
+  <p class="warn" id="status">Loading queue…</p>
+  <div class="card" id="complaint" hidden>
+    <p><strong id="vehicle"></strong> · received <span id="ldate"></span> · <span id="progress"></span></p>
+    <p class="narrative" id="narrative"></p>
+    <p>Accept one or more labels. First checked label is <em>primary</em>.</p>
+    <input type="text" id="filter" placeholder="Filter classes…" />
+    <div class="defs" id="defs"></div>
+    <p><textarea id="note" rows="2" placeholder="Optional note (ambiguity, not enough text, …)"></textarea></p>
+    <p>
+      <button type="button" id="save">Save and next</button>
+      <button type="button" id="skip">Skip for now</button>
+    </p>
+  </div>
+  <script>
+    const state = { queue: null, defs: {}, rows: [], i: 0, done: new Set() };
+
+    async function init() {
+      const q = await fetch('/api/queue').then(r => r.json());
+      if (q.error) { document.getElementById('status').textContent = q.error; return; }
+      const p = await fetch('/api/progress').then(r => r.json());
+      state.queue = q;
+      state.defs = q.class_definitions || {};
+      state.rows = q.rows || [];
+      state.done = new Set(p.done_ids || []);
+      state.i = state.rows.findIndex(r => !state.done.has(String(r.cmplid)));
+      if (state.i < 0) state.i = state.rows.length;
+      document.getElementById('status').innerHTML =
+        `<span class="done">${p.done} / ${p.total} labeled.</span> ${q.instructions || ''}`;
+      renderDefs();
+      show();
+    }
+
+    function renderDefs() {
+      const box = document.getElementById('defs');
+      const filter = (document.getElementById('filter').value || '').toLowerCase();
+      const names = Object.keys(state.defs).sort();
+      box.innerHTML = names.filter(n => !filter || n.toLowerCase().includes(filter) ||
+        state.defs[n].toLowerCase().includes(filter)).map(n =>
+        `<label class="cls"><input type="checkbox" value="${n.replace(/"/g, '&quot;')}"> <strong>${n}</strong> — ${state.defs[n]}</label>`
+      ).join('');
+    }
+
+    function current() { return state.rows[state.i]; }
+
+    function show() {
+      const row = current();
+      const card = document.getElementById('complaint');
+      if (!row) {
+        card.hidden = true;
+        document.getElementById('status').innerHTML =
+          `<span class="done">First pass complete (${state.done.size} / ${state.rows.length}). Stop the server.</span>`;
+        return;
+      }
+      card.hidden = false;
+      document.getElementById('vehicle').textContent = `${row.year} ${row.make} ${row.model}`;
+      document.getElementById('ldate').textContent = row.ldate;
+      document.getElementById('narrative').textContent = row.narrative;
+      document.getElementById('progress').textContent = `${state.i + 1} of ${state.rows.length}`;
+      document.getElementById('note').value = '';
+      document.getElementById('filter').value = '';
+      renderDefs();
+    }
+
+    document.getElementById('filter').addEventListener('input', renderDefs);
+    document.getElementById('skip').addEventListener('click', () => { state.i += 1; show(); });
+    document.getElementById('save').addEventListener('click', async () => {
+      const row = current();
+      if (!row) return;
+      const accept = [...document.querySelectorAll('#defs input:checked')].map(el => el.value);
+      if (!accept.length) { alert('Pick at least one label.'); return; }
+      const res = await fetch('/api/label', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cmplid: row.cmplid, accept, note: document.getElementById('note').value }),
+      }).then(r => r.json());
+      if (!res.ok) { alert(res.error || 'save failed'); return; }
+      state.done.add(String(row.cmplid));
+      document.getElementById('status').innerHTML =
+        `<span class="done">${res.progress.done} / ${res.progress.total} labeled.</span>`;
+      state.i += 1;
+      show();
+    });
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+{
+  "schema": "gold_current_adas_oversample_queue",
+  "blind": true,
+  "separate_from_random_accuracy": true,
+  "rows": [
+    {
+      "cmplid": "2247496",
+      "make": "FORD",
+      "model": "MUSTANG MACH E",
+      "year": "2022",
+      "narrative": "I had put the vehicle into One Pedal Drive mode for the first time on the morning of Aug 29th. Vehicle operated as it should for first few places I drove to and stopped, but then I approached a red light, removed foot slowly from accelerator and vehicle came to a full stop as it should. Approximately 2-5 seconds later, without warning or even the collision avoidance system activating, my vehicle suddenly accelerated into the rear of the stopped truck in front of me. Fortunately no serious injuries but someone could have been killed. My foot was NOT on the accelerator at the time - it was hovering over it while waiting for the light to change to green. My vehicle was taken to Ford for evaluation, but they claim it has to be repaired before they can diagnose/confirm the issue. I am the original owner with no previous accidents or incidents. ",
+      "ldate": "20260917"
+    },
+    {
+      "cmplid": "2240689",
+      "make": "CHEVROLET",
+      "model": "BOLT EV",
+      "year": "2027",
+      "narrative": "The brake pedal can easily become disconnected from the electronic brake booster behind the firewall. When this happens, it stops all driver aids. The safety issue is it can happen while driving, and if using adaptive cruise control, or GM super cruise, if one pedal driving is on, it can without warning substantially slow the car, and has the potential to cause an accident. Its not too far to think the dislodging can cause the boost arm to be placed in a position to prevent full brakeing either.   I have not taken it in because it is a design flaw of the system I believe. From searching online, I found the assembly, and it lacks a locking pin in the pedal to the shaft as you can see in the service diagram attached. Speaking to someone at a GM dealer they verified the issue on another 2027 Chevy Bolt, but not reproducible on other GM vehicles with the same electronic brake boosting system. ",
+      "ldate": "20260828"
+    },
+    {
+      "cmplid": "2244810",
+      "make": "GMC",
+      "model": "SIERRA 1500",
+      "year": "2016",
+      "narrative": "air bags on my truck still dont work and i was not told by sales person that the safety features didnt work on truck before purchase. Dealership has worked on it twice and the last tech airbags were working and they are not still same symbol saying airbag not working",
+      "ldate": "20260909"
+    },
+    {
+      "cmplid": "2242662",
+      "make": "HONDA",
+      "model": "ODYSSEY",
+      "year": "2019",
+      "narrative": "Ton of warning messages displayed related to ADAS systems not working.  Took car to the dealership and was told the multicamera system failed.  Messages almost identical to what's reported here and apparently many other Honda owners are reporting the same problem.    [XXX]   INFORMATION REDACTED PURSUANT TO THE FREEDOM OF INFORMATION ACT (FOIA), 5 U.S.C. 552(B)(6)",
+      "ldate": "20260902"
+    },
+    {
+      "cmplid": "2244446",
+      "make": "FORD",
+      "model": "C-MAX",
+      "year": "2016",
+      "narrative": "The contact owns a 2016 Ford C-MAX. The contact stated that while reversing, the rear-view camera displayed a blank screen. The contact stated that the failure was a persistent failure, and the rear-view camera displayed an upside-down image. The dealer was made aware of the failure. The vehicle was taken to the dealer, where the failure was associated with a recall. The vehicle was not repaired. The contact was informed that parts were not yet available. The contact received notification of NHTSA Campaign Number: 25V695000 (Back Over Prevention); however, the part was not yet available. The failure mileage was approximately 136,000.",
+      "ldate": "20260908"
+    },
+    {
+      "cmplid": "2247550",
+      "make": "KIA",
+      "model": "TELLURIDE",
+      "year": "2021",
+      "narrative": " I have owned this vehicle since new.  This vehicle has never had an accident.  In the last 3 months the FCAS started sending messages to the dashboard without a vehicle in front, in clear blue skies and the radar element in front is clean.  The message lasts 2-3 minutes and disappears.   Went to Kia Service At Greenway Kia at the Avenues in Jacksonville, FL.  The first time they said no errors codes popped up.  They said it it happens again, bring it back. It kept on the same and I went back.  No resolution.    Then I sent and email to Kia Customer Service and after two weeks called them and the rep stated she found the email.  She said take it to Kia Service which I did.  Still the issue is unresolved.  Made a second call to Kia Customer Service and spoke to another rep and she sent me to an agent \"higher up?\".  He said that he will let the Kia dealership know.  I was under the impression he would call them with the \"fix\".  No luck.    Why have they not changed the radar element in front?  Money?  I have driven vehicles for 62 years and never needed FACS.  I guess car manufacturers installed this to deal with the current drivers paying attention to their social media accounts instead of driving.  There is Kia Telluride Thread I found and several others describe the same issue.  All report no solutions.  Perhaps a recall only for those vehicles that have this problem.    Respectfully,",
+      "ldate": "20260917"
+    },
+    {
+      "cmplid": "2242235",
+      "make": "GMC",
+      "model": "SIERRA 1500",
+      "year": "2024",
+      "narrative": "10/01/25: Vehicle brought to dealership for the 6.2L Engine Loss of Propulsion Recall. Engine Passed the Pico vibration test. Oil was changed from 0W-20 to 0W-40. Mileage was 29K.  06/17/26: Engine Seized at 43K miles. Was travelling 50 MPH up a Mtn Pass. Barely had enough momentum to roll to the right shoulder out of traffic.  07/07/26: New motor installed. Back to 0W/20 oil.   Since ownership, I have to on a regular basis reset the Collison Warning from Seat Vibration to Beeps. It appears to reset back from Beeps to Seat Vibration every time there is an over the air software update. It might even just randomly reset. I cant tell for sure. I recently had a small backing accident were I was expecting the Beeps to alert me. I mentioned this to my auto insurance company. They told me this was not the first time they have heard of this type of situation.  ",
+      "ldate": "20260901"
+    },
+    {
+      "cmplid": "2246609",
+      "make": "TESLA",
+      "model": "MODEL Y",
+      "year": "2026",
+      "narrative": "Lane departure pulls the car unsafely when two lanes merge or one lane splits. It has caused us to swerve a few times leading to major safety concerns. It's locked by software we are forced to turn off manually every time we drive. Even when off it seems to pull me around on certain roads",
+      "ldate": "20260915"
+    },
+    {
+      "cmplid": "2241270",
+      "make": "TOYOTA",
+      "model": "AVALON",
+      "year": "2019",
+      "narrative": "On two occasions, 8 months apart, our car started braking on its own while driving in traffic. In both instances, the on-screen alerts indicated the LDA and simultaneously the check engine light. Neither time were we trying to switch lanes. In fact, the first time we were on a one-way street. In both instances, we were able to cruise over to a parking space before the car completely stopped avoiding a rear-end collision. Once we got in the space, we turned the car off and back on but it would not go forward or backward. We sat for 30 minutes or so, started it up and was able to get it home. We took the car to the Toyota dealership the next day. We got a call from the dealership in a few days stating the mechanics drove the car but the issue did not occur so we had to go in to the dealer and sign an authorization to allow access to the car's computer. About a week went by before we received a call stating they were waiting for an engineer to come in and diagnose the problem. Two weeks later, we got another call informing us the engineer would be delayed in getting to the dealership and asked if we wanted to pick up the car. Obviously, driving a car that we no longer feel safe in was not an option so we informed them to keep it until the problem was addressed. Weeks went by and we were not contacted so we sent a letter to the Corporate Office of  Toyota. A case was opened but two weeks passed before we heard anything.  We reached out and spoke with a representative who said they would have the initial rep call us.  We never heard back so reached out again in a week and spoke with yet another rep who said there are two case numbers and the case is in progress and also told us there was \"some kind of dispute\" but we needed to speak with the case manager who opened the case and they would have her call back.  Here we are nearly 3 months later and there has been no  resolution. We've not heard back from the dealer in over a month and the Corporation in nearly 2 weeks. ",
+      "ldate": "20260830"
+    },
+    {
+      "cmplid": "2243155",
+      "make": "HYUNDAI",
+      "model": "KONA",
+      "year": "2024",
+      "narrative": "This mainly concerns the forward collision detection sensor, if that\u00e2\u0080\u0099s even what it\u00e2\u0080\u0099s actually called. My vehicle is available for testing and inspection.  I was driving on an interstate, with my adaptive cruise control set to 75 mph.  I was in the left of 3 lanes when got to a curve that went to the right.  As I came to the beginning of the curve, all of a sudden my dash is warning me of a forward collision and the car started braking hard on its own.  There is a metal guardrail that separates the 2 sides of the interstate and cars are also coming from the other direction.  There wasn\u00e2\u0080\u0099t anyone behind me, thank goodness.  If there had been, I can\u00e2\u0080\u0099t say for sure what would have happened, but it would not have been good.  It took a hot minute for me to figure out what it was doing so I could stop it and get back up to speed.  It scared me when it happened.  When I go the same way without my cruise control on, it doesn\u00e2\u0080\u0099t happen.  That\u00e2\u0080\u0099s how I know it has something to do with how it\u00e2\u0080\u0099s all connected.  This has happened twice at 2 different places since I got the car in May of 2024. I don\u00e2\u0080\u0099t use my cruise control hardly at all now because I\u00e2\u0080\u0099m scared it\u00e2\u0080\u0099s going to suddenly brake again.  I wasn\u00e2\u0080\u0099t sure what could be done about it.  I put the info on the Hyundai owner surveys but nothing ever happened.  I found the NHTSA completely by accident.  I want someone to inspect it and try to recreate it, but it\u00e2\u0080\u0099s an awfully dangerous thing to try.  Nobody has yet. It\u00e2\u0080\u0099s not like it\u00e2\u0080\u0099s a noise or a rattle.  The only thing that I would consider a warning was the crash detection warning on the dash screen that flashes red. That started right about the time that the brakes were activated.  ",
+      "ldate": "20260903"
+    },
+    {
+      "cmplid": "2246776",
+      "make": "CHEVROLET",
+      "model": "TRAVERSE",
+      "year": "2023",
+      "narrative": "2023 Chevy Traverse LT with 33, 884 miles on it. ABS, TC, Service ESC, Service 4WD, Reduced Steering Assist. OBD2 Codes: C0040, U0414, U0121 populated. There is a short in the Electronic Brake Control Monitor, a part that should last way more than 3 years and 33k miles. $1300 to remove and replace EBCM.",
+      "ldate": "20260915"
+    },
+    {
+      "cmplid": "2241904",
+      "make": "FORD",
+      "model": "ESCAPE",
+      "year": "2020",
+      "narrative": "I consistently get an AWD failure warning and then it turns off multiple different safety features of the car, traction control, hill assist, AWD, collision detection etc. I have seen a lot of people complain about the same thing. This is dangerous and ford needs to provide a solution to the bad ground of the AWD module. ",
+      "ldate": "20260901"
+    },
+    {
+      "cmplid": "2246239",
+      "make": "LAND ROVER",
+      "model": "RANGE ROVER SPORT",
+      "year": "2019",
+      "narrative": "The car experienced a complete electrical failure.  Exactly like the recall D126 warns about.  This engineering fix is taking too long.  They should simply replace the DC/DC converter.  I was stuck in the middle of the intersection and had to have my car towed, battery replaced.  They are slow playing this problem to avoid having to pay for repairs.",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2244430",
+      "make": "HYUNDAI",
+      "model": "PALISADE",
+      "year": "2026",
+      "narrative": "I first brought my vehicle to the Towson MD Hyundai Service Department, near my summer home, upon receiving a warning that the front sensor was not operating.  I was advised that the issue will be covered under warranty. Imagine my surprise when I was advised that it would not be covered because the service team located documentation in the vehicle's file indicating that the sensor had been damaged while the new vehicle was being transported to or delivered to the Sarasota FL dealership where we purchased it. They said this documentation specifically chronicled the damage. I reported this to Hyunai's upper mgmt, was assigned a rep who promised to contact Sarasota on my behalf and work to resolve the issue between the two dealerships. After many weeks, she reported back that Sarasota denied that this damage had occurred because the notes/documentation Towson located could no longer be found in the system. But she assured me that they would continue working with the two dealerships to get to the bottom of what had occurred and she would get it covered. It took most of the summer, many calls from the assigned representative stating she was still trying to reach the various parties involved; very confusing as I have never had trouble reaching a service member or manager- and each time made me reiterate the issue, history, and assure that no collision had taken place.  Ultimately  I was informed Hyundai had determined the damage is not covered under warranty because of what they characterized as external damage, likely due to collision, Of course Iam stunned.  The repair will cost approximately $2,000. I want to be unequivocally clear on this point: There has been no impact or visible damage to the front bumper verified by Towson to which she told me \"Impact doesn't always show. I have read online about a number of these incidents. i feel Hyundai is clearly trying to cover an ongoing issue that they don't want to address.  I am happy share my correspondence with you",
+      "ldate": "20260908"
+    },
+    {
+      "cmplid": "2245048",
+      "make": "VOLVO",
+      "model": "V60",
+      "year": "2016",
+      "narrative": "BCM Trouble Codes: C000101, C000201, and C008248  Incident & Defect Summary: The Brake Control Module (BCM) experienced a premature internal electrical circuit failure at only 55,188 total vehicle miles. This vehicle was purchased directly from an authorized Volvo retail showroom (Volvo Cars Marin) in 2020 at 36,434 miles, meaning this primary active safety infrastructure failed after just 18,754 miles of personal ownership (averaging roughly 3,125 miles per year under meticulous maintenance). The internal hardware breakdown disabled vital active safety networks, triggering persistent dashboard warnings that anti-lock braking (ABS), traction control, and electronic stability management are completely inoperative.  Safety Hazard & Risk: A compromised BCM heavily increases stopping distances and removes automated vehicle stabilization, posing an immediate danger during emergency evasive maneuvers or sudden cornering on wet/rainy California road surfaces. Independent specialist evaluation (Ackerman's Volvo) confirmed severe active stability risks. Furthermore, authorized dealer service staff failed to issue a proactive safety warning and actively downplayed a completely offline ABS/traction control system as a minor \"collision sensor fault,\" releasing a vehicle with heavily compromised active safety braking systems back onto public roads. Given that core electronic braking components are designed to last the full operational life of the vehicle, premature internal failure at 55,000 miles indicates a severe manufacturing or circuitry defect that requires federal tracking and evaluation.",
+      "ldate": "20260910"
+    },
+    {
+      "cmplid": "2245200",
+      "make": "HONDA",
+      "model": "ODYSSEY",
+      "year": "2020",
+      "narrative": "I randomly received a series of 6 warning messages when starting the car on 9/3/26. They were all warnings related to the automatic safety features such as lane departure, collision detection, auto bright lights, etc.I took it to the dealer on 9/4/26 & they diagnosed an internal failure with a multi-purpose camera embedded in the rearview mirror. The dealer ordered a new part, installed and reprogrammed and recalibrated the camera. This vehicle has been owned only by me, is kept in a garage away from weather exposure, there is no reason for this part to fail on a 6 year old car with a hefty cost to the consumer. ",
+      "ldate": "20260910"
+    },
+    {
+      "cmplid": "2246341",
+      "make": "ACURA",
+      "model": "MDX",
+      "year": "2018",
+      "narrative": "The vehicle was being driven and the dashboard was lit up with all the systems in error related to ACC (Adaptive Cruise Control)",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2241364",
+      "make": "AUDI",
+      "model": "Q3",
+      "year": "2026",
+      "narrative": "Vehicle is a new 2026 Audi Q3 S Line quattro with recurring electronic system failures affecting safety-related functions, beginning on or about April 11, 2026. The vehicle has repeatedly displayed \u00e2\u0080\u009cDriver assistance systems are limited\u00e2\u0080\u009d and related driver-assist warnings with no environmental cause (clear weather, clean windshield), indicating intermittent dropout of camera/radar-based safety systems including collision avoidance and lane assist. The digital instrument cluster \u00e2\u0080\u0094 the sole speedometer display \u00e2\u0080\u0094 intermittently cuts out and shows grey static, temporarily depriving the driver of speed and warning information while driving. The infotainment/compute system exhibits broader instability: navigation hangs indefinitely at \u00e2\u0080\u009cInitializing navigation\u00e2\u0080\u009d (documented on video, which also shows two system clocks displaying different times simultaneously), random audio pops with no media playing, embedded cellular connectivity repeatedly dropping, and Bluetooth/CarPlay phone connections failing when answering or placing calls, which encourages handheld phone use while driving. Failures are intermittent and have recurred across drive cycles for several months. I believe these represent a software defect in the vehicle\u00e2\u0080\u0099s electronic platform affecting FMVSS-relevant systems, consistent with owner reports on other Audi models sharing this software generation. Video and photo documentation available.",
+      "ldate": "20260831"
+    },
+    {
+      "cmplid": "2246017",
+      "make": "TESLA",
+      "model": "MODEL Y",
+      "year": "2026",
+      "narrative": "Using FSD- supervised the car hit the garage door opening denting the car while backing up to park in my garage ",
+      "ldate": "20260913"
+    },
+    {
+      "cmplid": "2242780",
+      "make": "CHEVROLET",
+      "model": "EQUINOX EV",
+      "year": "2025",
+      "narrative": "On September 2, 2026, at approximately 3:19 PM, my 2025 Chevrolet Equinox EV unexpectedly applied hard automatic braking while I was proceeding through a green intersection. A white SUV ahead of me was moving to the left and clearing my travel path. There was no vehicle, pedestrian, bicycle, or other obstacle directly blocking my lane that required emergency braking.  At the exact moment the vehicle applied the brakes, a Forward Collision Warning appeared on the driver display. Based on the warning and the braking response, I believe the Forward Collision Alert/Automatic Emergency Braking system falsely detected an imminent collision and activated unnecessarily.  The unexpected braking created a risk that a vehicle behind me could rear-end my vehicle. My two children were passengers and were frightened by the sudden braking. No collision or injury occurred.  There were no warning lamps, messages, or symptoms before this incident. The Forward Collision Warning appeared only when the unexpected braking occurred. The problem has not yet been reproduced or confirmed by a Chevrolet dealer. The vehicle has not yet been inspected by the dealer, manufacturer, police, or insurance company.  I reported the incident to Chevrolet and opened case number 109390168. The vehicle and original dashcam footage are available for inspection upon request. The video shows the traffic conditions immediately before, during, and after the braking event. As a temporary safety precaution pending inspection, I changed the automatic-braking settings to Alert Only while retaining collision warnings. ",
+      "ldate": "20260902"
+    },
+    {
+      "cmplid": "2243919",
+      "make": "HYUNDAI",
+      "model": "SANTA FE",
+      "year": "2022",
+      "narrative": "Vehicle on initial start up shows no issue. Driving for a short distance or stationary for a short time. Vehicle instrument panel will show a fault of Forward safety system. Errors on Lane keeping assist, High beam assist, and Driver attention warning. Smart camera module will be hot to the touch causing failure of Front view camera and Front Radar Module.",
+      "ldate": "20260907"
+    },
+    {
+      "cmplid": "2241874",
+      "make": "CADILLAC",
+      "model": "CT4",
+      "year": "2026",
+      "narrative": "On or about XXX, I was the authorized subscriber and driver of a 2026 Cadillac CT4 owned by Flexcar, VIN [XXX]. While driving near [XXX] and [XXX], multiple dashboard warning lamps suddenly illuminated and a brake-assist warning appeared. The braking response became abnormally stiff or limited, and I nearly rear-ended another vehicle.  The suspected systems are the service-brake/brake-assist system and the vehicle\u00e2\u0080\u0099s electrical or electronic-control system. The exact cause is UNKNOWN. There was no separate advance warning immediately before the incident; the warning lamps and brake-assist message appeared when the malfunction began. I photographed the illuminated dashboard. A similar event had previously occurred in this vehicle, and I experienced substantially similar symptoms in another Cadillac CT4 supplied by Flexcar.  I immediately reported the incident, stopped driving and followed Flexcar\u00e2\u0080\u0099s towing and return instructions. The vehicle is now in Flexcar\u00e2\u0080\u0099s possession and may be available for inspection through Flexcar, but access is outside my control.  Flexcar states that it inspected and tested the vehicle but could not reproduce the condition. Flexcar has not provided diagnostic codes, technician findings, the inspection facility or detailed test results. To my knowledge, no authorized Cadillac dealership, manufacturer representative, police agency, insurer or independent service center has inspected or confirmed the malfunction. I opened a case with Cadillac Customer Assistance, but Cadillac has not inspected the vehicle.  The intermittent malfunction affected braking response and created an immediate collision risk to me and other road users. The dashboard photographs document that the warning condition occurred despite Flexcar\u00e2\u0080\u0099s later inability to reproduce it. INFORMATION REDACTED PURSUANT TO THE FREEDOM OF INFORMATION ACT (FOIA), 5 U.S.C. 552(B)(6)",
+      "ldate": "20260831"
+    },
+    {
+      "cmplid": "2244506",
+      "make": "HONDA",
+      "model": "PILOT",
+      "year": "2025",
+      "narrative": "Lost power on steering wheel while driving, unable to turn left/right. All of the warning lights related to braking, lane assist, hill descent, adaptive cruise control, trailer stability assist, hill start assist, low speed breaking, auto-high beam, parking sensor detector, etc..  \"All wheel drive system problem. Only front wheels may be powered. See your dealer.\"",
+      "ldate": "20260908"
+    },
+    {
+      "cmplid": "2240892",
+      "make": "CADILLAC",
+      "model": "ESCALADE ESV",
+      "year": "2024",
+      "narrative": "The Forward Collision Warning system will shut off while driving and an error message will appear. Also, the entire dashboard and radio goes blank and restarts while driving. Also, the backup camera often does not work, instead of an image the screen will flash purple then go black without any image at all. We have brought the car in multiple times for repair, the dealer has had the car for well over a month and it is still not repaired.",
+      "ldate": "20260829"
+    },
+    {
+      "cmplid": "2246438",
+      "make": "HONDA",
+      "model": "CR-V",
+      "year": "2026",
+      "narrative": "While pulling into a parking space in a parking lot with foot on the brake coming to a stop, the vehicle suddenly and without warning accelerated up over the curb onto and across a sidewalk and finally stopped on a lawn.  Had someone been on the sidewalk in front of the vehicle they would have been struck.  Had the vehicle not stopped it would have continued into the side of a building.  The vehicle's engine continued to run after the vehicle finally came to a stop.  The vehicle is currently scheduled for a service appointment at the dealership where it purchased.  There were no warning or caution indications on the instrument panel.",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2246505",
+      "make": "SUBARU",
+      "model": "OUTBACK",
+      "year": "2025",
+      "narrative": "While traveling along I-94E outside of Macomb County on September 10th at around 8:30AM, forward collision warning triggered twice while facing the direct sun. It triggered for around 6 seconds.  Shortly after getting off the Shook Rd exit at around 8:45M and turning right, I had a full AEB activation while again facing the sun, almost causing the vehicle behind me to rear end me.",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2242538",
+      "make": "FORD",
+      "model": "ESCAPE",
+      "year": "2025",
+      "narrative": "Multiple computer related problems, including sensing objects that do not exist while using automated cruise control.   Automatic braking engagement when car senses objects that do not exist both in the front and rear while driving.  Rear sensor occupancy alert randomly triggered when it has been turned off, And when there is nobody in the back seat.  GPS unable to locate signal even in wide open spaces, randomly drops service.   Various climate control components read improperly, or do not display appropriately.  Numerous morning messages both before and after incidents.   The vehicle has been to Ford dealer, they have been unable to reproduce or determine what caused these faults.",
+      "ldate": "20260902"
+    },
+    {
+      "cmplid": "2244630",
+      "make": "HONDA",
+      "model": "ACCORD",
+      "year": "2019",
+      "narrative": "the warning goes for everything that is on the dashboard. there are no safety features for the car that helps to protect the car and other cars. there are no warnings. this car is dangerous for everyone. no emergency brakes.  ",
+      "ldate": "20260909"
+    },
+    {
+      "cmplid": "2243743",
+      "make": "TOYOTA",
+      "model": "TACOMA",
+      "year": "2019",
+      "narrative": "I wrecked my truck in a snowstorm, and the front airbags did not deploy. The crash had me and 2 others in my vehicle. I have permanent injuries",
+      "ldate": "20260906"
+    },
+    {
+      "cmplid": "2240058",
+      "make": "TESLA",
+      "model": "MODEL 3",
+      "year": "2024",
+      "narrative": "On XXX at approximately 12:56 PM Pacific on [XXX], my 2024 Tesla Model 3 VIN [XXX] was operating in Full Self-Driving (Supervised). The system detected oncoming traffic, stopped, then reversed to yield and backed into a parked 2015 Ford Transit van that had an occupant inside. I am the registered owner. [XXX] was the driver. TeslaCam saved events at 12:56:33 and 12:56:43. There was little visible damage, no injuries logged, and no police report. Tesla's consumer privacy form does not accept a crash narrative. I requested a Vehicle Data Report / copy of my data on XXX. USAA/[XXX] claim XXX later assigned 100 percent fault to the Tesla driver for backing, treating this as a conventional reverse collision rather than an FSD commanded maneuver. I am reporting this as a safety defect in FSD (Supervised) because the vehicle reversed into a parked occupied vehicle while the feature was engaged. INFORMATION REDACTED PURSUANT TO THE FREEDOM OF INFORMATION ACT (FOIA), 5 U.S.C. 552(B)(6)",
+      "ldate": "20260827"
+    },
+    {
+      "cmplid": "2243568",
+      "make": "AUDI",
+      "model": "A6",
+      "year": "2026",
+      "narrative": "This report is on a new vehicle. The incident occurred within one week of purchase. While driving on a freeway at constant speed, with the closest vehicle in front of me approximately 25 yards away and with no warning, the car slammed on the brakes in an emergency fashion and aggressively tightened the seat belt shoulder harness. This was followed by a notice \"emergency call cancelled\". It is clear that the Audi pre sense malfunctioned and caused the system to think a rear end collision was imminent, when clearly it was not. The internet is littered with complaints about this. Fortunately, this did not result in an accident, but I would classify it as a near miss safety incident since if someone had been close behind me it likely would have resulted in a rear end collision. I have reported this to the Audi dealer that I purchased it from. Given that I haven't had a car accident in forty years, I consider this system more of a safety hazard than a help. ",
+      "ldate": "20260905"
+    },
+    {
+      "cmplid": "2240438",
+      "make": "GENESIS",
+      "model": "GV70",
+      "year": "2025",
+      "narrative": "On XXX, I was taking my Genesis GV70 out of the garage, while going reverse the car would not stop, the car\u00e2\u0080\u0099s reverse parking collision-avoidance assist did not work, the car continued by going over my mailbox, crossed the street, went over a cable box, went up the hill and stopped by taking a tree out of the ground.  The car was pronounced total loss by Geico.  Geico\u00e2\u0080\u0099s claim # XXX.  The car is now at Copart, phone # [XXX], [XXX], lot # XXX.  I have opened up a case with Genesis to have the car inspected by a professional to find out malfunctioning of the rear collision avoidance assist. I had to pressure Genesis to hire a professional to inspect the car but they are taking an enormous amount of time to get back to me with an explanation. INFORMATION REDACTED PURSUANT TO THE FREEDOM OF INFORMATION ACT (FOIA), 5 U.S.C. 552(B)(6)",
+      "ldate": "20260828"
+    },
+    {
+      "cmplid": "2244427",
+      "make": "HONDA",
+      "model": "HR-V",
+      "year": "2019",
+      "narrative": "Defective front-facing camera located above the rear view mirror, used by several car safety systems, fails intermittently causing the dashboard to emit persistent visual and audio warnings.  This is a 2019 HRV-EX with approx. 60,000 miles.  It happens most frequently when the car interior is hot.  The cacophony is so overwhelming that it distracts from being able to safely operate the vehicle.  Honda dealer from whom the car was purchased estimated over $2000 to fix the issue.  This is a common issue with several Honda models and there is a class action suit filed in US District Court, Central District of CA.  Honda should acknowledge there's a design defect in the camera system and offer to repair it at its own expense.",
+      "ldate": "20260908"
+    },
+    {
+      "cmplid": "2241546",
+      "make": "HONDA",
+      "model": "PROLOGUE",
+      "year": "2025",
+      "narrative": "I have reported car jerks while driving as though pushing to go. Car service said never heard of something with Prologues and brushed it off. I want it documented. The safety features such as listed above do not always effectively work either. ",
+      "ldate": "20260831"
+    },
+    {
+      "cmplid": "2243327",
+      "make": "VOLVO",
+      "model": "XC60",
+      "year": "2022",
+      "narrative": "Component Failure & Inspection Availability: Infotainment Head Unit (IHU) / Audio Module (AUD) running Android Automotive OS. The vehicle and its components are available for inspection upon request.  Safety Risk: The audio system completely crashes approximately every 3 drive cycles. This failure disables all safety-critical audio features, including turn signal clicks, backup camera and parking sensor chimes, blind-spot/cross-traffic warning alerts, and emergency system tones. Operating the vehicle without audible turn signals or proximity chimes creates significant driver distraction and an immediate hazard to traffic safety.  Dealer / Service Confirmation: The issue occurs intermittently during daily operation and is being reported to Volvo dealer service  Prior Inspection: The vehicle has been inspected by Volvo service department  Symptoms & Onset: The problem began following a recent Android Automotive OS software update. No warning lamps, error messages, or indicators appear prior to the failure. The entire audio bus shuts off either at vehicle start or mid-drive. The only temporary workaround is forcing an infotainment reboot by holding the center display home button for 20\u00e2\u0080\u009330 seconds, but the complete audio failure recurs every few drive cycles.",
+      "ldate": "20260904"
+    },
+    {
+      "cmplid": "2241597",
+      "make": "CHEVROLET",
+      "model": "COLORADO",
+      "year": "2023",
+      "narrative": "The contact owns a 2023 Chevrolet Colorado. The contact stated that while driving on several occasions at various speeds, the Forward Collision Avoidance system activated, and the brakes inadvertently engaged. The Forward Collision Avoidance warning light illuminated, with an audible chime and an unknown message displayed. The contact stated that on one occasion the vehicle was pulled off the highway to avoid crashing with another vehicle. The vehicle was restarted and taken to a dealer. The contact received notification of NHTSA Campaign Number: 24V133000 (Electrical System, Forward Collision Avoidance) while getting service, and a system update was performed, and the front camera system was updated. The vehicle was repaired, but the failure returned three days later. The manufacturer was notified of the failure. The failure mileage was approximately 20,000.",
+      "ldate": "20260831"
+    },
+    {
+      "cmplid": "2240280",
+      "make": "CHEVROLET",
+      "model": "SILVERADO 1500",
+      "year": "2023",
+      "narrative": "Front. Camera keep freezing up and failed at 40000 miles its a defect and should be replaced free you have a bulletin outTSB23-NA-095 ",
+      "ldate": "20260827"
+    },
+    {
+      "cmplid": "2244850",
+      "make": "HONDA",
+      "model": "PILOT",
+      "year": "2021",
+      "narrative": "Vehicle has multiple safety system failures. After extensive online research and multiple diagnostics, repair technicians indicating safety camera failure due to heat. Technician indicating significant increase specific to this vehicle of late. Excessive environmental temperature \u00e2\u0080\u009cfrying\u00e2\u0080\u009d ADAS camera.  This causes failure to HondaSense safety features such as collision mitigation, lane keeping, and road departure mitigation - features touted as industry leading by Honda.  Matter has been diagnosed and duplicated by service technicians. Extensive online research indicates potential widespread issue that requires highly expensive replacement/repair and calibration.",
+      "ldate": "20260909"
+    },
+    {
+      "cmplid": "2246396",
+      "make": "FORD",
+      "model": "FLEX",
+      "year": "2019",
+      "narrative": "Exterior b-pillar applique trim on front driver and passenger doors have ripped from the vehicle while driving.  Driver side trim includes key code pad and wires. Dealer has no parts available and taking no appointments.  Rear camera not working consistently. Dealer has no parts available and taking no appointments.",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2245349",
+      "make": "CHEVROLET",
+      "model": "TRAVERSE",
+      "year": "2026",
+      "narrative": "The blind spot warning sensor goes off at random. Making the driver not know if an object is close to the vehicle. This is very dangerous as a driver because you can get used to it going off and getting comfortable with nothing being in your blindspot, even with the warning light on. What happens when there actually is something in your blindspot? As you can see in the picture below, there is nothing in the mirror and the blindspot warning light is on. It has been this was since it came off the lot at the dealership. We have been told there is no fix for it. We would like to see a recall for this particular sensor before it becomes a problem.",
+      "ldate": "20260910"
+    },
+    {
+      "cmplid": "2246488",
+      "make": "TESLA",
+      "model": "MODEL Y",
+      "year": "2021",
+      "narrative": "In the 5 years we have had this vehicle there have been multiple issues with the Self Driving feature including: 1)Phantom braking on busy freeways in [XXX] 2)Swerving randomly into the other late on a curve on 4 lane hwy at 65 mph ([XXX] near [XXX]) 3)Attempting to switch lanes into fast traffic when we were at a standstill in rush hour traffic ([XXX]) 4)Slamming brakes on on a 2 lane road on a curve because there was a semi in the other lane (that had not crossed the line) [XXX]  5)Being a short way from exiting the freeway and having the car jump back into traffic ([XXX] at [XXX]) 6)  Slammed on brakes when the car in front of us was exiting [XXX] normally on an offramp going northbourd around the city of [XXX].  These are some of the most egregious errors the car has made, but there are more not listed. I try it on occasion when there is a software update. It is not safe though- almost without fail I need to take over each time I try it. As [XXX] said on XXX \"Hardware 3 simply does not have the capability to achieve unsupervised FSD due to physical computing and memory limitations.\"  The full self driving is dangerous, yet each time I get in the car the computer encourages its use.   INFORMATION REDACTED PURSUANT TO THE FREEDOM OF INFORMATION ACT (FOIA), 5 U.S.C. 552(B)(6)",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2244437",
+      "make": "HONDA",
+      "model": "ODYSSEY",
+      "year": "2019",
+      "narrative": "Front camera failure causing all system errors to not work to include lane keeping assist, adaptive cruise control, lane departure warning, auto high beam.",
+      "ldate": "20260908"
+    },
+    {
+      "cmplid": "2243839",
+      "make": "VOLKSWAGEN",
+      "model": "TIGUAN",
+      "year": "2022",
+      "narrative": "Travel assist currently unavailable warning goes off frequently in 2022 Volkswagen Tiguan SE-R Line creating a loud repetitive dinging noise which is very distracting and alarming while driving, thus causing a safety issue.  This occurs even when not using travel assist features and there is no way for the consumer to disable the travel assist to prevent the warning from occurring.    This has been an ongoing issue since purchasing the vehicle in May 2022 and has been reported to the local Volkswagen dealership multiple times with no acknowledgement of the issue or offer to repair while the vehicle was under warranty.  I have recently discovered that Volkswagen issued a Technical Service Bulletin for dealerships in May 2023 under (TSB) 2070207/1 (also known as TSB 48-23-01).  It is a known issue to Volkswagen and they have failed to issue a recall or properly train their dealerships about the issuance of the Technical Service Bulletin to appropriately repair while covered under warranty.  ",
+      "ldate": "20260906"
+    },
+    {
+      "cmplid": "2245603",
+      "make": "VOLKSWAGEN",
+      "model": "ID. BUZZ",
+      "year": "2025",
+      "narrative": "I am reporting a safety concern involving my 2025 Volkswagen ID. Buzz Pro S RWD.  While reversing at approximately 3 mph out of a parking spot, the vehicle suddenly and automatically applied the brakes with extreme force even though there was no obstacle behind the vehicle and no apparent reason for emergency braking. The stop was so abrupt that it felt as though the vehicle had struck a solid object and caused the occupants to experience whiplash-like movement.  The braking appears to have been caused by the vehicle's Maneuver Braking/parking collision-avoidance system. This was not simply a warning or normal parking-assistance intervention; the vehicle unexpectedly brought itself to a violent stop.  I am concerned that false activation of this system creates its own safety hazard. An unexpected full-force stop while maneuvering could injure occupants, cause a driver to lose control of the situation, or create a collision risk with another vehicle or road user who is not expecting the vehicle to stop suddenly.  There was no visible obstacle that would explain the intervention. It's possible the camera system was confused by some shade during a sunny day. I believe this incident should be investigated as a potential defect involving false activation of the automatic braking system on the Volkswagen ID. Buzz.  ",
+      "ldate": "20260911"
+    },
+    {
+      "cmplid": "2240741",
+      "make": "TESLA",
+      "model": "MODEL Y",
+      "year": "2022",
+      "narrative": "While operating a 2022 Tesla Model Y with Full Self-Driving (FSD Supervised) engaged, the vehicle failed to execute a right merge onto the CA-280 North freeway ramp in Redwood City, CA. Instead, FSD initiated an unexpected wrong-way maneuver down a downward off-ramp.  As the vehicle headed toward a sharp left curve, it failed to decelerate sufficiently for the turn. The vehicle maintained speed on the downward incline and then accelerated slightly, traveling at around 30 mph immediately prior to impact.  Facing an active hazard initiated by the software, I performed an emergency manual override. System steering resistance and abrupt load transfer mid-turn caused an immediate loss of control, driving the vehicle over a mound and into an off-road ditch. Airbags deployed upon impact, and occupants (including a 5-month-old infant) were transported to the emergency room for evaluation.  A formal safety complaint is being filed regarding FSD wrong-way navigation failures, failure to decelerate, and severe handling/disengagement instability during emergency takeover scenarios.",
+      "ldate": "20260828"
+    },
+    {
+      "cmplid": "2246242",
+      "make": "TOYOTA",
+      "model": "RAV4 HYBRID",
+      "year": "2026",
+      "narrative": "The contact owns a 2026 Toyota Rav4 Hybrid. The contact stated that while driving 72 MPH with the cruise control engaged, the brake pedal was depressed to slow the vehicle; however, after pressing the resume button, the vehicle experienced unintended acceleration, and accelerated to 88 MPH. The contact pressed the cancel button, but the cruise control failed to disengage. The vehicle was taken to the dealer, who performed an inspection and determined that the vehicle was operating normally. The manufacturer was notified of the failure by phone. The failure mileage was approximately 300.",
+      "ldate": "20260914"
+    },
+    {
+      "cmplid": "2242507",
+      "make": "RAM",
+      "model": "4500",
+      "year": "2017",
+      "narrative": "Manufacturer Recall NumberC4B NHTSA Recall Number24V-896 there is a abs module recall on this truck we rear ended a city bus three people seriously injured  . and hurt we have been calling for 5 years no help please help [XXX] blackjack towing and recovery [XXX]  INFORMATION REDACTED PURSUANT TO THE FREEDOM OF INFORMATION ACT (FOIA), 5 U.S.C. 552(B)(6)",
+      "ldate": "20260902"
+    },
+    {
+      "cmplid": "2246576",
+      "make": "VOLKSWAGEN",
+      "model": "TIGUAN",
+      "year": "2023",
+      "narrative": "On September 14, 2026, my 2023 Volkswagen Tiguan SEL R-Line experienced a sudden electronic/system failure while the vehicle was in use. The infotainment system entered a continuous reboot cycle and subsequently displayed a black screen. At approximately the same time, the SOS/emergency-call indicator illuminated red and the vehicle/app reported \u00e2\u0080\u009cEmergency call function limited! Service vehicle.\u00e2\u0080\u009d Multiple vehicle functions then became unavailable, including Front Assist/automatic emergency braking, cruise control, navigation, compass, and Dynamic Road Sign Display. The instrument cluster displayed active warnings, and the Dynamic Road Sign Display fault generated a loud warning chime approximately every 30 seconds while driving. The repeated audible warning was significantly distracting. Attempts to restart the infotainment system and completely power-cycle the affected systems did not restore normal operation. Disconnecting and reconnecting the 12-volt battery also did not correct the original failure. The vehicle was subsequently taken to an authorized Volkswagen dealership for diagnosis. I am reporting this because the failure was not limited to entertainment or convenience equipment. The electronic failure coincided with loss of multiple driver-assistance functions, including Front Assist/automatic emergency braking, as well as loss of the vehicle\u00e2\u0080\u0099s SOS/emergency-call capability. The repeated warning chimes also created an additional distraction while operating the vehicle. The vehicle is currently at an authorized Volkswagen dealership awaiting diagnosis/repair. Volkswagen Customer CARE case 07734827 has been opened regarding the incident.",
+      "ldate": "20260915"
+    },
+    {
+      "cmplid": "2244532",
+      "make": "BMW",
+      "model": "X7",
+      "year": "2021",
+      "narrative": "The IP Cluster that shows details on the speed the vehicle is traveling at, gas left, mileage left etc. were left inaccessible when the Instrument Panel cluster on the BMW X7 blanked out.  Big Safety concern when the vehicle is unable to display travelling speed mid-drive",
+      "ldate": "20260908"
+    },
+    {
+      "cmplid": "2240430",
+      "make": "FORD",
+      "model": "EDGE",
+      "year": "2021",
+      "narrative": "The contact owns a 2021 Ford Edge. The contact received notification for NHTSA Campaign Number: 26V124000 (Back Over Prevention); however, the part to perform the recall repair was not yet available. The contact stated that the manufacturer had exceeded a reasonable amount of time for the recall repair. The vehicle was taken to a dealer, where the contact was informed that the USB port needed to perform the software update was defective. The dealer did not provide the alternative option included in the recall remedy, which authorized an over-the-air (OTA) software update free of charge. The vehicle was not repaired. The manufacturer was notified of the failure, and a case was opened. The contact had not experienced a failure.",
+      "ldate": "20260828"
+    }
+  ]
+}

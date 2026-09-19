@@ -1,0 +1,49 @@
+{
+  "window": {
+    "ldate_min": "20250101",
+    "ldate_max": "20260917"
+  },
+  "old_rows_in_window": 187556,
+  "new_rows": 195389,
+  "common_fingerprints": 125858,
+  "fingerprints_only_in_new": 5199,
+  "fingerprints_only_in_old": 7,
+  "same_complaint_cmplid_moved": 27430,
+  "same_complaint_COMPDESC_changed": 3,
+  "same_complaint_MAKETXT_changed": 2,
+  "same_complaint_MODELTXT_changed": 30,
+  "same_complaint_YEARTXT_changed": 2,
+  "compdesc_change_examples": [
+    {
+      "CMPLID_new": "2234640",
+      "ODINO": "11756343",
+      "COMPDESC_new": "WHEELS:LUGS/NUTS/BOLTS/STUDS",
+      "MAKETXT_new": "GULF STREAM",
+      "CDESCR": "Wheel stud broke off while in transit. Other studs were found to have been over torqued while new.  Other wheel studs on same hub had stripped threads. Wheel bearings on both axel ",
+      "CMPLID_old": "2234642",
+      "COMPDESC_old": "WHEELS",
+      "MAKETXT_old": "GULF STREAM"
+    },
+    {
+      "CMPLID_new": "2237016",
+      "ODINO": "11757959",
+      "COMPDESC_new": "BACK OVER PREVENTION: SENSING SYSTEM: CAMERA",
+      "MAKETXT_new": "MITSUBISHI",
+      "CDESCR": "The front and rear backup cameras on my 2022 Mitsubishi Outlander have completely failed, leaving me with a blank, black screen. This creates a severe safety hazard when parking an",
+      "CMPLID_old": "2237020",
+      "COMPDESC_old": "BACK OVER PREVENTION: WARNINGS",
+      "MAKETXT_old": "MITSUBISHI"
+    },
+    {
+      "CMPLID_new": "2239578",
+      "ODINO": "11759669",
+      "COMPDESC_new": "ELECTRICAL SYSTEM:12V/24V/48V BATTERY",
+      "MAKETXT_new": "LEXUS",
+      "CDESCR": "Battery drains which locks car unexpectedly. No warning, even with car FOB inside car which creates a safety issue if child or someone is in the car. All doors lock and with no acc",
+      "CMPLID_old": "2239563",
+      "COMPDESC_old": "ELECTRICAL SYSTEM",
+      "MAKETXT_old": "LEXUS"
+    }
+  ],
+  "note": "Fingerprint is ODINO + first 400 chars of whitespace-normalized CDESCR. CMPLID movement on a matching fingerprint is remapping, not a content edit."
+}

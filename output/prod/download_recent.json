@@ -1,0 +1,12 @@
+{
+  "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
+  "kind": "recent",
+  "zip_path": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\data\\incoming\\COMPLAINTS_RECEIVED_2025-2026_20260919.zip",
+  "extract_dir": "C:\\Users\\willf\\git_proj\\nhtsa-complaint-llm\\data\\incoming\\COMPLAINTS_RECEIVED_2025-2026_20260919",
+  "names": [
+    "COMPLAINTS_RECEIVED_2025-2026.txt"
+  ],
+  "bytes": 39732913,
+  "last_modified": "Sat, 19 Sep 2026 09:28:49 GMT",
+  "downloaded_at": "2026-09-19T20:46:49.692259+00:00"
+}
