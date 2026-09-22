@@ -1,5 +1,48 @@
 {
   "schema": "nightly_v1",
-  "note": "Placeholder until the first scheduled run writes a real summary.",
-  "cutoff_ldate": "20260826"
+  "ran_at": "2026-09-22T21:58:16.220714+00:00",
+  "host": "github-actions",
+  "cutoff_ldate": "20260826",
+  "champion": {
+    "model": "deberta-v3-base",
+    "checkpoint": "checkpoints/deberta_rung2_full_62k_plus_rare/final",
+    "why": "Live serving champion is the full-history DeBERTa. The 2019 as-of replay model is not served. The November 2025 challenger was not promoted (Wilson overlap)."
+  },
+  "pull": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
+    "last_modified": "Tue, 22 Sep 2026 09:29:30 GMT",
+    "dump_vehicle": 193617,
+    "post_cutoff": 8554,
+    "new_vehicle": 960,
+    "ldate_min": "20260828",
+    "ldate_max": "20260920"
+  },
+  "score": {
+    "n": 960,
+    "unknown_rate": 0.05416666666666667,
+    "median_confidence": 0.9854824542999268,
+    "gadget_rate": 0.08125,
+    "nhtsa_field_agreement": 0.36666666666666664,
+    "nhtsa_field_agreement_is_not_accuracy": true,
+    "note": null
+  },
+  "mix": {
+    "threshold": 0.2631368511544004,
+    "latest_ym": "202609",
+    "n_over": 1,
+    "first_fire": null,
+    "partial_month_trips": [
+      {
+        "month": "202609",
+        "n": 6600,
+        "distance_vs_pool": 0.2685586048691928
+      }
+    ],
+    "what_this_is": "NHTSA top-level component field on every vehicle filing, from the monthly count table. Not model predictions. Not accuracy."
+  },
+  "decision": {
+    "retrain": false,
+    "promote": false,
+    "reason": "No two-month fire on the locked NHTSA mix rule after 202511. Keep the live DeBERTa."
+  }
 }
