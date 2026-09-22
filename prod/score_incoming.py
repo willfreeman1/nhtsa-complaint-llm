@@ -36,9 +36,9 @@ def _frame_for_model(df: pd.DataFrame) -> pd.DataFrame:
 
 def _predict(model, tokenizer, df, batch_size, max_length, device):
     import torch
-    import train_deberta as td
+    from prod.weights import ID2LABEL, build_texts
 
-    texts = td.build_texts(df)
+    texts = build_texts(df)
     preds: list[str] = []
     confs: list[float] = []
     alt: list[list[dict]] = []
@@ -56,11 +56,11 @@ def _predict(model, tokenizer, df, batch_size, max_length, device):
             probs = torch.softmax(model(**enc).logits.float(), dim=-1)
             conf, idx = probs.max(dim=-1)
             topv, topi = probs.topk(3, dim=-1)
-            preds.extend(td.ID2LABEL[int(j)] for j in idx.tolist())
+            preds.extend(ID2LABEL[int(j)] for j in idx.tolist())
             confs.extend(float(c) for c in conf.tolist())
             for row_v, row_i in zip(topv.tolist(), topi.tolist()):
                 alt.append([
-                    {"label": td.ID2LABEL[int(j)], "p": float(p)}
+                    {"label": ID2LABEL[int(j)], "p": float(p)}
                     for p, j in zip(row_v, row_i)
                 ])
             if i and i % (batch_size * 20) == 0:
