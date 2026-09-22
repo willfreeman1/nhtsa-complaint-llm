@@ -1,9 +1,13 @@
-"""Download the current NHTSA complaints dump and compare it to the research copy.
+"""Download the current NHTSA complaints dump and find new vehicle filings.
+
+A row is new if its fingerprint (incident id + first 400 characters of the
+narrative) is not already on disk. NHTSA's published complaint id (CMPLID)
+can move between dumps; do not use it as the only key.
 
 Usage (from repo root):
     python -m prod.ingest headers
+    python -m prod.ingest pull
     python -m prod.ingest download --kind recent
-    python -m prod.ingest download --kind full
     python -m prod.ingest compare --new data/incoming/FLAT_CMPL_current.txt
 """
 from __future__ import annotations
@@ -18,6 +22,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from prod.paths import DATA, INCOMING, ROOT, ensure_prod_out
+
+LEDGER = INCOMING / "seen_fingerprints.parquet"
+NEW_ROWS = INCOMING / "new_vehicle_latest.parquet"
 
 FLAT_URL = "https://static.nhtsa.gov/odi/ffdd/cmpl/FLAT_CMPL.zip"
 RECENT_URL = "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip"
@@ -109,6 +116,136 @@ def cmd_download(args):
         json.dumps(meta, indent=2), encoding="utf-8"
     )
     print(json.dumps(meta, indent=2))
+    return meta, extract_dir
+
+
+def row_fingerprint(df):
+    """Stable id: ODINO + first 400 chars of whitespace-normalized narrative."""
+    narr = df["CDESCR"].astype(str).str.replace(r"\s+", " ", regex=True).str.strip().str[:400]
+    return df["ODINO"].astype(str) + "||" + narr
+
+
+def _find_txt(extract_dir: Path) -> Path:
+    txts = sorted(extract_dir.rglob("*.txt"))
+    if not txts:
+        raise SystemExit(f"No .txt in {extract_dir}")
+    # Prefer the complaints file over CMPL.txt layout notes if both exist
+    for p in txts:
+        if p.name.upper().startswith("FLAT") or "COMPLAINT" in p.name.upper():
+            return p
+    return max(txts, key=lambda p: p.stat().st_size)
+
+
+def _seen_fingerprints() -> set[str]:
+    import pandas as pd
+
+    seen: set[str] = set()
+    if LEDGER.exists():
+        seen.update(pd.read_parquet(LEDGER)["fingerprint"].astype(str))
+        return seen
+    research = DATA / "cmpl.parquet"
+    if research.exists():
+        old = pd.read_parquet(research, columns=["ODINO", "CDESCR"])
+        seen.update(row_fingerprint(old))
+    if NEW_ROWS.exists():
+        extra = pd.read_parquet(NEW_ROWS)
+        if "fingerprint" in extra.columns:
+            seen.update(extra["fingerprint"].astype(str))
+        else:
+            seen.update(row_fingerprint(extra))
+    return seen
+
+
+def _reuse_extract(kind: str, last_mod: str | None) -> tuple[dict, Path] | None:
+    """Use a prior download when NHTSA has not published a new zip."""
+    meta_path = ensure_prod_out() / f"download_{kind}.json"
+    if not last_mod or not meta_path.exists():
+        return None
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    if meta.get("last_modified") != last_mod:
+        return None
+    extract_dir = Path(meta["extract_dir"])
+    if not extract_dir.exists():
+        return None
+    try:
+        _find_txt(extract_dir)
+    except SystemExit:
+        return None
+    print(f"Reusing {extract_dir} (Last-Modified unchanged)")
+    return meta, extract_dir
+
+
+def cmd_pull(args):
+    """Download the newest 5-year chunk and write vehicle rows we have not seen."""
+    import pandas as pd
+
+    INCOMING.mkdir(parents=True, exist_ok=True)
+    out_dir = ensure_prod_out()
+    last_meta_path = out_dir / "pull_last.json"
+    probe = _probe(RECENT_URL if args.kind == "recent" else FLAT_URL)
+    last_mod = (probe.get("headers") or {}).get("Last-Modified")
+    if last_meta_path.exists() and not args.force:
+        prev = json.loads(last_meta_path.read_text(encoding="utf-8"))
+        if prev.get("last_modified") and prev.get("last_modified") == last_mod:
+            print(json.dumps({
+                "skipped": True,
+                "reason": "Last-Modified unchanged",
+                "last_modified": last_mod,
+                "previous_pull": prev.get("pulled_at"),
+                "new_vehicle": prev.get("new_vehicle"),
+            }, indent=2))
+            return
+
+    reused = None if args.force else _reuse_extract(args.kind, last_mod)
+    if reused is not None:
+        meta, extract_dir = reused
+    else:
+        dl_args = argparse.Namespace(kind=args.kind)
+        meta, extract_dir = cmd_download(dl_args)
+    txt = _find_txt(extract_dir)
+    keep = [
+        "CMPLID", "ODINO", "PROD_TYPE", "MAKETXT", "MODELTXT", "YEARTXT",
+        "COMPDESC", "CDESCR", "DATEA", "LDATE", "FAILDATE",
+        "CRASH", "FIRE", "INJURED", "DEATHS",
+    ]
+    print(f"Loading {txt} ...")
+    fresh = _load_flat(txt, columns=keep)
+    fresh["fingerprint"] = row_fingerprint(fresh)
+    print(f"  {len(fresh):,} rows")
+
+    seen = _seen_fingerprints()
+    print(f"  known fingerprints: {len(seen):,}")
+    veh = fresh[fresh["PROD_TYPE"] == "V"].copy()
+    new = veh[~veh["fingerprint"].isin(seen)].copy()
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    dated = INCOMING / f"new_vehicle_{stamp}.parquet"
+    new.to_parquet(NEW_ROWS, index=False)
+    new.to_parquet(dated, index=False)
+
+    ledger_df = pd.DataFrame({"fingerprint": sorted(seen | set(veh["fingerprint"]))})
+    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    ledger_df.to_parquet(LEDGER, index=False)
+
+    summary = {
+        "pulled_at": datetime.now(timezone.utc).isoformat(),
+        "kind": args.kind,
+        "url": meta["url"],
+        "last_modified": meta.get("last_modified") or last_mod,
+        "dump_rows": int(len(fresh)),
+        "dump_vehicle": int(len(veh)),
+        "known_before": int(len(seen)),
+        "new_vehicle": int(len(new)),
+        "ldate_min": str(new["LDATE"].min()) if len(new) else None,
+        "ldate_max": str(new["LDATE"].max()) if len(new) else None,
+        "new_path": str(NEW_ROWS),
+        "dated_path": str(dated),
+        "ledger_path": str(LEDGER),
+        "identity": "ODINO + first 400 chars of normalized CDESCR. CMPLID is dump-local.",
+    }
+    (out_dir / "pull_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    last_meta_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    print(json.dumps(summary, indent=2))
+    print(f"Wrote {out_dir / 'pull_summary.json'}")
 
 
 def _load_flat(path: Path, columns=None):
@@ -234,6 +371,11 @@ def main():
     p_d = sub.add_parser("download")
     p_d.add_argument("--kind", choices=["recent", "full"], default="recent")
     p_d.set_defaults(func=cmd_download)
+
+    p_p = sub.add_parser("pull")
+    p_p.add_argument("--kind", choices=["recent", "full"], default="recent")
+    p_p.add_argument("--force", action="store_true", help="Download even if Last-Modified is unchanged")
+    p_p.set_defaults(func=cmd_pull)
 
     p_c = sub.add_parser("compare")
     p_c.add_argument("--new", required=True, help="Path to extracted FLAT_CMPL.txt (or 5-year txt)")
