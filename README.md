@@ -43,9 +43,12 @@ category).
 | Smaller fine-tuned classifier (DeBERTa), trained the same way | 82.2% |
 
 The 7-billion-parameter model gets within half a point of the expensive frontier
-model it learned from, with no ongoing bill to a hosted service. See [`WRITEUP.md`](WRITEUP.md) §6
-for the full cost comparison, and §2.1 for an honest look at what that ~87% ceiling
-actually means: a chunk of the "misses" are genuinely ambiguous complaints, not clean
+model it learned from, with no ongoing bill to a hosted service. The same model,
+asked with the same written rules but *before* we trained it on our labels, scored
+71.5% on this set — so the training improved it by about **15 points** (71.5% →
+86.2%). See [`WRITEUP.md`](WRITEUP.md) §4.0 for that before/after, §6 for the full
+cost comparison, and §2.1 for an honest look at what that ~87% ceiling actually
+means: a chunk of the "misses" are genuinely ambiguous complaints, not clean
 model errors.
 
 That score is fair on the answer key's mix of complaints. It is **not** a score on

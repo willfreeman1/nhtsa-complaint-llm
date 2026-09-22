@@ -1,0 +1,56 @@
+{
+  "schema": "gold_v3_qwen_zeroshot",
+  "what": "Untrained Qwen2.5-7B-Instruct on the 551-row hand-checked set, using the full teacher prompt from scripts/teacher_prompt.py (same prompt as Sonnet/Haiku). No LoRA adapter.",
+  "gold_file": "gold_eval_set_v3.json",
+  "base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter": null,
+  "prompt": "teacher_prompt.build_system_prompt (full, with worked examples)",
+  "device": "cuda",
+  "gold_metrics": {
+    "n": 551,
+    "n_parse_failures": 0,
+    "accuracy": 0.7150635208711433,
+    "accuracy_hard_subset": 0.6204620462046204,
+    "accuracy_dual_agreement_subset": 0.8306451612903226,
+    "macro_f1": 0.7009258009139031
+  },
+  "ci": {
+    "overall": {
+      "n": 551,
+      "successes": 394,
+      "accuracy": 0.7150635208711433,
+      "wilson_95": {
+        "lo": 0.6759856277806894,
+        "hi": 0.7511633098620539
+      },
+      "label": "overall"
+    },
+    "hard": {
+      "n": 303,
+      "successes": 188,
+      "accuracy": 0.6204620462046204,
+      "wilson_95": {
+        "lo": 0.5646349007494458,
+        "hi": 0.6732728666458487
+      },
+      "label": "hard"
+    },
+    "easy": {
+      "n": 248,
+      "successes": 206,
+      "accuracy": 0.8306451612903226,
+      "wilson_95": {
+        "lo": 0.7790044825635289,
+        "hi": 0.8721984958165323
+      },
+      "label": "easy"
+    }
+  },
+  "timing": {
+    "load_seconds": 3.08871813799999,
+    "score_seconds": 2078.6870631379998,
+    "rows_per_second": 0.2650711642801138,
+    "n": 551,
+    "max_new_tokens": 256
+  }
+}

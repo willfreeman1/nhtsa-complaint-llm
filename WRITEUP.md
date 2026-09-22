@@ -184,6 +184,31 @@ confirming the shortened prompt was sufficient and there's no sign of a common
 fine-tuning failure mode where a model, once heavily trained on a fixed label set,
 loses the flexibility to handle anything outside it.
 
+### 4.0 What the same model does before training
+
+The 86.2% is after training. To see how much that training bought, the same
+Qwen2.5-7B-Instruct was scored on the same 551 complaints *without* the adapter,
+using the full written rules and worked examples that Claude Sonnet and Claude
+Haiku got (`scripts/teacher_prompt.py`). That is "before fine-tuning" in the
+sense that matters here: the model can already follow instructions, but it has
+never seen our 68,000 teacher labels.
+
+| | Untrained Qwen (full teacher prompt) | Fine-tuned Qwen |
+|---|---|---|
+| Gold accuracy (overall) | 71.5% (394/551) | **86.2%** (475/551) |
+| Gold accuracy, hard subset | 62.0% | **76.6%** |
+| Gold accuracy, dual-agreement | 83.1% | **98.0%** |
+| Macro-F1 | 0.701 | **0.799** |
+| Parse failures | 0/551 | 0/551 |
+
+The 95% interval on the untrained score is 67.6%–75.1%; the fine-tuned interval
+is 83.1%–88.8%. Those ranges do not overlap. Training lifted the overall score
+by about 15 points. It also shows the 7-billion-parameter model is **not**
+already at frontier level if you only give it a good prompt: untrained Qwen sits
+well below Sonnet's 86.6%, and even below the smaller trained DeBERTa classifier's
+82.2%. The training is what closed the gap. Source:
+`output/prod/gold_v3_qwen_zeroshot.json`.
+
 ### 4.1 Does it still handle genuinely new categories?
 
 To test that directly, 5 synthetic complaints were written describing real vehicle
