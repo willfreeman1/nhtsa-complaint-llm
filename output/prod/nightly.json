@@ -1,6 +1,6 @@
 {
   "schema": "nightly_v1",
-  "ran_at": "2026-09-26T16:36:30.830114+00:00",
+  "ran_at": "2026-09-27T17:10:49.004610+00:00",
   "host": "github-actions",
   "cutoff_ldate": "20260826",
   "champion": {
@@ -13,18 +13,18 @@
     "last_modified": "Sat, 26 Sep 2026 09:34:43 GMT",
     "dump_vehicle": 195235,
     "post_cutoff": 10172,
-    "new_vehicle": 385,
-    "ldate_min": "20260918",
-    "ldate_max": "20260924"
+    "new_vehicle": 0,
+    "ldate_min": null,
+    "ldate_max": null
   },
   "score": {
-    "n": 385,
-    "unknown_rate": 0.046753246753246755,
-    "median_confidence": 0.9875627756118774,
-    "gadget_rate": 0.09610389610389611,
-    "nhtsa_field_agreement": 0.4077922077922078,
+    "n": 0,
+    "unknown_rate": null,
+    "median_confidence": null,
+    "gadget_rate": null,
+    "nhtsa_field_agreement": null,
     "nhtsa_field_agreement_is_not_accuracy": true,
-    "note": null
+    "note": "no new post-cutoff rows"
   },
   "mix": {
     "threshold": 0.2631368511544004,
