@@ -1,6 +1,6 @@
 {
   "schema": "nightly_v1",
-  "ran_at": "2026-10-01T18:32:51.933019+00:00",
+  "ran_at": "2026-10-02T17:59:37.405189+00:00",
   "host": "github-actions",
   "cutoff_ldate": "20260826",
   "champion": {
@@ -10,19 +10,19 @@
   },
   "pull": {
     "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
-    "last_modified": "Thu, 01 Oct 2026 15:24:15 GMT",
-    "dump_vehicle": 196839,
-    "post_cutoff": 11776,
-    "new_vehicle": 448,
-    "ldate_min": "20260928",
-    "ldate_max": "20260929"
+    "last_modified": "Fri, 02 Oct 2026 11:00:49 GMT",
+    "dump_vehicle": 197226,
+    "post_cutoff": 12163,
+    "new_vehicle": 398,
+    "ldate_min": "20260929",
+    "ldate_max": "20260930"
   },
   "score": {
-    "n": 448,
-    "unknown_rate": 0.033482142857142856,
-    "median_confidence": 0.9807704091072083,
-    "gadget_rate": 0.14508928571428573,
-    "nhtsa_field_agreement": 0.4419642857142857,
+    "n": 398,
+    "unknown_rate": 0.06030150753768844,
+    "median_confidence": 0.9860334992408752,
+    "gadget_rate": 0.09798994974874371,
+    "nhtsa_field_agreement": 0.3969849246231156,
     "nhtsa_field_agreement_is_not_accuracy": true,
     "note": null
   },
