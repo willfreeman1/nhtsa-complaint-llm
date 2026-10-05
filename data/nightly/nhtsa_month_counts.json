@@ -2,7 +2,7 @@
   "schema": "nhtsa_month_counts_v1",
   "source": "research + https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
   "cutoff_ldate": "20260826",
-  "built_at": "2026-10-04T16:57:04.685791+00:00",
+  "built_at": "2026-10-05T20:51:06.442183+00:00",
   "universe": [
     "",
     "AIR BAGS",
