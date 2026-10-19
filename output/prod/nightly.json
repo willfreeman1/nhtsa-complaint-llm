@@ -1,6 +1,6 @@
 {
   "schema": "nightly_v1",
-  "ran_at": "2026-10-18T16:04:50.979417+00:00",
+  "ran_at": "2026-10-19T18:48:55.727310+00:00",
   "host": "github-actions",
   "cutoff_ldate": "20260826",
   "champion": {
@@ -10,7 +10,7 @@
   },
   "pull": {
     "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
-    "last_modified": "Sun, 18 Oct 2026 09:25:49 GMT",
+    "last_modified": "Mon, 19 Oct 2026 09:19:23 GMT",
     "dump_vehicle": 202226,
     "post_cutoff": 17162,
     "new_vehicle": 0,
