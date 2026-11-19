@@ -1,6 +1,6 @@
 {
   "schema": "nightly_v1",
-  "ran_at": "2026-11-18T20:49:03.323386+00:00",
+  "ran_at": "2026-11-19T20:54:24.069912+00:00",
   "host": "github-actions",
   "cutoff_ldate": "20260826",
   "champion": {
@@ -10,28 +10,34 @@
   },
   "pull": {
     "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
-    "last_modified": "Wed, 18 Nov 2026 09:28:11 GMT",
-    "dump_vehicle": 212594,
-    "post_cutoff": 27527,
-    "new_vehicle": 518,
-    "ldate_min": "20260917",
-    "ldate_max": "20261116"
+    "last_modified": "Thu, 19 Nov 2026 09:29:59 GMT",
+    "dump_vehicle": 213054,
+    "post_cutoff": 27987,
+    "new_vehicle": 457,
+    "ldate_min": "20261116",
+    "ldate_max": "20261117"
   },
   "score": {
-    "n": 518,
-    "unknown_rate": 0.06177606177606178,
-    "median_confidence": 0.9685741662979126,
-    "gadget_rate": 0.06177606177606178,
-    "nhtsa_field_agreement": 0.39575289575289574,
+    "n": 457,
+    "unknown_rate": 0.05032822757111598,
+    "median_confidence": 0.9720674753189087,
+    "gadget_rate": 0.15317286652078774,
+    "nhtsa_field_agreement": 0.40043763676148797,
     "nhtsa_field_agreement_is_not_accuracy": true,
     "note": null
   },
   "mix": {
     "threshold": 0.2631368511544004,
     "latest_ym": "202611",
-    "n_over": 0,
+    "n_over": 1,
     "first_fire": null,
-    "partial_month_trips": [],
+    "partial_month_trips": [
+      {
+        "month": "202611",
+        "n": 5740,
+        "distance_vs_pool": 0.2643692431335418
+      }
+    ],
     "what_this_is": "NHTSA top-level component field on every vehicle filing, from the monthly count table. Not model predictions. Not accuracy."
   },
   "decision": {
